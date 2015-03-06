@@ -32,45 +32,46 @@ packages and software*, that take care of handling query formatting, data
 retrieval, etc, and expose simple interfaces to researchers.
 
 To us, this opens no less than a new area of research for ecologists interested
-in question at large scales -- we live in a data-rich world, and a very large
-amount of these data can now *easily* be collected to address questions at large
-scales, without the need for additional costly and time-consuming sampling. More
-importantly, this allows *rapid* evaluation of scenarios. In this contribution,
-building on a real-life example, we (i) outline the basic approach, (ii)
-identify technical bottlenecks, (iii) discuss ethical considerations, and (iv)
-provide clear recommendations moving forward.
+in asking questions at large spatial and organizational scales -- we live in a
+data-rich world, and a very large amount of these data can now *easily* be
+collected, reducing the need for additional costly and time-consuming sampling.
+More importantly, this allows *rapid* evaluation of scenarios. In this
+contribution, building on a real-life example, we (i) outline the basic
+approach, (ii) identify technical bottlenecks, (iii) discuss ethical
+considerations, and (iv) provide clear recommendations moving forward.
 <!--XXX meta-discourse is awful but we need to convince people -->
 
 # An illustrative case-study
 
-Rodents and their parasites are distributed throughout Eurasia, in a wide range
-of habitats [@ref]. Both can serve as vectors for human pathogens [@ref], and
-this is especially a problem in areas of important ecological contact or high
-poverty. Predicting where rodents and their parasite will distribute is emerging
-as a major public health challenge in some areas of the world [@ref]. Obtaining
-data from these systems is difficult [@redf] -- rodents are hard to trap, have a
-large area of distribution, and parasitic investigation requires a tremendous
-amount of man-hours. This is especially true since parasites do not interact
-consistently with the same hosts through space [@pois13; @cana14] On the other
-hand, rodents distributions are usually well-predicted by climatic variables
-[@ref], which allows for predictive approaches instead of, or in complement to,
-additional sampling.
+Food-web data, that is the determination of trophic interactions among species,
+are difficult to collect. The usual approach is to assemble literature data,
+expert knowledge, and additional information coming from field work, either as
+observation of direct feeding events, or through the analysis of gut content.
+Because of these technical constraints, food-web data are most often assembled
+in a single location. This impedes our ability to address the variation of their
+structure in space, which may both translate the action of macro-ecological
+mechanisms, as well as hold key to our ability to predict the spatial variation
+of ecological properties.
 
-In this case-study, we will show how several tools can be easily integrated to
-(i) assemble a new dataset and (ii) use it to <!-- TODO continue -->
+In this case study, we are interested in predicting the structure of the
+pine-marsh food web worldwide. One example of this system has been described in
+detail by @martins. We will show how coupling these data with additional
+interactions reported in the literature, as well as species occurrence data,
+allows building a predictive model that describes the spatial variation of this
+system.
 
-**Step 1 --** Species interactions. @hadf14 have established a list of parasitic
-interactions between *XX* species of rodents and *YY* species of fleas in
-Eurasia. These data have been deposited to the *mangal* database @ref, and can
-be retrieved directly from `R`.
+Due to the limitations, ... (qualitative rather than quantitative prediction)
 
-``` r
-library(rmangal)
-library(betalink)
-api <- mangalapi()
-interaction_metadata <- getDataset(api, 2)
-interaction_data <- metaweb(toIgraph(api, interaction_metadata$networks))
-```
+## Interactions data
+
+Data from the pine-marsh food web were take from **REF**, as made available in
+the `IWDB` database (URL).
+
+good rationale for using genus level @eklo11 .
+
+## Occurrence data
+
+## Cleaning
 
 **Step 2 --** Clean species names.
 
@@ -103,9 +104,21 @@ of attribution when a very large volume of data is aggregated*? Second, *what
 should be the intellectual property of the newly aggregated dataset*?
 
 <!-- XXX Computational issues -->
-1. Data curation
-2. Large memory required
-3. Need computational litteracy
+
+This approach hardly qualifies as *big data*; nevertheless, it relies on the
+management and integration of a large volume of heterogeneous information, both
+qualitatively larger than the current "norm". The first challenge is being able
+to *manage* this data; it requires data management skills that are not usually
+needed when ... **REF**. The second challenge is being able to *manipulate*
+these data; small though they may be, the data from this case study do not fit
+in the memory of `R` (arguably the most commonly known software in ecology)
+without some adjustments. It is now worth asking whether our total reliance on
+this tool (as opposed to more performing yet equally user-friendly languages as
+`python` or `julia`) is going to pay-off in the long term. Since it makes very
+little doubt that computational approaches are going to become increasingly
+common in ecology **REF**, and are one areas where the community identifies
+lower skills that would be needed [@barr13a], it seems evident that developing
+computational litteracy should be a part of the core ecological curriculum.
 
 <!-- XXX Homogeneous identification -->
 1. Identifying species
@@ -114,8 +127,9 @@ should be the intellectual property of the newly aggregated dataset*?
 
 # Recommendations
 
-1. Publish pipeline!!!
-2. Pay attention to standard when releasing data
+1. Publish data (even the small one!)
+2. Publish pipeline
+3. Pay attention to standard when releasing data
 
 **Acknowledgements --** This work was funded in part through a grant from the
 Canadian Institute of Ecology and Evolution. TP was funded by a Starting grant
