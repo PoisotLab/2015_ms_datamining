@@ -65,21 +65,42 @@ Due to the limitations, ... (qualitative rather than quantitative prediction)
 ## Interactions data
 
 Data from the pine-marsh food web were take from **REF**, as made available in
-the `IWDB` database (URL).
+the `IWDB` database (URL). Marshes, as almost all wetlands, are critically
+endangered and home to a host of endemic biodiversity [@fens11; @minc13]. They
+represent a prime example of ecosystems for which data-based prediction can be
+used to generate scenarios at a temporal scale relevant for conservation
+decisions, and faster than what sampling could allow.
 
-good rationale for using genus level @eklo11 .
+The original food web (105 nodes, including vague denominations like
+*Unidentified detritus* or *Terrestrial invertebrates*), where cleaned in the
+following way. First, all nodes where aggregated to the *genus* level. Due to
+high level of structure in trophic interactions emerging from taxonomic rank
+alone [@eklo11], aggregating to the genus level has the double advantage of (i)
+removing ambiguities on the identification of species and (ii) allowing to
+integrate data when any two species from given genera interact. Second, all
+nodes that where not identified (`Unidentified` or `Unknown` in the original
+data). The cleaned network documented 227 interactions, between 80 genera. Using
+the name checking functions from the `taxize` package [@cham13a] revealed that
+all of these genus names where valid.
+
+Because the original foodweb was sampled *locally*, there is the possibility
+that interactions between genera are not reported. To circumvent this, we
+queried the *GLOBI* database [@poel14] for each genus name, and retrieved all
+*feeding* interactions. For all *new* genera retrieved through this method, we
+retrieved their interactions with genera already in the network.
+
+The final metanetwork has 4310 interactions between 189 genera. Given the
+curated publicly available data, it represents the current best description of
+feeding interactions between species of pine forests. A visual depiction of the
+network is given in *Fig. XX*.
 
 ## Occurrence data
 
-## Cleaning
+## Filtering
 
-**Step 2 --** Clean species names.
+## SDM
 
-**Step 3 --** Species occurrence.
-
-**Step 4 --** Species distribution model.
-
-**Step 5 --** Interactions distribution model.
+## Assembly
 
 # Opportunities
 
