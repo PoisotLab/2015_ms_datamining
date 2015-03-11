@@ -87,18 +87,31 @@ Because the original foodweb was sampled *locally*, there is the possibility
 that interactions between genera are not reported. To circumvent this, we
 queried the *GLOBI* database [@poel14] for each genus name, and retrieved all
 *feeding* interactions. For all *new* genera retrieved through this method, we
-retrieved their interactions with genera already in the network.
+retrieved their interactions with genera already in the network. This network
+has 789 genera, and a total of 9328 interactions.
 
-The final metanetwork has 4310 interactions between 189 genera. Given the
-curated publicly available data, it represents the current best description of
-feeding interactions between species of pine forests. A visual depiction of the
-network is given in *Fig. XX*.
+## Occurrence data and filtering
 
-## Occurrence data
+For each genera, we downloaded the known occurrences from GBIF and BISON. This
+yielded 64763 point-presence records. Because the goal is, ultimately, to do
+spatial modeling of the structure of the network, we removed genera for which
+less than 100 occurrences where known. This seems like a stringent filter, yet
+it enables to (i) maintain sufficient predictive powers for SDMs, and (ii) only
+work on the genera for which we have "high-quality" data. Genera with less than
+100 records were removed from the occurrence data and from the metanetwork. The
+final metanetwork has 4271 interactions between 188 genera. Given the curated
+publicly available data, it represents the current best description of feeding
+interactions between species of pine forests. A visual depiction of the network
+is given in *Fig. 1*.
 
-## Filtering
+In itself, the fact that filtering for genera with over 100 records reduced the
+sample size from 739 genera to 188 indicates how crucial it is that observations
+are reported in public databases. The type of analysis we present here is only
+as good as the underlying data.
 
 ## SDM
+
+
 
 ## Assembly
 
