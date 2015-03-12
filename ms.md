@@ -1,6 +1,6 @@
 ---
 title: Global ecology in a data-rich world
-author: see CONTRIBUTORS
+author: see CONTRIBUTORS (add your name)
 date: work in progress
 ---
 
@@ -72,16 +72,16 @@ used to generate scenarios at a temporal scale relevant for conservation
 decisions, and faster than what sampling could allow.
 
 The original food web (105 nodes, including vague denominations like
-*Unidentified detritus* or *Terrestrial invertebrates*), where cleaned in the
-following way. First, all nodes where aggregated to the *genus* level. Due to
+*Unidentified detritus* or *Terrestrial invertebrates*), were cleaned in the
+following way. First, all nodes were aggregated to the *genus* level. Due to
 high level of structure in trophic interactions emerging from taxonomic rank
 alone [@eklo11], aggregating to the genus level has the double advantage of (i)
 removing ambiguities on the identification of species and (ii) allowing to
 integrate data when any two species from given genera interact. Second, all
-nodes that where not identified (`Unidentified` or `Unknown` in the original
+nodes that were not identified (`Unidentified` or `Unknown` in the original
 data). The cleaned network documented 227 interactions, between 80 genera. Using
 the name checking functions from the `taxize` package [@cham13a] revealed that
-all of these genus names where valid.
+all of these genus names were valid.
 
 Because the original foodweb was sampled *locally*, there is the possibility
 that interactions between genera are not reported. To circumvent this, we
@@ -95,25 +95,43 @@ has 789 genera, and a total of 9328 interactions.
 For each genera, we downloaded the known occurrences from GBIF and BISON. This
 yielded 64763 point-presence records. Because the goal is, ultimately, to do
 spatial modeling of the structure of the network, we removed genera for which
-less than 100 occurrences where known. This seems like a stringent filter, yet
+less than 100 occurrences were known. This seems like a stringent filter, yet
 it enables to (i) maintain sufficient predictive powers for SDMs, and (ii) only
 work on the genera for which we have "high-quality" data. Genera with less than
 100 records were removed from the occurrence data and from the metanetwork. The
 final metanetwork has 4271 interactions between 188 genera. Given the curated
 publicly available data, it represents the current best description of feeding
-interactions between species of pine forests. A visual depiction of the network
-is given in *Fig. 1*.
+interactions between species of this ecosystem. A visual depiction of the
+network is given in *Fig. 1*.
 
 In itself, the fact that filtering for genera with over 100 records reduced the
 sample size from 739 genera to 188 indicates how crucial it is that observations
-are reported in public databases. The type of analysis we present here is only
-as good as the underlying data.
+are reported in public databases. The type of analysis we present here, although
+cost-effective and enabling rapid evaluation of different scenarios, is only as
+good as the underlying data. A concerted efforts by the community and funding
+agencies to ensure that the minimal amount of data is deposited upon publication
+or acquisition is needed.
 
 ## SDM
 
-
+For each species in this subset of data, we retrieved the 19 `bioclim`
+variables, with a resolution of 5 arc-minutes. This enabled us to build climatic
+envelope models for each species. The output of these models is, for species
+$i$, the probability of an observation $\mathrm{P}(i)$ within each pixel. We
+appreciate that this is a coarse analysis, but its purpose is only to highlight
+how the different data can be combined.
 
 ## Assembly
+
+For each of the 4271 interactions in the metanetwork, we measured the
+probability of it being observed in each pixel as being the joint probability of
+observing both species: $\mathrm{P}(L_{ij}) \propto \mathrm{P}(i)\mathrm{P}(j)$.
+This resulted in 4271 LDMs (Link distribution models). Based on these
+informations, we generated the following illustrations. First, a map of species
+richness (*Fig. 2A*) and number of interactions (*Fig. 2B*). Second, a map of
+*connectance* (*Fig. 2C*), which is the number of interactions divided by the
+squared species richness. Finally, a scatterplot of connectance as a function of
+latitude (*Fig. 2D*), which reveals a systematic macroecological trend.
 
 # Opportunities
 
