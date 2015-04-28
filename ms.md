@@ -106,21 +106,22 @@ In itself, the fact that filtering for genera with over 100 records reduced the
 sample size from 739 genera to 188 indicates how crucial it is that observations
 are reported in public databases. The type of analysis we present here, although
 cost-effective and enabling rapid evaluation of different scenarios, is only as
-good as the underlying data. A concerted efforts by the community and funding
-agencies to ensure that the minimal amount of data is deposited upon publication
-or acquisition is needed.
+good as the underlying data. Since most modelling tools require a minimal sample
+size in order to achieve acceptable accuracy, a concerted efforts by the
+community and funding agencies to ensure that the minimal amount of data is
+deposited upon publication or acquisition is needed.
 
 ## Species Distribution Model
 
-For each species in this subset of data, we retrieved the 19 `bioclim` variables
-[@hijm05], with a resolution of 5 arc-minutes. This enabled us to build climatic
-envelope models for each species; these models tend to be more conservative than
-alternate modeling strategies, in that they predict smaller range sizes
-[@hijm06], but perform well overall on presence-only data [@elit06]. The output
-of these models is, for species $i$, the probability of an observation
-$\mathrm{P}(i)$ within each pixel. We appreciate that this is a coarse analysis,
-but its purpose is only to highlight how the different data can be combined. A
-discussion of the limitations of this approach is given below.
+For each species in this subset of data, we retrieved the nineteen `bioclim`
+variables [@hijm05], with a resolution of 5 arc-minutes. This enabled us to
+build climatic envelope models for each species; these models tend to be more
+conservative than alternate modeling strategies, in that they predict smaller
+range sizes [@hijm06], but perform well overall on presence-only data [@elit06].
+The output of these models is, for species $i$, the probability of an
+observation $\mathrm{P}(i)$ within each pixel. We appreciate that this is a
+coarse analysis, but its purpose is only to highlight how the different data can
+be combined. A discussion of the limitations of this approach is given below.
 
 ## Assembly
 
@@ -158,9 +159,20 @@ The merging of large databases is already asking the question of proper
 attribution of data paternity. Namely, there are two core issues that need
 community consultation in order to be resolved. First, *what is the proper mode
 of attribution when a very large volume of data is aggregated*? Second, *what
-should be the intellectual property of the synthetic dataset*?
-
-<!-- TODO Add some more content to this paragraph -->
+should be the intellectual property of the synthetic dataset*? Currently,
+citations (whether to articles or datasets) are only counted when they are part
+of the main text. This example relies on well over a thousand references, and it
+makes no sense to expect that these will be given in the main text. One
+intermediate solution would be to collate these references in a supplement, but
+it is unclear that these would be counted, and therefore contribute to the
+impact of each individual dataset. This is a problem that we think can only be
+solved by publishers; proper attribution and credit is key to provide incentives
+to data release. As citations is currently the currency of scientific impact,
+publishers have a responsiblity not only to ensure that data are available
+(which many already do), but that they are recognized. The synthetic dataset, on
+the other, can reasonnably be understood as a novel product; there is technical
+and intellectual effort involved in producing it, and although it is a
+derivative work, we would encourage authors to deposit it anew.
 
 **Computational literacy:**
 
@@ -197,8 +209,10 @@ curation of the data they have the stewardship of, and identify potential
 mistakes and correct them upstream, so that users download high-quality,
 high-reliability data. Data contributors should rely more extensively on
 biodiversity identifiers (such as TSN, GBIF, NCBI Taxonomy ID, ...), to make
-sure that even when there are typos in the species name, it can be matched
-across datasets.
+sure that even when there are typos in the species name, they can be matched
+across datasets. Constructing this dataset highlighted a fundamental issue: the
+rate-limiting step is not the availability of tools or platforms, but rather the
+adoption of standars and publication of data in a way that conforms to them.
 
 **Propagation of error:**
 
