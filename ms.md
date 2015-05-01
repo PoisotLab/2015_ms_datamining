@@ -200,19 +200,19 @@ use to carry out more demanding studies.
 
 In conducting this analysis, we noticed that a common issue was the
 identification of species and genera. All of these datasets were deposited by
-people, and are prone to failure. Using tools such as `taxize` [@cham13a]
-allowed to resolve a few of the uncertainties. Yet this has to be done every
-time the data are queried, and requires the end user to make educated guesses as
-to what the "true" identity of the species is. These limitations can be
-overcome, on two conditions. Database maintainers should implement automated
-curation of the data they have the stewardship of, and identify potential
-mistakes and correct them upstream, so that users download high-quality,
-high-reliability data. Data contributors should rely more extensively on
-biodiversity identifiers (such as TSN, GBIF, NCBI Taxonomy ID, ...), to make
-sure that even when there are typos in the species name, they can be matched
-across datasets. Constructing this dataset highlighted a fundamental issue: the
-rate-limiting step is not the availability of tools or platforms, but rather the
-adoption of standars and publication of data in a way that conforms to them.
+people, and are prone to failure. Using tools such as `taxize` [@cham13a] allows
+to resolve a few of the uncertainties. Yet this has to be done every time the
+data are queried, and requires the end user to make educated guesses as to what
+the "true" identity of the species is. These limitations can be overcome, on two
+conditions. Database maintainers should implement automated curation of the data
+they have the stewardship of, and identify potential mistakes and correct them
+upstream, so that users download high-quality, high-reliability data. Data
+contributors should rely more extensively on biodiversity identifiers (such as
+TSN, GBIF, NCBI Taxonomy ID, ...), to make sure that even when there are typos
+in the species name, they can be matched across datasets. Constructing this
+dataset highlighted a fundamental issue: the rate-limiting step is not the
+availability of tools or platforms, but rather the adoption of standars and
+publication of data in a way that conforms to them.
 
 **Propagation of error:**
 
@@ -236,7 +236,23 @@ measures, the use of synthetic datasets is a cost and time-effective approach.
 # Recommendations
 
 1. Publish data (even the small one!)
-2. Publish pipeline
+
+Ideally, authors should release their analysis *pipeline* in addition to the
+data and explanation of the steps. The pipeline can take the form of a
+`makefile` (which allows to generate the results, from the raw data, without
+human intervention), or be all of the relevant code that allows to re-generate
+the figures and results. For example, we have released all of the `R` code that
+was used to generate the figures at **XXX**. Sharing the analysis pipeline has
+several advantages. First, it is a first steps towards ensuring the quality of
+analyses, since reviewers can (and should reasonably be expected to) look at the
+source code. Second, it provides a *template* for future analyses -- instead of
+re-developping the pipeline from scratch, authors can re-use (and acknowledge)
+the previous codebase and build on it. Finally, it helps identifying areas of
+future improvement. The development of software should primarily aim to make the
+work of researchers easier. Looking at commonalities in the analytical pipelines
+for which no ready-made solutions exists will be a great way to influence
+priorities in software development.
+
 3. Pay attention to standard when releasing data
 
 **Acknowledgements --** This work was funded in part through a grant from the
