@@ -69,17 +69,17 @@ represent a prime example of ecosystems for which data-based prediction can be
 used to generate scenarios at a temporal scale relevant for conservation
 decisions, and faster than what sampling could allow.
 
-The data comprising the original food web (105 nodes, including vague denominations like
-*Unidentified detritus* or *Terrestrial invertebrates*), were cleaned in the
-following way. First, all nodes were aggregated to the *genus* level. Due to
-high level of structure in trophic interactions emerging from taxonomic rank
-alone [@eklo11,@stou12], aggregating to the genus level has the double advantage of (i)
-removing ambiguities on the identification of species and (ii) allowing us to
-integrate data when any two species from given genera interact. Second, all
-nodes that were not identified (`Unidentified` or `Unknown` in the original
-data) **DBS: Were what?**. The cleaned network documented 227 interactions, between 80 genera. Using
-the name checking functions from the `taxize` package [@cham13a] revealed that
-all of these genus names were valid.
+The data comprising the original food web (105 nodes, including vague
+denominations like *Unidentified detritus* or *Terrestrial invertebrates*), were
+cleaned in the following way. First, all nodes were aggregated to the *genus*
+level. Due to high level of structure in trophic interactions emerging from
+taxonomic rank alone [@eklo11,@stou12], aggregating to the genus level has the
+double advantage of (i) removing ambiguities on the identification of species
+and (ii) allowing us to integrate data when any two species from given genera
+interact. Second, all nodes that were not identified (`Unidentified` or
+`Unknown` in the original data) were removed. The cleaned network documented 227
+interactions, between 80 genera. Using the name checking functions from the
+`taxize` package [@cham13a] revealed that all of these genus names were valid.
 
 Because the original food web was sampled *locally*, there is the possibility
 that interactions between genera are not reported. To circumvent this, we
@@ -176,6 +176,24 @@ the other, can reasonably be understood as a novel product; there is technical
 and intellectual effort involved in producing it, and although it is a
 derivative work, we would encourage authors to deposit it anew.
 
+**Sharing of code and analysis pipeline:**
+
+Ideally, authors should release their analysis *pipeline* in addition to the
+data and explanation of the steps. The pipeline can take the form of a
+`makefile` (which allows to generate the results, from the raw data, without
+human intervention), or be all of the relevant code that allows to re-generate
+the figures and results. For example, we have released all of the `R` code that
+was used to generate the figures at **XXX**. Sharing the analysis pipeline has
+several advantages. First, it is a first steps towards ensuring the quality of
+analyses, since reviewers can (and should reasonably be expected to) look at the
+source code. Second, it provides a *template* for future analyses -- instead of
+re-developing the pipeline from scratch, authors can re-use (and acknowledge)
+the previous codebase and build on it. Finally, it helps identifying areas of
+future improvement. The development of software should primarily aim to make the
+work of researchers easier. Looking at commonalities in the analytical pipelines
+for which no ready-made solutions exists will be a great way to influence
+priorities in software development.
+
 **Computational literacy:**
 
 This approach hardly qualifies as *big data*; nevertheless, it relies on the
@@ -183,20 +201,20 @@ management and integration of a large volume of heterogeneous information, both
 qualitatively larger than the current "norm". The first challenge is being able
 to *manage* this data; it requires data management skills that are not usually
 needed when the scale of the dataset is small, and, fallible though the process
-may be, when data can reasonably be inspected manually. The second challenge is being
-able to *manipulate* these data; even within the context of this simple
+may be, when data can reasonably be inspected manually. The second challenge is
+being able to *manipulate* these data; even within the context of this simple
 use-case, the data do not fit in the memory of `R` (arguably the most commonly
 known and used software in ecology) without some adjustments. Once these issues
 were overcome, running the analysis involved a few hours worth of computation
-time. **DBS: I know you want to say this, but I think this paragraph works without simultaneously taking a dig at `R` and promoting alternatives. Or, see my suggestion at the end of this paragraph.** It is now worth asking whether our total reliance on this tool (as opposed
-to more performing yet equally user-friendly languages as `python` or `julia`)
-is going to pay off in the long term. Since there is little doubt that
-computational approaches are going to become increasingly common in ecology
-[@hamp13], and are identified by the community as both in-demand skills and as not
-receiving enough attention in current ecological curricula [@barr13a], it seems
-that efforts should be allocated to raise the computational literacy of
-ecologists, and recognize that there is value in the diversity of tools one can
-use to carry out more demanding studies. **DBS suggests the following instead of what is above: For example, both `Python` and `Julia` are equally as user friendly as `R` while also being more powerful and better suited for computationally- or memory-intensive analyses.**
+time. Since there is little doubt that computational approaches are going to
+become increasingly common in ecology [@hamp13], and are identified by the
+community as both in-demand skills and as not receiving enough attention in
+current ecological curricula [@barr13a], it seems that efforts should be
+allocated to raise the computational literacy of ecologists, and recognize that
+there is value in the diversity of tools one can use to carry out more demanding
+studies. For example, both `Python` and `Julia` are equally as user friendly as
+`R` while also being more powerful and better suited for computationally- or
+memory-intensive analyses.
 
 **Standards and best practices:**
 
@@ -220,43 +238,21 @@ the publication of data in a way that conforms to them.
 
 There are always caveats to using synthetic datasets. First, the extent to which
 each component dataset is adequately sampled is unknown. This can create gaps in
-the information that is available *in fine* **DBS: I think *in fine* must be something coming from French; what do you want to say here?**. Second, because it is unlikely that
-all component datasets were acquired using reconcilable standards and protocol,
-it is likely that much of the quantitative information needs be discarded, and therefore
-the conservative position is to do qualitative analyses only. Although these
-have to be kept in mind, we do not think they should prevent use and evaluation
-of the approach we suggest. For one thing, at large spatial and organizational
-scales, coarse-grained analyses are still able to pick up qualitative
-differences in community structure. Second, most emergent properties are
-relatively insensitive to fine-scale error; for example, @grav13 show that even
-though a simple statistical model of food-web structure mispredicts some
-individual interactions, it produces communities with realistic emergent
-properties. Which level of error is acceptable needs to be determined for each
-application, but we argue that the use of synthetic datasets is a particularly cost- and time-effective approach for broad-scale description of community-level measures.
-
-**DBS: Is the following section really necessary for this editorial? I feel like the challenges section is already a nice way to culminate things. Also, most of it is implicit or explicit above (except the pipeline stuff), so maybe we're better off adding discussion of the pipeline somewhere else?**
-
-# Recommendations
-
-1. Publish data (even the small one!)
-
-Ideally, authors should release their analysis *pipeline* in addition to the
-data and explanation of the steps. The pipeline can take the form of a
-`makefile` (which allows to generate the results, from the raw data, without
-human intervention), or be all of the relevant code that allows to re-generate
-the figures and results. For example, we have released all of the `R` code that
-was used to generate the figures at **XXX**. Sharing the analysis pipeline has
-several advantages. First, it is a first steps towards ensuring the quality of
-analyses, since reviewers can (and should reasonably be expected to) look at the
-source code. Second, it provides a *template* for future analyses -- instead of
-re-developing the pipeline from scratch, authors can re-use (and acknowledge)
-the previous codebase and build on it. Finally, it helps identifying areas of
-future improvement. The development of software should primarily aim to make the
-work of researchers easier. Looking at commonalities in the analytical pipelines
-for which no ready-made solutions exists will be a great way to influence
-priorities in software development.
-
-3. Pay attention to standard when releasing data
+the information that is available when all component datasets are being merged.
+Second, because it is unlikely that all component datasets were acquired using
+reconcilable standards and protocol, it is likely that much of the quantitative
+information needs be discarded, and therefore the conservative position is to do
+qualitative analyses only. Although these have to be kept in mind, we do not
+think they should prevent use and evaluation of the approach we suggest. For one
+thing, at large spatial and organizational scales, coarse-grained analyses are
+still able to pick up qualitative differences in community structure. Second,
+most emergent properties are relatively insensitive to fine-scale error; for
+example, @grav13 show that even though a simple statistical model of food-web
+structure mispredicts some individual interactions, it produces communities with
+realistic emergent properties. Which level of error is acceptable needs to be
+determined for each application, but we argue that the use of synthetic datasets
+is a particularly cost- and time-effective approach for broad-scale description
+of community-level measures.
 
 **Acknowledgments --** This work was funded in part through a grant from the
 Canadian Institute of Ecology and Evolution. TP was funded by a Starting grant
