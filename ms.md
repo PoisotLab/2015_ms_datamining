@@ -15,43 +15,45 @@ structure to finance it, and there are time and scale constraints involved that
 make it unrealistic.
 
 Thankfully, developments in the recent years means that ecologists can now
-leverage existing data to an increasing extent, and use them to *build* new datasets (henceforth
-synthetic datasets) suitable for the questions at hand. There are several
-parallel advances that make this approach possible. First, the volume of data on
-ecological systems that are available *openly* increases on a daily basis. This
-includes point-occurrence data, as in *e.g.* GBIF, ITIS, but also taxonomic
-knowledge (through NCBI or EOL), and trait and interactions data. A vast
-treasure trove of ecological information is now available without having to
-contact and secure authorization from every contributor individually. Second,
-this data is often available in a *programmatic* way. As opposed to manual collection,
-identification, and curation of datasets, most of these services implement web
-API **DBS: Shouldn't we define API?** that allow to query them, either once or on a regular basis, to retrieve
-records with the desired properties. This ensures that the process is
-repeatable, testable, transparent, and nearly error proof. Finally, most of the
-heavy-lifting for these tasks can be done through a *burgeoning ecosystem of
-packages and software*, that take care of handling query formatting, data
-retrieval, etc, and expose simple interfaces to researchers.
+leverage existing data to an increasing extent, and use them to *build* new
+datasets (henceforth synthetic datasets) suitable for the questions at hand.
+There are several parallel advances that make this approach possible. First, the
+volume of data on ecological systems that are available *openly* increases on a
+daily basis. This includes point-occurrence data, as in *e.g.* GBIF, ITIS, but
+also taxonomic knowledge (through NCBI or EOL), and trait and interactions data.
+A vast treasure trove of ecological information is now available without having
+to contact and secure authorization from every contributor individually. Second,
+this data is often available in a *programmatic* way. As opposed to manual
+collection, identification, and curation of datasets, most of these services
+implement web API **DBS: Shouldn't we define API?** that allow to query them,
+either once or on a regular basis, to retrieve records with the desired
+properties. This ensures that the process is repeatable, testable, transparent,
+and nearly error proof. Finally, most of the heavy-lifting for these tasks can
+be done through a *burgeoning ecosystem of packages and software*, that take
+care of handling query formatting, data retrieval, etc, and expose simple
+interfaces to researchers.
 
-To us, this opens no less than a new way for ecologists to ask critical
-research questions, even at large spatial and organizational scales. Indeed, we live in a
+To us, this opens no less than a new way for ecologists to ask critical research
+questions, even at large spatial and organizational scales. Indeed, we live in a
 data-rich world, and a very large amount of these data can now *easily* be
 collected, reducing the need for additional costly and time-consuming sampling.
 More importantly, this allows *rapid* evaluation of scenarios. In this
 contribution, building on a real-life example, we (i) outline the basic
-approach, (ii) identify technical bottlenecks, (iii) discuss issues related to scientific ethics and best practice,
-and (iv) provide clear recommendations moving forward.
+approach, (ii) identify technical bottlenecks, (iii) discuss issues related to
+scientific ethics and best practice, and (iv) provide clear recommendations
+moving forward.
 
 # An illustrative case-study
 
 Food-web data, that is the determination of trophic interactions among species,
-are notoriously difficult to collect. The usual approach is to assemble literature data,
-expert knowledge, and additional information coming from field work, either as
-direct observation of feeding events or through gut-content analysis.
-Because of these technical constraints, food-web data are most often assembled
-in a single location. This impedes our ability to address the variation of their
-structure in space, which may both translate the action of macro-ecological
-mechanisms, as well as hold key to our ability to predict the spatial variation
-of ecological properties.
+are notoriously difficult to collect. The usual approach is to assemble
+literature data, expert knowledge, and additional information coming from field
+work, either as direct observation of feeding events or through gut-content
+analysis. Because of these technical constraints, food-web data are most often
+assembled in a single location. This impedes our ability to address the
+variation of their structure in space, which may both translate the action of
+macro-ecological mechanisms, as well as hold key to our ability to predict the
+spatial variation of ecological properties.
 
 In this case study, we are interested in predicting the structure of the
 pine-marsh food web worldwide. One example of this system has been described in
@@ -64,10 +66,10 @@ system.
 
 Data from the pine-marsh food web were take from **REF**, as made available in
 the `IWDB` database (URL). Marshes, like almost all wetlands, are critically
-endangered and serve as a home to a host of endemic biodiversity [@fens11; @minc13]. They
-represent a prime example of ecosystems for which data-based prediction can be
-used to generate scenarios at a temporal scale relevant for conservation
-decisions, and faster than what sampling could allow.
+endangered and serve as a home to a host of endemic biodiversity [@fens11;
+@minc13]. They represent a prime example of ecosystems for which data-based
+prediction can be used to generate scenarios at a temporal scale relevant for
+conservation decisions, and faster than what sampling could allow.
 
 The data comprising the original food web (105 nodes, including vague
 denominations like *Unidentified detritus* or *Terrestrial invertebrates*), were
@@ -84,32 +86,32 @@ interactions, between 80 genera. Using the name checking functions from the
 Because the original food web was sampled *locally*, there is the possibility
 that interactions between genera are not reported. To circumvent this, we
 queried the *GLOBI* database [@poel14] for each genus name, and retrieved all
-*feeding* interactions. For all *new* genera retrieved through this method, we also
-retrieved their interactions with genera already in the network. This network
-has 789 genera, and a total of 9328 interactions.
+*feeding* interactions. For all *new* genera retrieved through this method, we
+also retrieved their interactions with genera already in the network. This
+network has 789 genera, and a total of 9328 interactions.
 
 ## Occurrence data and filtering
 
-For each genera, we then downloaded the known occurrences from GBIF and BISON. This
-yielded 64763 point-presence records. Because the ultimate goal is to perform
-spatial modeling of the structure of the network, we removed genera for which
-fewer than 100 occurrences were known. This seems like a stringent filter, yet it
-enables to (i) maintain sufficient predictive powers for SDMs, and (ii) only
-work on the genera for which we have "high-quality" data. Genera with fewer than
-100 records were removed from the occurrence data and from the metanetwork. The
-final metanetwork therefore has 4271 interactions between 188 genera. Given the curated
-publicly available data, it represents the current best description of feeding
-interactions between species of this ecosystem. A visual depiction of the
-network is given in *Fig. 1*.
+For each genera, we then downloaded the known occurrences from GBIF and BISON.
+This yielded 64763 point-presence records. Because the ultimate goal is to
+perform spatial modeling of the structure of the network, we removed genera for
+which fewer than 100 occurrences were known. This seems like a stringent filter,
+yet it enables to (i) maintain sufficient predictive powers for SDMs, and (ii)
+only work on the genera for which we have "high-quality" data. Genera with fewer
+than 100 records were removed from the occurrence data and from the metanetwork.
+The final metanetwork therefore has 4271 interactions between 188 genera. Given
+the curated publicly available data, it represents the current best description
+of feeding interactions between species of this ecosystem. A visual depiction of
+the network is given in *Fig. 1*.
 
 On its own, the fact that filtering for genera with over 100 records reduced the
 sample size from 739 genera to 188 indicates how crucial it is that observations
-are reported in public databases. This is because the type of analysis we present here, although
-cost-effective and enabling rapid evaluation of different scenarios, is only as
-good as the underlying data. Since most modeling tools require a minimal sample
-size in order to achieve acceptable accuracy, a concerted efforts by the
-community and funding agencies to ensure that the minimal amount of data is
-deposited upon publication or acquisition is needed.
+are reported in public databases. This is because the type of analysis we
+present here, although cost-effective and enabling rapid evaluation of different
+scenarios, is only as good as the underlying data. Since most modeling tools
+require a minimal sample size in order to achieve acceptable accuracy, a
+concerted efforts by the community and funding agencies to ensure that the
+minimal amount of data is deposited upon publication or acquisition is needed.
 
 ## Species Distribution Model
 
@@ -117,8 +119,8 @@ For each species in this subset of data, we retrieved the nineteen `bioclim`
 variables [@hijm05], with a resolution of 5 arc-minutes. This enabled us to
 build climatic envelope models for each species. These models tend to be more
 conservative than alternate modeling strategies, in that they predict smaller
-range sizes [@hijm06], but they also perform well overall for presence-only data [@elit06].
-The output of these models is, for species $i$, the probability of an
+range sizes [@hijm06], but they also perform well overall for presence-only data
+[@elit06]. The output of these models is, for species $i$, the probability of an
 observation $\mathrm{P}(i)$ within each pixel. We appreciate that this is a
 coarse analysis, but its purpose is only to highlight how the different data can
 be combined. A discussion of the limitations of this approach is given below.
@@ -126,17 +128,17 @@ be combined. A discussion of the limitations of this approach is given below.
 ## Assembly
 
 For each of the 4271 interactions in the metanetwork, we estimated the
-probability of it being observed in each pixel as the product of the probabilities of
-observing each species on its own: $\mathrm{P}(L_{ij}) \propto \mathrm{P}(i)\mathrm{P}(j)$.
-This resulted in 4271 LDMs ("link distribution models"). Based on this
-information, we generated the following illustrations. First, a map of species
-richness (*Fig. 2A*) and number of interactions (*Fig. 2B*). Second, a map of
-*connectance* (*Fig. 2C*), which is the number of interactions divided by the
-squared species richness. Finally, a scatterplot of connectance as a function of
-latitude (*Fig. 2D*), which reveals a systematic macroecological trend.
-Interestingly, this last panel shows a strong response to this system to the
-fact that the tropics in Africa are surrounded by deserts in which
-the species studied here are not predicted to occur given the climatic
+probability of it being observed in each pixel as the product of the
+probabilities of observing each species on its own: $\mathrm{P}(L_{ij}) \propto
+\mathrm{P}(i)\mathrm{P}(j)$. This resulted in 4271 LDMs ("link distribution
+models"). Based on this information, we generated the following illustrations.
+First, a map of species richness (*Fig. 2A*) and number of interactions (*Fig.
+2B*). Second, a map of *connectance* (*Fig. 2C*), which is the number of
+interactions divided by the squared species richness. Finally, a scatterplot of
+connectance as a function of latitude (*Fig. 2D*), which reveals a systematic
+macroecological trend. Interestingly, this last panel shows a strong response to
+this system to the fact that the tropics in Africa are surrounded by deserts in
+which the species studied here are not predicted to occur given the climatic
 variables.
 
 # Opportunities
@@ -157,24 +159,25 @@ from theory.
 
 **DBS: Aren't there any reasonable references for this paragraph? Maybe even a BES editorial about why they now require authors to deposit data?**
 
-The merging of large databases has already created a conflict of how to properly attribute
-data paternity. Here there are at least two core issues that will require
-community consultation in order to be resolved. First, *what is the proper mode
-of attribution when a very large volume of data is aggregated*? Second, *what
-should be the intellectual property of the synthetic dataset*? Currently,
-citations (whether to articles or datasets) are only counted when they are part
-of the main text. The simple example outlined here relies on well over a thousand references, and it
-makes little sense to expect that they would be provided in the main text. One
-intermediate solution would be to collate these references in a supplement, but
-it is unclear that these would be counted, and therefore contribute to the
-*impact* of each individual dataset. This is a problem that we argue is best
-solved by publishers; proper attribution and credit is key to provide incentives
-to data release. As citations are currently the currency of scientific impact,
-publishers have a responsibility not only to ensure that data are available
-(which many already do), but that they are recognized. The synthetic dataset, on
-the other, can reasonably be understood as a novel product; there is technical
-and intellectual effort involved in producing it, and although it is a
-derivative work, we would encourage authors to deposit it anew.
+The merging of large databases has already created a conflict of how to properly
+attribute data paternity. Here there are at least two core issues that will
+require community consultation in order to be resolved. First, *what is the
+proper mode of attribution when a very large volume of data is aggregated*?
+Second, *what should be the intellectual property of the synthetic dataset*?
+Currently, citations (whether to articles or datasets) are only counted when
+they are part of the main text. The simple example outlined here relies on well
+over a thousand references, and it makes little sense to expect that they would
+be provided in the main text. One intermediate solution would be to collate
+these references in a supplement, but it is unclear that these would be counted,
+and therefore contribute to the *impact* of each individual dataset. This is a
+problem that we argue is best solved by publishers; proper attribution and
+credit is key to provide incentives to data release. As citations are currently
+the currency of scientific impact, publishers have a responsibility not only to
+ensure that data are available (which many already do), but that they are
+recognized. The synthetic dataset, on the other, can reasonably be understood as
+a novel product; there is technical and intellectual effort involved in
+producing it, and although it is a derivative work, we would encourage authors
+to deposit it anew.
 
 **Sharing of code and analysis pipeline:**
 
@@ -256,7 +259,8 @@ of community-level measures.
 
 **Acknowledgments --** This work was funded in part through a grant from the
 Canadian Institute of Ecology and Evolution. TP was funded by a Starting grant
-from the Université de Montréal. DBS acknowledges a Marsden Fund Fast-Start grant (UOC-1101) and Rutherford
-Discovery Fellowship, both administered by the Royal Society of New Zealand.
+from the Université de Montréal. DBS acknowledges a Marsden Fund Fast-Start
+grant (UOC-1101) and Rutherford Discovery Fellowship, both administered by the
+Royal Society of New Zealand.
 
 # References
