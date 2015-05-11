@@ -1,7 +1,28 @@
 ---
-title: Synthetic datasets for global ecology in a data-rich world
-author: see CONTRIBUTORS (add your name)
+title: Synthetic datasets enable the rapid testing of ecological hypotheses in a data-rich world
+author:
+  - family: Poisot
+    given: Timothée
+    affiliation: 1, 2
+    email: tim@poisotlab.io
+  - family: Stouffer
+    given: Daniel B.
+    affiliation: 3
+affiliation:
+  - id: 1
+    text: Université de Montréal
+  - id: 2
+    text: QCBS
+  - id: 3
+    text: U. Canterbury
+keyword:
+  - k: open data
+  - k: API
+  - k: species distributions
+  - k: computational ecology
+  - k: trophic interactions
 date: work in progress
+abstract: This is an abstract. Yep.
 ---
 
 Ecologists are tasked with providing information on issues at the global scale.
@@ -25,23 +46,31 @@ A vast treasure trove of ecological information is now available without having
 to contact and secure authorization from every contributor individually. Second,
 this data is often available in a *programmatic* way. As opposed to manual
 collection, identification, and curation of datasets, most of these services
-implement web API **DBS: Shouldn't we define API?** that allow to query them,
-either once or on a regular basis, to retrieve records with the desired
-properties. This ensures that the process is repeatable, testable, transparent,
-and nearly error proof. Finally, most of the heavy-lifting for these tasks can
-be done through a *burgeoning ecosystem of packages and software*, that take
-care of handling query formatting, data retrieval, etc, and expose simple
-interfaces to researchers.
+implement web APIs, *i.e.* services that allow users to query and/or upload data
+in a standard format. These services can be queried, either once or on a regular
+basis, to retrieve records with the desired properties. This ensures that the
+process is repeatable, testable, transparent, and nearly error proof. Finally,
+most of the heavy-lifting for these tasks can be done through a *burgeoning
+ecosystem of packages and software*, that handles query formatting, data
+retrieval, etc, and expose simple interfaces to researchers.
 
-To us, this opens no less than a new way for ecologists to ask critical research
-questions, even at large spatial and organizational scales. Indeed, we live in a
-data-rich world, and a very large amount of these data can now *easily* be
-collected, reducing the need for additional costly and time-consuming sampling.
-More importantly, this allows *rapid* evaluation of scenarios. In this
-contribution, building on a real-life example, we (i) outline the basic
-approach, (ii) identify technical bottlenecks, (iii) discuss issues related to
-scientific ethics and best practice, and (iv) provide clear recommendations
-moving forward.
+Hypothesis testing for large-scale systems is inherently limited by the
+availability of suitable datasets. Perhaps as a result, macro-ecology has been
+guided by a search for patterns that are very broad both in  scale and nature
+@REF, as opposed to the testing of pre-established hypotheses. While it is
+obvious that collecting data at scales that are large enough to be relevant is
+an insurmountable effort (both because of the monetary, time, and human costs
+needed), we suggest that macroecologists should build on existing databases, and
+aggregate them in a way that allows direct testing of proposals stemming from
+theory. To us, this opens no less than a new way for ecologists to ask critical
+research questions, spanning from the local to the global, and from the
+organismal to the ecosystemic, scales. Indeed, we live in a data-rich world, and
+a very large amount of these data can now *easily* be collected, reducing the
+need for additional costly and time-consuming sampling. More importantly, this
+allows *rapid* evaluation of scenarios. In this contribution, building on a
+real-life example, we (i) outline the basic approach, (ii) identify technical
+bottlenecks, (iii) discuss issues related to scientific ethics and best
+practice, and (iv) provide clear recommendations moving forward.
 
 # An illustrative case-study
 
@@ -113,6 +142,8 @@ require a minimal sample size in order to achieve acceptable accuracy, a
 concerted efforts by the community and funding agencies to ensure that the
 minimal amount of data is deposited upon publication or acquisition is needed.
 
+The code to reproduce this analysis is in the `1_get_data.r` suppl. file.
+
 ## Species Distribution Model
 
 For each species in this subset of data, we retrieved the nineteen `bioclim`
@@ -125,35 +156,28 @@ observation $\mathrm{P}(i)$ within each pixel. We appreciate that this is a
 coarse analysis, but its purpose is only to highlight how the different data can
 be combined. A discussion of the limitations of this approach is given below.
 
+The code to reproduce this analysis is in the `2_get_sdm.r` suppl. file.
+
 ## Assembly
 
 For each of the 4271 interactions in the metanetwork, we estimated the
 probability of it being observed in each pixel as the product of the
 probabilities of observing each species on its own: $\mathrm{P}(L_{ij}) \propto
 \mathrm{P}(i)\mathrm{P}(j)$. This resulted in 4271 LDMs ("link distribution
-models"). Based on this information, we generated the following illustrations.
-First, a map of species richness (*Fig. 2A*) and number of interactions (*Fig.
-2B*). Second, a map of *connectance* (*Fig. 2C*), which is the number of
-interactions divided by the squared species richness. Finally, a scatterplot of
-connectance as a function of latitude (*Fig. 2D*), which reveals a systematic
-macroecological trend. Interestingly, this last panel shows a strong response to
-this system to the fact that the tropics in Africa are surrounded by deserts in
-which the species studied here are not predicted to occur given the climatic
-variables.
+models"). The code to reproduce this analysis is in the `3_get_ldm.r` suppl.
+file.
 
-# Opportunities
+Based on this information, we generated the following illustrations (using
+`4_draw_figures.r`). First, a map of species richness (*Fig. 2A*) and number of
+interactions (*Fig. 2B*). Second, a map of *connectance* (*Fig. 2C*), which is
+the number of interactions divided by the squared species richness. Finally, a
+scatterplot of connectance as a function of latitude (*Fig. 2D*), which reveals
+a systematic macroecological trend. Interestingly, this last panel shows a
+strong response to this system to the fact that the tropics in Africa are
+surrounded by deserts in which the species studied here are not predicted to
+occur given the climatic variables.
 
-Hypothesis testing for large-scale systems is inherently limited by the
-availability of suitable datasets. Perhaps as a result, macro-ecology has been
-guided by a search for patterns that are very broad both in  scale and nature
-@REF, as opposed to the testing of pre-established hypotheses. While it is
-obvious that collecting data at scales that are large enough to be relevant is
-an insurmountable effort (both because of the monetary, time, and human costs
-needed), we suggest that macroecologists should build on existing databases,
-and aggregate them in a way that allows direct testing of proposals stemming
-from theory.
-
-# Challenges
+# Challenges moving forward
 
 **Attribution stacking and intellectual paternity:**
 
