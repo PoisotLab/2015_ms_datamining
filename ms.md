@@ -25,34 +25,37 @@ date: work in progress
 abstract: This is an abstract. Yep.
 ---
 
-Ecologists are tasked with providing information on issues at the global scale.
-Notable examples include, in addition to the global biodiversity crisis [@xxx],
-predicting the consequences of the loss of trophic structure @este11, rapid
-shifts in species distributions [@xxx], and <!-- TODO add a few -->. Most of
-these pressing topics require to be addressed (i) at the global scale and (ii)
-through the integration of several types of data [@thui13]. Because of these
-requirements, new sampling is not a viable solution: there is no funding
-structure to finance it, and there are time and scale constraints involved that
-make it unrealistic.
+Ecologists are tasked with providing information on issues involving a variety
+of ecological and organisational scales.  Notable examples include, in addition
+to the global biodiversity crisis [@xxx], predicting the consequences of the
+loss of trophic structure [@este11], rapid shifts in species distributions
+[@gilm10], and increased anthropogenic stress on species and their environment
+[@ref]. Most of these pressing topics require to be addressed (i) at the global
+scale, or at the very least across a variety of environments and landscapes,
+and (ii) through the integration of several types of data [@thui13]. Because
+of these requirements, new sampling is not a viable solution: there is no
+funding structure to finance it, and there are time and scale constraints
+involved that make it unrealistic.
 
 Thankfully, developments in the recent years means that ecologists can now
 leverage existing data to an increasing extent, and use them to *build* new
 datasets (henceforth synthetic datasets) suitable for the questions at hand.
-There are several parallel advances that make this approach possible. First, the
-volume of data on ecological systems that are available *openly* increases on a
-daily basis. This includes point-occurrence data, as in *e.g.* GBIF, ITIS, but
-also taxonomic knowledge (through NCBI or EOL), and trait and interactions data.
-A vast treasure trove of ecological information is now available without having
-to contact and secure authorization from every contributor individually. Second,
-this data is often available in a *programmatic* way. As opposed to manual
-collection, identification, and curation of datasets, most of these services
-implement web APIs, *i.e.* services that allow users to query and/or upload data
-in a standard format. These services can be queried, either once or on a regular
-basis, to retrieve records with the desired properties. This ensures that the
-process is repeatable, testable, transparent, and nearly error proof. Finally,
-most of the heavy-lifting for these tasks can be done through a *burgeoning
-ecosystem of packages and software*, that handles query formatting, data
-retrieval, etc, and expose simple interfaces to researchers.
+There are several parallel advances that make this approach possible. First,
+the volume of data on ecological systems that are available *openly* increases
+on a daily basis. This includes point-occurrence data, as in *e.g.* GBIF,
+ITIS, but also taxonomic knowledge (through NCBI or EOL), and trait and
+interactions data.  A vast treasure trove of ecological information is
+now available without having to contact and secure authorization from
+every contributor individually. Second, this data is often available in
+a *programmatic* way. As opposed to manual collection, identification,
+and maintenance of datasets, most of these services implement web APIs,
+*i.e.* services that allow users to query and/or upload data in a standard
+format. These services can be queried, either once or on a regular basis, to
+retrieve records with the desired properties. This ensures that the process
+is repeatable, testable, transparent, and nearly error proof. Finally, most of
+the heavy-lifting for these tasks can be done through a *burgeoning ecosystem
+of packages and software*, that handles query formatting, data retrieval,
+and associated tasks, all the while exposing simple interfaces to researchers.
 
 Hypothesis testing for large-scale systems is inherently limited by the
 availability of suitable datasets. Perhaps as a result, macro-ecology has been
@@ -181,27 +184,26 @@ occur given the climatic variables.
 
 **Attribution stacking and intellectual paternity:**
 
-**DBS: Aren't there any reasonable references for this paragraph? Maybe even a BES editorial about why they now require authors to deposit data?**
-
-The merging of large databases has already created a conflict of how to properly
-attribute data paternity. Here there are at least two core issues that will
-require community consultation in order to be resolved. First, *what is the
-proper mode of attribution when a very large volume of data is aggregated*?
-Second, *what should be the intellectual property of the synthetic dataset*?
-Currently, citations (whether to articles or datasets) are only counted when
-they are part of the main text. The simple example outlined here relies on well
-over a thousand references, and it makes little sense to expect that they would
-be provided in the main text. One intermediate solution would be to collate
-these references in a supplement, but it is unclear that these would be counted,
-and therefore contribute to the *impact* of each individual dataset. This is a
-problem that we argue is best solved by publishers; proper attribution and
-credit is key to provide incentives to data release. As citations are currently
-the currency of scientific impact, publishers have a responsibility not only to
-ensure that data are available (which many already do), but that they are
-recognized. The synthetic dataset, on the other, can reasonably be understood as
-a novel product; there is technical and intellectual effort involved in
-producing it, and although it is a derivative work, we would encourage authors
-to deposit it anew.
+The merging of large databases has already created a conflict of how to
+properly attribute data paternity. Here there are at least two core issues
+that will require community consultation in order to be resolved. First,
+*what is the proper mode of attribution when a very large volume of data
+is aggregated*?  Second, *what should be the intellectual property of the
+synthetic dataset*?  Currently, citations (whether to articles or datasets)
+are only counted when they are part of the main text. The simple example
+outlined here relies on well over a thousand references, and it makes
+little sense to expect that they would be provided in the main text. One
+intermediate solution would be to collate these references in a supplement,
+but it is unclear that these would be counted, and therefore contribute to
+the *impact* of each individual dataset. This is a problem that we argue is
+best solved by publishers; proper attribution and credit is key to provide
+incentives to data release [@whel14; @kena14]. As citations are currently
+the currency of scientific impact, publishers have a responsibility not
+only to ensure that data are available (which many already do), but that
+they are recognized. The synthetic dataset, on the other, can reasonably be
+understood as a novel product; there is technical and intellectual effort
+involved in producing it, and although it is a derivative work, we would
+encourage authors to deposit it anew.
 
 **Sharing of code and analysis pipeline:**
 
