@@ -1,0 +1,58 @@
+\documentclass[11pt,letterpaper]{article}
+
+\usepackage{hyperref}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+\begin{document}
+
+\setlength{\parskip}{1em}
+\setlength{\parindent}{0pt}
+
+$if(title)$
+{\Large\bfseries\sffamily $title$}
+\vskip 2em
+$endif$
+
+
+$if(author)$
+$for(author)$
+$author.given$ $author.family$ $$^{$author.affiliation$ $if(author.email)$,\ast$endif$}$$\\
+$endfor$
+\bigskip
+$endif$
+
+$if(affiliation)$
+$for(affiliation)$
+($affiliation.id$) $affiliation.text$\\
+$endfor$
+\bigskip
+$endif$
+
+$if(author)$
+$for(author)$
+$if(author.email)$ $$\ast$$ e-mail: \texttt{$author.email$}$endif$
+$endfor$
+\bigskip
+$endif$
+
+$if(abstract)$
+\begin{abstract}
+$abstract$
+\end{abstract}
+$endif$
+
+$if(keyword)$
+{\tiny
+\textbf{Keywords:}
+$for(keyword)$
+  $keyword.k$ \,\,\,\,\,\,\,\,\,\,
+$endfor$
+}
+$endif$
+
+\clearpage
+
+$body$
+
+\end{document}

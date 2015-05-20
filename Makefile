@@ -2,9 +2,10 @@ SOURCE=ms.md
 OUTPUT=global_ecol.pdf
 BIB=/home/tpoisot/.pandoc/default.bib
 CSL=/home/tpoisot/.pandoc/styles/oikos.csl
-PFLAGS= --bibliography=$(BIB) -H margins.sty
+PFLAGS= --bibliography=$(BIB) --template pandoc.template.latex
 
-# --csl=$(CSL) 
+# -H margins.sty
+# --csl=$(CSL)
 
 PHONY: all
 
