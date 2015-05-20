@@ -14,7 +14,7 @@ affiliation:
   - id: 2
     text: QCBS
   - id: 3
-    text: U. Canterbury
+    text: University of Canterbury
 keyword:
   - k: open data
   - k: API
