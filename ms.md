@@ -8,6 +8,9 @@ author:
   - family: Stouffer
     given: Daniel B.
     affiliation: 3
+  - family: Gravel
+    given: Dominique
+    affiliation: 2,4
 affiliation:
   - id: 1
     text: Université de Montréal
@@ -15,6 +18,8 @@ affiliation:
     text: QCBS
   - id: 3
     text: University of Canterbury
+  - id: 4
+    text: Université du Québec à Rimouski
 keyword:
   - k: open data
   - k: API
@@ -26,7 +31,7 @@ abstract: This is an abstract. Yep.
 ---
 
 Ecologists are tasked with providing information on issues involving a variety
-of ecological and organisational scales.  Notable examples include, in addition
+of organisational scales.  Notable examples include, in addition
 to the global biodiversity crisis [@xxx], predicting the consequences of the
 loss of trophic structure [@este11], rapid shifts in species distributions
 [@gilm10], and increased anthropogenic stress on species and their environment
@@ -44,7 +49,7 @@ There are several parallel advances that make this approach possible. First,
 the volume of data on ecological systems that are available *openly* increases
 on a daily basis. This includes point-occurrence data, as in *e.g.* GBIF,
 ITIS, but also taxonomic knowledge (through NCBI or EOL), and trait and
-interactions data.  A vast treasure trove of ecological information is
+interactions data. A vast treasure trove of ecological information is
 now available without having to contact and secure authorization from
 every contributor individually. Second, this data is often available in
 a *programmatic* way. As opposed to manual collection, identification,
@@ -56,10 +61,14 @@ is repeatable, testable, transparent, and nearly error proof. Finally, most of
 the heavy-lifting for these tasks can be done through a *burgeoning ecosystem
 of packages and software*, that handles query formatting, data retrieval,
 and associated tasks, all the while exposing simple interfaces to researchers.
+<!-- DG: Be careful about the error proof argument. There is also an immense risk that just goes on with the size of the dataset. You go blind, without the underlying knowledge of the data points that you do have when you collect them. In some instances it might not matter, but in others it could. The argument is that idiosyncracies in data will vanish as they grow bigger, but it's not that all convincing. Further, there is always a significant risk of bad coding. --> 
+<!-- DG:  I guess the point I'm trying to make is simply remove 'nearly error proof'....--> 
 
+
+<!-- DG: elle est où la référence pour cette appréciable phrase?--> 
 Hypothesis testing for large-scale systems is inherently limited by the
-availability of suitable datasets. Perhaps as a result, macro-ecology has been
-guided by a search for patterns that are very broad both in  scale and nature
+availability of suitable datasets. Perhaps as a result, macroecology has been
+guided by a search for patterns that are very broad both in scale and nature
 @REF, as opposed to the testing of pre-established hypotheses. While it is
 obvious that collecting data at scales that are large enough to be relevant is
 an insurmountable effort (both because of the monetary, time, and human costs
@@ -74,6 +83,9 @@ allows *rapid* evaluation of scenarios. In this contribution, building on a
 real-life example, we (i) outline the basic approach, (ii) identify technical
 bottlenecks, (iii) discuss issues related to scientific ethics and best
 practice, and (iv) provide clear recommendations moving forward.
+<!-- DG: The general objective of the paper is not clear--> 
+<!-- DG:  and be careful, you start by a strong state (!) about hypothesis testing, but never provide one for this paper. It is essentially descriptive, again. I think there would be a way to do it, even if it is not central to the story --> 
+<!-- DG: might worth putting some cautionary remark about the interpretation of the results; the paper is essentially a proof of concept and not the place to debate about the validity of the analysis - for this, you can cite Camille's paper in GCB in 2014 to say that you build on an already established method. Otherwise we'll get reviewers criticizing the ecology, not the computations. --> 
 
 # An illustrative case-study
 
@@ -84,8 +96,11 @@ work, either as direct observation of feeding events or through gut-content
 analysis. Because of these technical constraints, food-web data are most often
 assembled in a single location. This impedes our ability to address the
 variation of their structure in space, which may both translate the action of
-macro-ecological mechanisms, as well as hold key to our ability to predict the
+macroecological mechanisms, as well as hold key to our ability to predict the
 spatial variation of ecological properties.
+
+
+<!-- DG: the objective of the analysis could be made clearer. And the rationale better justified, even though it's not the central aspect of the paper.   --> 
 
 In this case study, we are interested in predicting the structure of the
 pine-marsh food web worldwide. One example of this system has been described in
@@ -102,6 +117,7 @@ endangered and serve as a home to a host of endemic biodiversity [@fens11;
 @minc13]. They represent a prime example of ecosystems for which data-based
 prediction can be used to generate scenarios at a temporal scale relevant for
 conservation decisions, and faster than what sampling could allow.
+<!-- DG:  In a sentence, why did you picked this example ? is it because of data availability ? --> 
 
 The data comprising the original food web (105 nodes, including vague
 denominations like *Unidentified detritus* or *Terrestrial invertebrates*), were
@@ -116,16 +132,21 @@ interactions, between 80 genera. Using the name checking functions from the
 `taxize` package [@cham13a] revealed that all of these genus names were valid.
 
 Because the original food web was sampled *locally*, there is the possibility
-that interactions between genera are not reported. To circumvent this, we
+that interactions between genera are not reported. 
+<!-- DG:  what do you mean ? because some species were absent ? too rare? --> 
+To circumvent this, w
 queried the *GLOBI* database [@poel14] for each genus name, and retrieved all
 *feeding* interactions. For all *new* genera retrieved through this method, we
 also retrieved their interactions with genera already in the network. This
 network has 789 genera, and a total of 9328 interactions.
 
+<!-- DG: how do you get from 105 nodes to 789, after aggregating them ? It looks like you start from 105 genera and then find for them new interactions in GLOBI, and then after look for interactions of these new nodes. All make sense, but it could be more explicit how you grow from 105 to 789. --> 
+
+
 ## Occurrence data and filtering
 
 For each genera, we then downloaded the known occurrences from GBIF and BISON.
-This yielded 64763 point-presence records. Because the ultimate goal is to
+This yielded 64 763 point-presence records. Because the ultimate goal is to
 perform spatial modeling of the structure of the network, we removed genera for
 which fewer than 100 occurrences were known. This seems like a stringent filter,
 yet it enables to (i) maintain sufficient predictive powers for SDMs, and (ii)
@@ -136,18 +157,24 @@ the curated publicly available data, it represents the current best description
 of feeding interactions between species of this ecosystem. A visual depiction of
 the network is given in *Fig. 1*.
 
+<!-- DG: first time you mention metanetwork. Would be great to define it. --> 
+<!-- DG: not clear how you dropped back to 188. is it only because you filtered out other species with insufficient occurrences ? - the answer comes in the following paragrpha. should be here.--> 
+<!-- DG: the automatization of the whole process makes it easy to perform sensitivity analysis. might be a good example to assess the robustness of the approach to you 100 occurrence threshold --> 
+
 On its own, the fact that filtering for genera with over 100 records reduced the
 sample size from 739 genera to 188 indicates how crucial it is that observations
 are reported in public databases. This is because the type of analysis we
 present here, although cost-effective and enabling rapid evaluation of different
 scenarios, is only as good as the underlying data. Since most modeling tools
-require a minimal sample size in order to achieve acceptable accuracy, a
+require a minimal sample size in order to achieve acceptable accuracy, 
 concerted efforts by the community and funding agencies to ensure that the
 minimal amount of data is deposited upon publication or acquisition is needed.
 
 The code to reproduce this analysis is in the `1_get_data.r` suppl. file.
 
 ## Species Distribution Model
+
+<!-- DG:  define your climatic envelope models. The tirm is not precise enough--> 
 
 For each species in this subset of data, we retrieved the nineteen `bioclim`
 variables [@hijm05], with a resolution of 5 arc-minutes. This enabled us to
@@ -169,18 +196,25 @@ probabilities of observing each species on its own: $\mathrm{P}(L_{ij}) \propto
 \mathrm{P}(i)\mathrm{P}(j)$. This resulted in 4271 LDMs ("link distribution
 models"). The code to reproduce this analysis is in the `3_get_ldm.r` suppl.
 file.
+<!-- DG:  I understand the space limitations, and also the fact that it is illustrative, but avoid putting some important details under the carpet. Here for instance, co-occurrence is totally neutral (as usually done in SDMs). Just make it explicit. Pi is also a function of the climate. Finally, you assume that interactions happen as long as species are found at same location. --> 
+<!-- DG:  It's gonna be like that all the time, but I understand that some people get irritated if you don't recognize limits to the approach. --> 
+<!-- DG:  Further, there are different sources of uncertainties. the occurrence is probabilistic because of at least two reasons: first, the data and the models are pretty bad, with uncertainties caused by lack of knowledge. secondly, distribution on its own could be stochastic (e.g. metapop). while the second makes sense to get at a probability of an interaction to happen, the first one not --> 
 
 Based on this information, we generated the following illustrations (using
 `4_draw_figures.r`). First, a map of species richness (*Fig. 2A*) and number of
 interactions (*Fig. 2B*). Second, a map of *connectance* (*Fig. 2C*), which is
 the number of interactions divided by the squared species richness. Finally, a
 scatterplot of connectance as a function of latitude (*Fig. 2D*), which reveals
-a systematic macroecological trend. Interestingly, this last panel shows a
+a systematic macroecological trend.
+<!-- DG:  describe it !--> 
+ Interestingly, this last panel shows a
 strong response to this system to the fact that the tropics in Africa are
 surrounded by deserts in which the species studied here are not predicted to
 occur given the climatic variables.
 
 # Challenges moving forward
+
+<!-- DG:  a transition is lacking. something like the example nicely illustrates the promises of data intensive approaches. it builds on new data availability, new statistical and computational tools. But as with every technical development in science comes a number of challenges and limitations. Here we discuss a few we believe are important. We essentially define these issues and emphasize that each of them, on their own, should be the subject of further debates. --> 
 
 **Attribution stacking and intellectual paternity:**
 
@@ -204,16 +238,18 @@ they are recognized. The synthetic dataset, on the other, can reasonably be
 understood as a novel product; there is technical and intellectual effort
 involved in producing it, and although it is a derivative work, we would
 encourage authors to deposit it anew.
+<!-- DG:  which means that we should give credit to both the original contributors and teh one that assembled it ? I do fully agree with that position, but I don't think it will be very operational. As suggested above, some rewording would help in this section and the other ones just to underline that you adequately point at new challenges, but do not explore them in full details and obviously do not solve them. Otherwise the reader might be systematically disappointed. --> 
 
 **Sharing of code and analysis pipeline:**
 
+<!-- DG:  provide a definition for pipeline --> 
 Ideally, authors should release their analysis *pipeline* in addition to the
 data and explanation of the steps. The pipeline can take the form of a
 `makefile` (which allows to generate the results, from the raw data, without
 human intervention), or be all of the relevant code that allows to re-generate
 the figures and results. For example, we have released all of the `R` code that
 was used to generate the figures at **XXX**. Sharing the analysis pipeline has
-several advantages. First, it is a first steps towards ensuring the quality of
+several advantages. First, it is a first stepv towards ensuring the quality of
 analyses, since reviewers can (and should reasonably be expected to) look at the
 source code. Second, it provides a *template* for future analyses -- instead of
 re-developing the pipeline from scratch, authors can re-use (and acknowledge)
@@ -222,6 +258,7 @@ future improvement. The development of software should primarily aim to make the
 work of researchers easier. Looking at commonalities in the analytical pipelines
 for which no ready-made solutions exists will be a great way to influence
 priorities in software development.
+<!-- DG:  what should we do with version control ? and with software versions ? Papers do last much longer than the longevity of pieces of code, and that will be a major issue. Standard practices should include a complete listing of the packages and software details that were used to make sure that someone could reproduce your work in 15 years from now. --> 
 
 **Computational literacy:**
 
@@ -244,24 +281,31 @@ there is value in the diversity of tools one can use to carry out more demanding
 studies. For example, both `Python` and `Julia` are equally as user friendly as
 `R` while also being more powerful and better suited for computationally- or
 memory-intensive analyses.
+<!-- DG:  tu n'as pas pu t'empêcher de faire ce commentaire ! Pour la mémoire, je trouve ces débats sur les langages de programmation aussi pertinents et objectifs qu'en aurait un sur la langue des publications scientifiques ou la couleur de la margarine (on a eu ça ici!); il y a d'autres critères que l'élégance ou la performance du code, l'historique, la facilité de partage et d'accès sont aussi importants --> 
+
 
 **Standards and best practices:**
 
 In conducting this analysis, we noticed that a common issue was the
 identification of species and genera. All of these datasets were deposited by
-individual scientists; whether we like it or not, individuals are prone to failure in a very different way that the "Garbage in, garbage out" idea that applies to computer programs. Using tools such as `taxize` [@cham13a] can allow
-us to resolve a few of the uncertainties, yet this must be done every time the
-data are queried and requires the end user to make educated guesses as to what
-the "true" identity of the species is. These limitations can be overcome, on two
-conditions. Database maintainers should implement automated curation of the data
-they have the stewardship of, and identify potential mistakes and correct them
-upstream, so that users download high-quality, high-reliability data. Data
-contributors should rely more extensively on biodiversity identifiers (such as
-TSN, GBIF, NCBI Taxonomy ID, ...), to make sure that even when there are typos
-in the species name, they can be matched across datasets. Constructing this
-dataset highlighted a fundamental issue: the rate-limiting step is rarely the
-availability of appropriate tools or platforms, but instead it is the adoption of common standards and
-the publication of data in a way that conforms to them.
+individual scientists; whether we like it or not, individuals are prone to
+failure in a very different way that the "Garbage in, garbage out" idea that
+applies to computer programs. Using tools such as `taxize` [@cham13a] can
+allow us to resolve a few of the uncertainties, yet this must be done every
+time the data are queried and requires the end user to make educated guesses
+as to what the "true" identity of the species is. These limitations can be
+overcome, on two conditions. Database maintainers should implement automated
+curation of the data they have the stewardship of, and identify potential
+mistakes and correct them upstream, so that users download high-quality, high-
+reliability data. Data contributors should rely more extensively on
+biodiversity identifiers (such as TSN, GBIF, NCBI Taxonomy ID, ...), to make
+sure that even when there are typos in the species name, they can be matched
+across datasets. Constructing this dataset highlighted a fundamental issue:
+the rate-limiting step is rarely the availability of appropriate tools or
+platforms, but instead it is the adoption of common standards and the
+publication of data in a way that conforms to them.
+
+<!-- DG: The subtitle was more general than what was actually described in this paragraph. To me, all of the above were part of 'standards and best practices' --> 
 
 **Propagation of error:**
 
@@ -274,7 +318,7 @@ information needs be discarded, and therefore the conservative position is to do
 qualitative analyses only. Although these have to be kept in mind, we do not
 think they should prevent use and evaluation of the approach we suggest. For one
 thing, at large spatial and organizational scales, coarse-grained analyses are
-still able to pick up qualitative differences in community structure. Second,
+still able to pick up qualitative differences in community structure. Third,
 most emergent properties are relatively insensitive to fine-scale error; for
 example, @grav13 show that even though a simple statistical model of food-web
 structure mispredicts some individual interactions, it produces communities with
@@ -282,6 +326,9 @@ realistic emergent properties. Which level of error is acceptable needs to be
 determined for each application, but we argue that the use of synthetic datasets
 is a particularly cost- and time-effective approach for broad-scale description
 of community-level measures.
+
+<!-- DG:  There is no strong conclusion to the paper. I think it would be great to revisit the first paragraph in light of this example and discuss the promises of new data-intensive approaches. --> 
+
 
 **Acknowledgments --** This work was funded in part through a grant from the
 Canadian Institute of Ecology and Evolution. TP was funded by a Starting grant
