@@ -1,5 +1,5 @@
 ---
-title: Synthetic datasets enable the rapid testing of ecological hypotheses in a data-rich world
+title: Synthetic datasets for the rapid testing of ecological hypotheses
 author:
   - family: Poisot
     given: Timothée
@@ -10,9 +10,9 @@ author:
     affiliation: 3
 affiliation:
   - id: 1
-    text: Université de Montréal
+    text: Université de Montréal, Département de Sciences Biologiques
   - id: 2
-    text: QCBS
+    text: Québec Centre for Biodiversity Sciences
   - id: 3
     text: University of Canterbury
 keyword:
@@ -22,7 +22,7 @@ keyword:
   - k: computational ecology
   - k: trophic interactions
 date: work in progress
-abstract: This is an abstract. Yep.
+abstract: TO BE COMPLETED LATER.
 ---
 
 Ecologists are tasked with providing information on issues involving a variety
@@ -53,13 +53,12 @@ and maintenance of datasets, most of these services implement web APIs,
 format. These services can be queried, either once or on a regular basis, to
 retrieve records with the desired properties. This ensures that the process
 is repeatable, testable, transparent, and nearly error proof. Finally, most of
-the heavy-lifting for these tasks can be done through a *burgeoning ecosystem
-of packages and software*, that handles query formatting, data retrieval,
+the heavy-lifting for these tasks can be done through a *burgeoning ecosystem of packages and software*, that handles query formatting, data retrieval,
 and associated tasks, all the while exposing simple interfaces to researchers.
 
 Hypothesis testing for large-scale systems is inherently limited by the
 availability of suitable datasets. Perhaps as a result, macro-ecology has been
-guided by a search for patterns that are very broad both in  scale and nature
+guided by a search for patterns that are very broad both in scale and nature
 @REF, as opposed to the testing of pre-established hypotheses. While it is
 obvious that collecting data at scales that are large enough to be relevant is
 an insurmountable effort (both because of the monetary, time, and human costs
@@ -248,40 +247,44 @@ memory-intensive analyses.
 **Standards and best practices:**
 
 In conducting this analysis, we noticed that a common issue was the
-identification of species and genera. All of these datasets were deposited by
-individual scientists; whether we like it or not, individuals are prone to failure in a very different way that the "Garbage in, garbage out" idea that applies to computer programs. Using tools such as `taxize` [@cham13a] can allow
-us to resolve a few of the uncertainties, yet this must be done every time the
-data are queried and requires the end user to make educated guesses as to what
-the "true" identity of the species is. These limitations can be overcome, on two
-conditions. Database maintainers should implement automated curation of the data
-they have the stewardship of, and identify potential mistakes and correct them
-upstream, so that users download high-quality, high-reliability data. Data
-contributors should rely more extensively on biodiversity identifiers (such as
-TSN, GBIF, NCBI Taxonomy ID, ...), to make sure that even when there are typos
-in the species name, they can be matched across datasets. Constructing this
-dataset highlighted a fundamental issue: the rate-limiting step is rarely the
-availability of appropriate tools or platforms, but instead it is the adoption of common standards and
-the publication of data in a way that conforms to them.
+identification of species and genera. All of these datasets were deposited
+by individual scientists; whether we like it or not, individuals are prone
+to failure in a very different way that the "Garbage in, garbage out" idea
+that applies to computer programs. Using tools such as `taxize` [@cham13a]
+can allow us to resolve a few of the uncertainties, yet this must be done
+every time the data are queried and requires the end user to make educated
+guesses as to what the "true" identity of the species is. These limitations
+can be overcome, on two conditions. Database maintainers should implement
+automated curation of the data they have the stewardship of, and identify
+potential mistakes and correct them upstream, so that users download
+high-quality, high-reliability data. Data contributors should rely more
+extensively on biodiversity identifiers (such as TSN, GBIF, NCBI Taxonomy
+ID, ...), to make sure that even when there are typos in the species name,
+they can be matched across datasets. Constructing this dataset highlighted
+a fundamental issue: the rate-limiting step is rarely the availability of
+appropriate tools or platforms, but instead it is the adoption of common
+standards and the publication of data in a way that conforms to them.
 
 **Propagation of error:**
 
-There are always caveats to using synthetic datasets. First, the extent to which
-each component dataset is adequately sampled is unknown. This can create gaps in
-the information that is available when all component datasets are being merged.
-Second, because it is unlikely that all component datasets were acquired using
-reconcilable standards and protocol, it is likely that much of the quantitative
-information needs be discarded, and therefore the conservative position is to do
-qualitative analyses only. Although these have to be kept in mind, we do not
-think they should prevent use and evaluation of the approach we suggest. For one
-thing, at large spatial and organizational scales, coarse-grained analyses are
-still able to pick up qualitative differences in community structure. Second,
-most emergent properties are relatively insensitive to fine-scale error; for
-example, @grav13 show that even though a simple statistical model of food-web
-structure mispredicts some individual interactions, it produces communities with
-realistic emergent properties. Which level of error is acceptable needs to be
-determined for each application, but we argue that the use of synthetic datasets
-is a particularly cost- and time-effective approach for broad-scale description
-of community-level measures.
+There are always caveats to using synthetic datasets. First, the extent
+to which each component dataset is adequately sampled is unknown. This
+can create gaps in the information that is available when all component
+datasets are being merged.  Second, because it is unlikely that all component
+datasets were acquired using reconcilable standards and protocol, it is
+likely that much of the quantitative information needs be discarded,
+and therefore the conservative position is to do qualitative analyses
+only. Although these have to be kept in mind, we do not think they should
+prevent use and evaluation of the approach we suggest. For one thing, at
+large spatial and organizational scales, coarse-grained analyses are still
+able to pick up qualitative differences in community structure. Second,
+most emergent properties are relatively insensitive to fine-scale error;
+for example, @grav13 show that even though a simple statistical model of
+food-web structure mispredicts some individual interactions, it produces
+communities with realistic emergent properties. Which level of error is
+acceptable needs to be determined for each application, but we argue that
+the use of synthetic datasets is a particularly cost- and time-effective
+approach for broad-scale description of community-level measures.
 
 **Acknowledgments --** This work was funded in part through a grant from the
 Canadian Institute of Ecology and Evolution. TP was funded by a Starting grant
