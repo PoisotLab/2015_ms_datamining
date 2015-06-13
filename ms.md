@@ -11,9 +11,12 @@ author:
   - family: Leroux
     given: Shawn
     affiliation: 4
+  - family: Woods
+    given: Spencer A.
+    affiliation: 5, 6
   - family: Stouffer
     given: Daniel B.
-    affiliation: 5
+    affiliation: 7
 affiliation:
   - id: 1
     text: Université de Montréal, Département de Sciences Biologiques
@@ -24,6 +27,10 @@ affiliation:
   - id: 4
     text: Shawn??
   - id: 5
+    text: Woods Institute for the Environment, Stanford University, Stanford, CA, USA 
+  - id: 6
+    text: School for Environmental and Forest Science, University of Washington, Seattle, WA, USA 
+  - id: 7
     text: University of Canterbury
 keyword:
   - k: open data
@@ -51,11 +58,13 @@ macroecological questions that could be adressed (i) without additional data
 and (ii) at minimal cost, by making use of open data and community-developed
 software and platforms.
 
+{>>  Halpern et al. 2008. A Global Map of Human Impact on Marine Ecosystems. Science 319: 948-952.  <<}
+
 Existing data can, to an increasing extent, be used to *build* new datasets
 (henceforth synthetic datasets). There are several parallel advances that make
 this approach possible. First, the volume of data on ecological systems that
 are available *openly* increases on a daily basis. This includes point-
-occurrence data, as in *e.g.* GBIF, ITIS, but also taxonomic knowledge (through
+occurrence data, as in *e.g.* GBIF, but also taxonomic knowledge (through ITIS,
 NCBI or EOL), and trait and interactions data. A vast treasure trove of
 ecological information is now available without having to contact and secure
 authorization from every contributor individually. Second, this data is often
@@ -68,28 +77,30 @@ process is repeatable, testable, transparent, and nearly error proof. Finally,
 most of the heavy-lifting for these tasks can be done through a *burgeoning
 ecosystem of packages and software*, that handles query formatting, data
 retrieval, and associated tasks, all the while exposing simple interfaces to
-researchers.
-
-<!-- DG: Be careful about the error proof argument. There is also an immense risk that just goes on with the size of the dataset. You go blind, without the underlying knowledge of the data points that you do have when you collect them. In some instances it might not matter, but in others it could. The argument is that idiosyncracies in data will vanish as they grow bigger, but it's not that all convincing. Further, there is always a significant risk of bad coding. --> 
+researchers. None of these are *new* data, in the sense that these collections
+represent the aggregation of thousands of ecological studies; the originality
+lies in the ability to query, aggregate, curate, and use these data
+consistently using open solutions.
 
 Hypothesis testing for large-scale systems is inherently limited by the
-availability of suitable datasets. Perhaps as a result, developments in
-macroecology have primarily been driven by a search for patterns that are very
-broad both in scale and nature [@beck12c; @keit12]. While it is obvious that
-collecting exhaustive data at scales that are large enough to be relevant can
-be an insurmountable effort (both because of the monetary, time, and human
-costs needed), we suggest that macroecologists could, in parallel, build on
-existing databases, and aggregate them in a way that allows direct testing of
-proposals stemming from theory. To us, this opens no less than a new way for
-ecologists to ask critical research questions, spanning from the local to the
-global, and from the organismal to the ecosystemic, scales. Indeed, we live in
-a data-rich world, and a very large amount of these data can now *easily* be
-collected, reducing the need for additional costly and time-consuming sampling.
-More importantly, this allows *rapid* evaluation of scenarios. In this
-contribution, building on a real-life example, we (i) outline the basic
-approach, (ii) identify technical bottlenecks, (iii) discuss issues related to
-scientific ethics and best practice, and (iv) provide clear recommendations
-moving forward.
+availability of suitable datasets -- most data collection results in small
+scale, local data, and it is not always clear how these can be used at more
+global scales. Perhaps as a result, developments in macroecology have primarily
+been driven by a search for patterns that are very broad both in scale and
+nature [@beck12c; @keit12]. While it is obvious that collecting exhaustive data
+at scales that are large enough to be relevant can be an insurmountable effort
+(both because of the monetary, time, and human costs needed), we suggest that
+macroecologists could, in parallel, build on existing databases, and aggregate
+them in a way that allows direct testing of proposals stemming from theory. To
+us, this opens no less than a new way for ecologists to ask critical research
+questions, spanning from the local to the global, and from the organismal to
+the ecosystemic, scales. Indeed, we live in a data-rich world, and a very large
+amount of these data can now *easily* be collected, reducing the need for
+additional costly and time-consuming sampling. More importantly, this allows
+*rapid* evaluation of scenarios. In this contribution, building on a real-life
+example, we (i) outline the basic approach, (ii) identify technical
+bottlenecks, (iii) discuss issues related to scientific ethics and best
+practice, and (iv) provide clear recommendations moving forward.
 
 <!-- DG: The general objective of the paper is not clear--> 
 <!-- DG:  and be careful, you start by a strong state (!) about hypothesis testing, but never provide one for this paper. It is essentially descriptive, again. I think there would be a way to do it, even if it is not central to the story --> 
@@ -105,28 +116,29 @@ analysis. Because of these technical constraints, food-web data are most often
 assembled in a single location. This impedes our ability to address the
 variation of their structure in space, which may both translate the action of
 macroecological mechanisms, as well as hold key to our ability to predict the
-spatial variation of ecological properties.
+spatial variation of ecological properties. As a consequence, most of the
+properties of food web over large (continental, global) spatial extents remain
+undocumented. For example, what is the relationship between latitude and connectance (the density of feeding interactions)?
 
-
-<!-- DG: the objective of the analysis could be made clearer. And the rationale better justified, even though it's not the central aspect of the paper.   --> 
-
-In this case study, we are interested in predicting the structure of the pine-
-marsh food web worldwide. One example of this system has been described in
-detail by @martins. We will show how coupling these data with additional
-interactions reported in the literature, as well as species occurrence data,
-allows us to build a predictive model that describes the spatial variation of
-this system.
+One possible way to approach this question would be to collect data from
+different localities, and document through *e.g.* regressions the relationship
+between latitude and connected. The approach we will illustrate here uses
+broad-scale data integration to forecast the structure of a single system at
+the global scale. We are interested in predicting the structure of a pine-
+marsh food web, worldwide.
 
 ## Interactions data
 
-Data from the pine-marsh food web were take from **REF**, as made available in
+Food web data were take from **REF**, as made available in
 the `IWDB` database (URL). Marshes, like almost all wetlands, are critically
 endangered and serve as a home to a host of endemic biodiversity [@fens11;
-@minc13]. They represent a prime example of ecosystems for which data-based
-prediction can be used to generate scenarios at a temporal scale relevant for
-conservation decisions, and faster than what sampling could allow.
-
-<!-- DG:  In a sentence, why did you picked this example ? is it because of data availability ? --> 
+@minc13]. Stream food webs in particular are important, both because they
+provide coupling between terrestrial and aquatic communities and ensure the
+maintenance of ecosystem services, but also because the increased pressure on
+wetlands makes them particularly threatened. They represent a prime example of
+ecosystems for which data-based prediction can be used to generate scenarios at
+a temporal scale relevant for conservation decisions, and faster than what
+sampling could allow.
 
 The data comprising the original food web (105 nodes, including vague
 denominations like *Unidentified detritus* or *Terrestrial invertebrates*),
@@ -137,24 +149,29 @@ the double advantage of (i) removing ambiguities on the identification of
 species and (ii) allowing us to integrate data when any two species from given
 genera interact. Second, all nodes that were not identified (`Unidentified` or
 `Unknown` in the original data) were removed. The cleaned network documented
-227 interactions, between 80 genera. Using the name checking functions from the
-`taxize` package [@cham13a] revealed that all of these genus names were valid.
+227 interactions, between 80 genera.
+
+{>>CHECK AND REDO IF NEEDED<<}
+
+Using the name checking functions from the `taxize` package [@cham13a] revealed
+that all of these genus names were valid.
 
 Because the original food web was sampled *locally*, there is the possibility
-that interactions between genera are not reported. 
-<!-- DG:  what do you mean ? because some species were absent ? too rare? --> 
-To circumvent this, w
-queried the *GLOBI* database [@poel14] for each genus name, and retrieved all
-*feeding* interactions. For all *new* genera retrieved through this method, we
-also retrieved their interactions with genera already in the network. This
-network has 789 genera, and a total of 9328 interactions.
+that interactions between genera are not reported; either because species from
+these genera do not interact, or co-occur, in the sampling location. To
+circumvent this, we queried the *GLOBI* database [@poel14] for each genus name,
+and retrieved all *feeding* interactions. For all *new* genera retrieved
+through this method, we also retrieved their interactions with genera already
+in the network. The inflated network (original data, and data from *GLOBI*) has
+789 genera, and a total of 9328 interactions between them.
 
-<!-- DG: how do you get from 105 nodes to 789, after aggregating them ? It looks like you start from 105 genera and then find for them new interactions in GLOBI, and then after look for interactions of these new nodes. All make sense, but it could be more explicit how you grow from 105 to 789. --> 
+The code to reproduce this analysis is in the `1_get_data.r` suppl. file.
 
+{>>CHECK ALL NUMERICAL VALUES<<}
 
 ## Occurrence data and filtering
 
-For each genera, we then downloaded the known occurrences from GBIF and BISON.
+For each genera, we downloaded the known occurrences from GBIF and BISON.
 This yielded 64 763 point-presence records. Because the ultimate goal is to
 perform spatial modeling of the structure of the network, we removed genera for
 which fewer than 100 occurrences were known. This seems like a stringent
@@ -228,29 +245,36 @@ occur given the climatic variables.
 
 <!-- DG:  a transition is lacking. something like the example nicely illustrates the promises of data intensive approaches. it builds on new data availability, new statistical and computational tools. But as with every technical development in science comes a number of challenges and limitations. Here we discuss a few we believe are important. We essentially define these issues and emphasize that each of them, on their own, should be the subject of further debates. --> 
 
-**Attribution stacking and intellectual paternity:**
+**Attribution stacking and intellectual provenance:**
 
 The merging of large databases has already created a conflict of how to
-properly attribute data paternity. Here there are at least two core issues
-that will require community consultation in order to be resolved. First,
-*what is the proper mode of attribution when a very large volume of data
-is aggregated*?  Second, *what should be the intellectual property of the
-synthetic dataset*?  Currently, citations (whether to articles or datasets)
-are only counted when they are part of the main text. The simple example
-outlined here relies on well over a thousand references, and it makes
-little sense to expect that they would be provided in the main text. One
-intermediate solution would be to collate these references in a supplement,
-but it is unclear that these would be counted, and therefore contribute to
-the *impact* of each individual dataset. This is a problem that we argue is
-best solved by publishers; proper attribution and credit is key to provide
-incentives to data release [@whel14; @kena14]. As citations are currently
-the currency of scientific impact, publishers have a responsibility not
-only to ensure that data are available (which many already do), but that
-they are recognized. The synthetic dataset, on the other, can reasonably be
-understood as a novel product; there is technical and intellectual effort
-involved in producing it, and although it is a derivative work, we would
-encourage authors to deposit it anew.
-<!-- DG:  which means that we should give credit to both the original contributors and teh one that assembled it ? I do fully agree with that position, but I don't think it will be very operational. As suggested above, some rewording would help in this section and the other ones just to underline that you adequately point at new challenges, but do not explore them in full details and obviously do not solve them. Otherwise the reader might be systematically disappointed. --> 
+properly attribute data provenance. Here there are at least two core issues
+that will require community consultation in order to be resolved. First, *what
+is the proper mode of attribution when a very large volume of data is
+aggregated*?  Second, *what should be the intellectual property of the
+synthetic dataset*?  Currently, citations (whether to articles or datasets) are
+only counted when they are part of the main text. The simple example outlined
+here relies on well over a thousand references, and it makes little sense to
+expect that they would be provided in the main text. One intermediate solution
+would be to collate these references in a supplement, but it is unclear that
+these would be counted, and therefore contribute to the *impact* of each
+individual dataset. This is a problem that we argue is best solved by
+publishers; proper attribution and credit is key to provide incentives to data
+release [@whel14; @kena14]. As citations are currently the currency of
+scientific impact, publishers have a responsibility not only to ensure that
+data are available (which many already do), but that they are recognized. The
+synthetic dataset, on the other, can reasonably be understood as a novel
+product; there is technical and intellectual effort involved in producing it,
+and although it is a derivative work, we would encourage authors to deposit it
+anew. 
+
+<!-- DG:  which means that we should give credit to both the original
+contributors and teh one that assembled it ? I do fully agree with that
+position, but I don't think it will be very operational. As suggested above,
+some rewording would help in this section and the other ones just to underline
+that you adequately point at new challenges, but do not explore them in full
+details and obviously do not solve them. Otherwise the reader might be
+systematically disappointed. -->
 
 **Sharing of code and analysis pipeline:**
 
@@ -349,7 +373,7 @@ description of community- level measures.
 # Why not?
 
 - need to try
-- fast!
+- fast, and relies on existing "classical" data
 - generate testable predictions
 - can identify gaps in knowledge
 - necessary step before real-time predictions @anto14
