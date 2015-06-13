@@ -31,7 +31,7 @@ affiliation:
   - id: 3
     text: Université du Québec à Rimouski
   - id: 4
-    text: Shawn??
+    text: Shawn
   - id: 5
     text: Woods Institute for the Environment, Stanford University, Stanford, CA, USA 
   - id: 6
@@ -49,7 +49,7 @@ keyword:
   - k: computational ecology
   - k: trophic interactions
 date: work in progress
-abstract: TO BE COMPLETED LATER.
+abstract: ...
 ---
 
 Ecologists are tasked with providing information on issues involving a variety
