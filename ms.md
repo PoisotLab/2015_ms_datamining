@@ -14,9 +14,12 @@ author:
   - family: Woods
     given: Spencer A.
     affiliation: 5, 6
+  - family: Fortin
+    given: Marie-Josée
+    affiliation: 7
   - family: Stouffer
     given: Daniel B.
-    affiliation: 7
+    affiliation: 8
 affiliation:
   - id: 1
     text: Université de Montréal, Département de Sciences Biologiques
@@ -31,6 +34,8 @@ affiliation:
   - id: 6
     text: School for Environmental and Forest Science, University of Washington, Seattle, WA, USA 
   - id: 7
+    text: University of Toronto
+  - id: 8
     text: University of Canterbury
 keyword:
   - k: open data
@@ -97,8 +102,10 @@ questions, spanning from the local to the global, and from the organismal to
 the ecosystemic, scales. Indeed, we live in a data-rich world, and a very large
 amount of these data can now *easily* be collected, reducing the need for
 additional costly and time-consuming sampling. More importantly, this allows
-*rapid* evaluation of scenarios. In this contribution, building on a real-life
-example, we (i) outline the basic approach, (ii) identify technical
+*rapid* evaluation of both climate change scenarios [@albouy] and hypotheses.
+In this contribution, building on a real-life example, we (i) outline the basic
+approach of integrating data from a variety of sources (both in terms of
+provenance, and type of ecological information), (ii) identify technical
 bottlenecks, (iii) discuss issues related to scientific ethics and best
 practice, and (iv) provide clear recommendations moving forward.
 
@@ -262,11 +269,12 @@ individual dataset. This is a problem that we argue is best solved by
 publishers; proper attribution and credit is key to provide incentives to data
 release [@whel14; @kena14]. As citations are currently the currency of
 scientific impact, publishers have a responsibility not only to ensure that
-data are available (which many already do), but that they are recognized. The
+data are available (which many already do), but that they are recognized; data
+citation, no matter how many data are cited, is a way to achieve this goal. The
 synthetic dataset, on the other, can reasonably be understood as a novel
 product; there is technical and intellectual effort involved in producing it,
 and although it is a derivative work, we would encourage authors to deposit it
-anew. 
+anew.
 
 <!-- DG:  which means that we should give credit to both the original
 contributors and teh one that assembled it ? I do fully agree with that
@@ -370,18 +378,19 @@ description of community- level measures.
 
 <!-- DG:  There is no strong conclusion to the paper. I think it would be great to revisit the first paragraph in light of this example and discuss the promises of new data-intensive approaches. -->
 
-# Why not?
+# Conclusion -- why not?
 
 - need to try
 - fast, and relies on existing "classical" data
 - generate testable predictions
-- can identify gaps in knowledge
+- can identify gaps in knowledge -- missing data!
 - necessary step before real-time predictions @anto14
 
 **Acknowledgments --** This work was funded in part through a grant from the
 Canadian Institute of Ecology and Evolution. TP was funded by a Starting grant
 from the Université de Montréal, and a NSERC Discovery Grant. DBS acknowledges
 a Marsden Fund Fast-Start grant (UOC-1101) and Rutherford Discovery Fellowship,
-both administered by the Royal Society of New Zealand.
+both administered by the Royal Society of New Zealand. We thank Kévin Cazelles
+for constructive comments on the manuscript.
 
 # References
