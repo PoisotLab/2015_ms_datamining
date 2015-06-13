@@ -17,9 +17,12 @@ author:
   - family: Fortin
     given: Marie-Josée
     affiliation: 7
+  - family: Baiser
+    given: Benjamin B.
+    affiliation: 8
   - family: Stouffer
     given: Daniel B.
-    affiliation: 8
+    affiliation: 9
 affiliation:
   - id: 1
     text: Université de Montréal, Département de Sciences Biologiques
@@ -36,6 +39,8 @@ affiliation:
   - id: 7
     text: University of Toronto
   - id: 8
+    text: University of Florida
+  - id: 9
     text: University of Canterbury
 keyword:
   - k: open data
@@ -125,7 +130,8 @@ variation of their structure in space, which may both translate the action of
 macroecological mechanisms, as well as hold key to our ability to predict the
 spatial variation of ecological properties. As a consequence, most of the
 properties of food web over large (continental, global) spatial extents remain
-undocumented. For example, what is the relationship between latitude and connectance (the density of feeding interactions)?
+undocumented. For example, what is the relationship between latitude and
+connectance (the density of feeding interactions)?
 
 One possible way to approach this question would be to collect data from
 different localities, and document through *e.g.* regressions the relationship
@@ -136,9 +142,9 @@ marsh food web, worldwide.
 
 ## Interactions data
 
-Food web data were take from **REF**, as made available in
-the `IWDB` database (URL). Marshes, like almost all wetlands, are critically
-endangered and serve as a home to a host of endemic biodiversity [@fens11;
+Food web data were take from **REF**, as made available in the `IWDB` database
+(URL). Marshes, like almost all wetlands, are critically endangered and serve
+as a home to a host of endemic biodiversity [@fens11;
 @minc13]. Stream food webs in particular are important, both because they
 provide coupling between terrestrial and aquatic communities and ensure the
 maintenance of ecosystem services, but also because the increased pressure on
