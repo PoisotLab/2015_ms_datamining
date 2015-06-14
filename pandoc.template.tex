@@ -1,14 +1,31 @@
 \documentclass[12pt,letterpaper]{article}
 
-\usepackage{hyperref}
+\usepackage[hidelinks]{hyperref}
+
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 
+$if(figure)$
+\usepackage{graphicx}
+$endif$
+
+% STIX for the text
+\usepackage{stix}
+
+% Inconsolata for the code
+\usepackage{inconsolata}
+
+% Helvetica for the titles
 \usepackage[scaled]{helvet}
-\usepackage[sc]{mathpazo}
+
+% Spacing
+\usepackage{setspace}
 
 \usepackage[letterpaper]{geometry}
-\geometry{margin=2.2cm}
+\geometry{margin=2.5cm}
+
+\providecommand{\tightlist}{%
+	\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 
 \begin{document}
 
@@ -49,7 +66,7 @@ $abstract$
 $endif$
 
 $if(keyword)$
-{\tiny
+{\small
 \textbf{Keywords:}
 $for(keyword)$
   $keyword.k$ \,\,\,\,\,\,\,\,\,\,
@@ -59,6 +76,24 @@ $endif$
 
 \clearpage
 
+\doublespacing
+
 $body$
+
+\singlespacing
+
+$if(figure)$
+\clearpage
+\listoffigures
+\clearpage
+$for(figure)$
+\begin{figure}[p!]
+  \centering
+  \includegraphics[width=\textwidth]{$figure.file$}
+	\caption{$figure.caption$\label{$figure.label$}}
+\end{figure}
+\cleardoublepage
+$endfor$
+$endif$
 
 \end{document}

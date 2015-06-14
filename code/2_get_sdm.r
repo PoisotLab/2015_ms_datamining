@@ -2,8 +2,10 @@ library(dismo)
 library(raster)
 library(maps)
 library(maptools)
+library(igraph)
 library(mapdata)
 library(plyr)
+library(doMC)
 
 load("ppd.Rdata")
 load("g.Rdata")
@@ -24,9 +26,11 @@ xl = range(ppd$longitude) + c(-3.0, 3.0)
 yl = range(ppd$latitude) + c(-3.0, 3.0)
 
 # Load (or download and crop) bioclim data
-# bioclim = crop(getData("worldclim", var="bio", res=5), c(min(xl), max(xl), min(yl), max(yl)))
-# writeRaster(bioclim, filename="bioclim.grd", overwrite=T)
+cat("Getting clim data\n")
+bioclim = crop(getData("worldclim", var="bio", res=5), c(min(xl), max(xl), min(yl), max(yl)))
+writeRaster(bioclim, filename="bioclim.grd", overwrite=T)
 bclim = brick("bioclim.grd")
+cat("Got it!\n\n")
 
 make_pred = function(sites, pred){
   bc_sites = extract(pred, sites[,c('longitude', 'latitude')])
@@ -37,5 +41,8 @@ make_pred = function(sites, pred){
 }
 
 usgen = sort(unique(ppd$genus))
-sdm = alply(usgen, 1, function(x) make_pred(subset(ppd, genus == x), bclim))
+cat("Preparing to run SDMs\n")
+registerDoMC(9)
+sdm = alply(usgen, 1, function(x) make_pred(subset(ppd, genus == x), bclim), .parallel=T)
+names(sdm) = usgen
 save(sdm, file="sdm.Rdata")

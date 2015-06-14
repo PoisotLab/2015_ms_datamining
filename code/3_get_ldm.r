@@ -12,7 +12,6 @@ load("sdm.Rdata")
 
 names(sdm) = sort(unique(V(g)$name))
 
-
 # Species richness
 sp_ric = sdm[[1]]
 for(i in c(2:length(sdm))) sp_ric = sp_ric + sdm[[i]]

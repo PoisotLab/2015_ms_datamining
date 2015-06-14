@@ -11,7 +11,7 @@ load("dm.Rdata")
 load("g.Rdata")
 load("ppd.Rdata")
 
-source("layout.foodweb.r")
+#source("layout.foodweb.r")
 wg = walktrap.community(g)$membership
 sp_colors = brewer.pal(length(unique(wg)), 'Set1')[wg]
 names(sp_colors) = V(g)$name
@@ -27,7 +27,7 @@ png(file="figure1.png", width=1800, height=700)
 layout(matrix(rep(c(1,1,1,2,2,2,2,2,2), 6), ncol=9, byrow=T))
 
 # Draw the network
-plot(g, layout=layout.foodweb.radial,
+plot(g, layout=layout.fruchterman.reingold,
   vertex.size=3, vertex.color=sp_colors,
   vertex.label=NA, vertex.frame.color = NA,
   edge.arrow.size=0, edge.color=rgb(0.4, 0.4, 0.4, 0.2))
@@ -47,35 +47,52 @@ space_grid$L = extract(n_link, space_grid[,c('x', 'y')])
 space_grid$Co = space_grid$L/(space_grid$S^2)
 space_grid = subset(space_grid, !is.na(Co))
 
-sg = ddply(space_grid, .(y), summarize, Co = mean(Co))
+sg = ddply(space_grid, .(y), summarize, Co = mean(Co), S = mean(S), L = mean(L))
 
+
+zsc = function(x) (x-mean(x))/sd(x)
 
 # Figure 2 -- trends
 png(file="figure2.png", height=600*1.3, width=900*1.3)
-par(mfcol=c(2,2))
+par(mfcol=c(3,2))
 
-plot(log(sp_ric, 10), col=colors, axes=F, box='n')
-map("world", add=T, col=rgb(0.7, 0.7, 0.7, 0.2), fill=T)
+plot(sp_ric, col=colors, axes=F, bty='n')
+map("world", add=T, col=rgb(0.3, 0.3, 0.3, 0.2), interior=F)
 box()
-title("Number of genera - log-10 transformed")
+title("Number of genera")
 
-plot(log(n_link, 10), col=colors, axes=F, box='n')
-map("world", add=T, col=rgb(0.7, 0.7, 0.7, 0.2), fill=T)
+plot(zsc(S)~y, sg, xlab="Latitude", ylab="Z-score of (predicted) genera richness", pch=NA, xlim=c(-80, 80))
+rect(-23.26,par("usr")[3],23.26,par("usr")[4], col=colors()[4], border=NA)
+points(zsc(S)~y, sg, col=brewer.pal(3, 'Set1')[2], pch=19)
+abline(v=0, lty=2, col="darkgrey")
+abline(v=23.26*c(-1,1), lty=3, col='grey')
 box()
-title("Number of interactions - log-10 transformed")
+
+plot(n_link, col=colors, axes=F, bty='n')
+map("world", add=T, col=rgb(0.3, 0.3, 0.3, 0.2), interior=F)
+box()
+title("Number of interactions")
+
+plot(zsc(L)~y, sg, xlab="Latitude", ylab="Z-score of (predicted) link numbers", pch=NA, xlim=c(-80, 80))
+rect(-23.26,par("usr")[3],23.26,par("usr")[4], col=colors()[4], border=NA)
+points(zsc(L)~y, sg, col=brewer.pal(3, 'Set1')[2], pch=19)
+abline(v=0, lty=2, col="darkgrey")
+abline(v=23.26*c(-1,1), lty=3, col='grey')
+box()
 
 Co = n_link/(sp_ric^2)
 
 plot(sqrt(Co), col=colors, axes=F, box='n', zlim=c(0,1))
-map("world", add=T, col=rgb(0.7, 0.7, 0.7, 0.2), fill=T)
+map("world", add=T, col=rgb(0.3, 0.3, 0.3, 0.2), interior=F)
 box()
-title("Connectance - square-root transformed")
+title("Connectance")
 
-plot(Co~y, sg, xlab="Latitude", ylab="Connectance", pch=NA, xlim=c(-80, 80))
+plot(zsc(Co)~y, sg, xlab="Latitude", ylab="Z-score of (predicted) connectance", pch=NA, xlim=c(-80, 80))
 rect(-23.26,par("usr")[3],23.26,par("usr")[4], col=colors()[4], border=NA)
-points(Co~y, sg, col=brewer.pal(3, 'Set1')[2], pch=19)
+points(zsc(Co)~y, sg, col=brewer.pal(3, 'Set1')[2], pch=19)
 abline(v=0, lty=2, col="darkgrey")
 abline(v=23.26*c(-1,1), lty=3, col='grey')
 box()
+
 
 dev.off()

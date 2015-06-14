@@ -33,9 +33,9 @@ affiliation:
   - id: 4
     text: Shawn
   - id: 5
-    text: Woods Institute for the Environment, Stanford University, Stanford, CA, USA 
+    text: Woods Institute for the Environment, Stanford University, Stanford, CA, USA
   - id: 6
-    text: School for Environmental and Forest Science, University of Washington, Seattle, WA, USA 
+    text: School for Environmental and Forest Science, University of Washington, Seattle, WA, USA
   - id: 7
     text: University of Toronto
   - id: 8
@@ -48,6 +48,13 @@ keyword:
   - k: species distributions
   - k: computational ecology
   - k: trophic interactions
+figure:
+  - id: f_network
+    caption: Visual representation of the initial data. On the left, the food web (original data and additional interactions from GLOBI) is represented, with species forming modules in different colors. On the right, each dot represents one observation from BISON and GBIF (color-coded by module).
+    file: figures/figure1.png
+  - id: f_maps
+    caption: Maps, and relationship with latitude, for the number of genera, number of interactions, and connectance. The tropics are shaded in light yellow. The average value of each output has been (i) averaged across latitudes and (ii) z-score transformed; this emphasizes variations across the gradient as opposed to absolute values (which is a more conservative way of looking at these results, since the predictions are mostly qualitative).
+    file: figures/figure2.png
 date: work in progress
 abstract: ...
 ---
@@ -114,9 +121,9 @@ provenance, and type of ecological information), (ii) identify technical
 bottlenecks, (iii) discuss issues related to scientific ethics and best
 practice, and (iv) provide clear recommendations moving forward.
 
-<!-- DG: The general objective of the paper is not clear--> 
-<!-- DG:  and be careful, you start by a strong state (!) about hypothesis testing, but never provide one for this paper. It is essentially descriptive, again. I think there would be a way to do it, even if it is not central to the story --> 
-<!-- DG: might worth putting some cautionary remark about the interpretation of the results; the paper is essentially a proof of concept and not the place to debate about the validity of the analysis - for this, you can cite Camille's paper in GCB in 2014 to say that you build on an already established method. Otherwise we'll get reviewers criticizing the ecology, not the computations. --> 
+<!-- DG: The general objective of the paper is not clear-->
+<!-- DG:  and be careful, you start by a strong state (!) about hypothesis testing, but never provide one for this paper. It is essentially descriptive, again. I think there would be a way to do it, even if it is not central to the story -->
+<!-- DG: might worth putting some cautionary remark about the interpretation of the results; the paper is essentially a proof of concept and not the place to debate about the validity of the analysis - for this, you can cite Camille's paper in GCB in 2014 to say that you build on an already established method. Otherwise we'll get reviewers criticizing the ecology, not the computations. -->
 
 # An illustrative case-study
 
@@ -136,47 +143,56 @@ connectance (the density of feeding interactions)?
 One possible way to approach this question would be to collect data from
 different localities, and document through *e.g.* regressions the relationship
 between latitude and connected. The approach we will illustrate here uses
-broad-scale data integration to forecast the structure of a single system at
-the global scale. We are interested in predicting the structure of a pine-
-marsh food web, worldwide.
+broad-scale data integration to forecast the structure of a single system at the
+global scale. We are interested in predicting the structure of a pine-marsh
+food web, worldwide.
 
 ## Interactions data
 
 Food web data were take from **REF**, as made available in the `IWDB` database
-(URL). Marshes, like almost all wetlands, are critically endangered and serve
-as a home to a host of endemic biodiversity [@fens11;
-@minc13]. Stream food webs in particular are important, both because they
-provide coupling between terrestrial and aquatic communities and ensure the
-maintenance of ecosystem services, but also because the increased pressure on
-wetlands makes them particularly threatened. They represent a prime example of
-ecosystems for which data-based prediction can be used to generate scenarios at
-a temporal scale relevant for conservation decisions, and faster than what
-sampling could allow.
+(URL). Marshes, like almost all wetlands, are critically endangered and serve as
+a home to a host of endemic biodiversity [@fens11; @minc13]. Stream food webs in
+particular are important, both because they provide coupling between terrestrial
+and aquatic communities and ensure the maintenance of ecosystem services, but
+also because the increased pressure on wetlands makes them particularly
+threatened. They represent a prime example of ecosystems for which data-based
+prediction can be used to generate scenarios at a temporal scale relevant for
+conservation decisions, and faster than what sampling could allow.
 
 The data comprising the original food web (105 nodes, including vague
-denominations like *Unidentified detritus* or *Terrestrial invertebrates*),
-were cleaned in the following way. First, all nodes were aggregated to the
-*genus* level. Due to high level of structure in trophic interactions emerging
-from taxonomic rank alone [@eklo11,@stou12], aggregating to the genus level has
-the double advantage of (i) removing ambiguities on the identification of
-species and (ii) allowing us to integrate data when any two species from given
-genera interact. Second, all nodes that were not identified (`Unidentified` or
-`Unknown` in the original data) were removed. The cleaned network documented
-227 interactions, between 80 genera.
+denominations like *Unidentified detritus* or *Terrestrial invertebrates*), were
+cleaned in the following way. First, all nodes were aggregated to the *genus*
+level. Due to high level of structure in trophic interactions emerging from
+taxonomic rank alone [@eklo11; @stou12], aggregating to the genus level has the
+double advantage of (i) removing ambiguities on the identification of species
+and (ii) allowing us to integrate data when any two species from given genera
+interact. Second, all nodes that were not identified (`Unidentified` or
+`Unknown` in the original data) were removed. The cleaned network documented 227
+interactions, between 80 genera.
 
 {>>CHECK AND REDO IF NEEDED<<}
 
-Using the name checking functions from the `taxize` package [@cham13a] revealed
-that all of these genus names were valid.
+We used the name-checking functions from the `taxize` package [@cham13a] to
+perform the following steps. First, all names were resolved, and one of the
+following was applied: valid names were conserved, invalid names with a close
+replacement were corrected, and invalid names with no replacement were removed.
+In most situations, invalid names were typos in the spelling of valid ones.
+After this step, 74 genera with 189 interactions remained, representing a high
+quality genus-level food-web from the original sampling.
 
-Because the original food web was sampled *locally*, there is the possibility
-that interactions between genera are not reported; either because species from
-these genera do not interact, or co-occur, in the sampling location. To
-circumvent this, we queried the *GLOBI* database [@poel14] for each genus name,
-and retrieved all *feeding* interactions. For all *new* genera retrieved
-through this method, we also retrieved their interactions with genera already
-in the network. The inflated network (original data, and data from *GLOBI*) has
-789 genera, and a total of 9328 interactions between them.
+Because this food web was sampled *locally*, there is the possibility that
+interactions between genera are not reported; either because species from these
+genera do not interact, or co-occur, in the sampling location. To circumvent
+this, we queried the *GLOBI* database [@poel14] for each genus name, and
+retrieved all *feeding* interactions. For all *new* genera retrieved through
+this method, we also retrieved their interactions with genera already in the
+network. The inflated network (original data, and data from *GLOBI*) has 368
+genera, and a total of 4796 interactions between them.
+
+As a final step, we queried the GBIF taxonomic rank database with each of these
+(tentatively) genera names. Every tentative genera that was either not found,
+or whose taxonomic level was not *genus*, was removed from the network. The
+cleaned food web had a total of 224 genera and 1701 interactions.
 
 The code to reproduce this analysis is in the `1_get_data.r` suppl. file.
 
@@ -184,21 +200,21 @@ The code to reproduce this analysis is in the `1_get_data.r` suppl. file.
 
 ## Occurrence data and filtering
 
-For each genera, we downloaded the known occurrences from GBIF and BISON.
-This yielded 64 763 point-presence records. Because the ultimate goal is to
-perform spatial modeling of the structure of the network, we removed genera for
-which fewer than 100 occurrences were known. This seems like a stringent
-filter, yet it enables to (i) maintain sufficient predictive powers for SDMs,
-and (ii) only work on the genera for which we have "high-quality" data. Genera
-with fewer than 100 records were removed from the occurrence data and from the
-metanetwork. The final metanetwork therefore has 4271 interactions between 188
-genera. Given the curated publicly available data, it represents the current
-best description of feeding interactions between species of this ecosystem. A
-visual depiction of the network is given in *Fig. 1*.
+For each genera, we downloaded the known occurrences from GBIF and BISON. This
+yielded 64 763 point-presence records. Because the ultimate goal is to perform
+spatial modeling of the structure of the network, we removed genera for which
+fewer than 100 occurrences were known. This seems like a stringent filter, yet
+it enables to (i) maintain sufficient predictive powers for SDMs, and (ii) only
+work on the genera for which we have "high-quality" data. Genera with fewer than
+100 records were removed from the occurrence data and from the metanetwork. The
+final metanetwork therefore has 4271 interactions between 188 genera. Given the
+curated publicly available data, it represents the current best description of
+feeding interactions between species of this ecosystem. A visual depiction of
+the network is given in \autoref{f_network}.
 
-<!-- DG: first time you mention metanetwork. Would be great to define it. --> 
-<!-- DG: not clear how you dropped back to 188. is it only because you filtered out other species with insufficient occurrences ? - the answer comes in the following paragrpha. should be here.--> 
-<!-- DG: the automatization of the whole process makes it easy to perform sensitivity analysis. might be a good example to assess the robustness of the approach to you 100 occurrence threshold --> 
+<!-- DG: first time you mention metanetwork. Would be great to define it. -->
+<!-- DG: not clear how you dropped back to 188. is it only because you filtered out other species with insufficient occurrences ? - the answer comes in the following paragrpha. should be here.-->
+<!-- DG: the automatization of the whole process makes it easy to perform sensitivity analysis. might be a good example to assess the robustness of the approach to you 100 occurrence threshold -->
 
 On its own, the fact that filtering for genera with over 100 records reduced
 the sample size from 739 genera to 188 indicates how crucial it is that
@@ -214,7 +230,7 @@ The code to reproduce this analysis is in the `1_get_data.r` suppl. file.
 
 ## Species Distribution Model
 
-<!-- DG:  define your climatic envelope models. The tirm is not precise enough--> 
+<!-- DG:  define your climatic envelope models. The tirm is not precise enough-->
 
 For each species in this subset of data, we retrieved the nineteen `bioclim`
 variables [@hijm05], with a resolution of 5 arc-minutes. This enabled us to
@@ -238,9 +254,9 @@ probabilities of observing each species on its own: $\mathrm{P}(L_{ij}) \propto
 models"). The code to reproduce this analysis is in the `3_get_ldm.r` suppl.
 file.
 
-<!-- DG:  I understand the space limitations, and also the fact that it is illustrative, but avoid putting some important details under the carpet. Here for instance, co-occurrence is totally neutral (as usually done in SDMs). Just make it explicit. Pi is also a function of the climate. Finally, you assume that interactions happen as long as species are found at same location. --> 
-<!-- DG:  It's gonna be like that all the time, but I understand that some people get irritated if you don't recognize limits to the approach. --> 
-<!-- DG:  Further, there are different sources of uncertainties. the occurrence is probabilistic because of at least two reasons: first, the data and the models are pretty bad, with uncertainties caused by lack of knowledge. secondly, distribution on its own could be stochastic (e.g. metapop). while the second makes sense to get at a probability of an interaction to happen, the first one not --> 
+<!-- DG:  I understand the space limitations, and also the fact that it is illustrative, but avoid putting some important details under the carpet. Here for instance, co-occurrence is totally neutral (as usually done in SDMs). Just make it explicit. Pi is also a function of the climate. Finally, you assume that interactions happen as long as species are found at same location. -->
+<!-- DG:  It's gonna be like that all the time, but I understand that some people get irritated if you don't recognize limits to the approach. -->
+<!-- DG:  Further, there are different sources of uncertainties. the occurrence is probabilistic because of at least two reasons: first, the data and the models are pretty bad, with uncertainties caused by lack of knowledge. secondly, distribution on its own could be stochastic (e.g. metapop). while the second makes sense to get at a probability of an interaction to happen, the first one not -->
 
 Based on this information, we generated the following illustrations (using
 `4_draw_figures.r`). First, a map of species richness (*Fig. 2A*) and number of
@@ -248,7 +264,7 @@ interactions (*Fig. 2B*). Second, a map of *connectance* (*Fig. 2C*), which is
 the number of interactions divided by the squared species richness. Finally, a
 scatterplot of connectance as a function of latitude (*Fig. 2D*), which reveals
 a systematic macroecological trend.
-<!-- DG:  describe it !--> 
+<!-- DG:  describe it !-->
  Interestingly, this last panel shows a
 strong response to this system to the fact that the tropics in Africa are
 surrounded by deserts in which the species studied here are not predicted to
@@ -256,7 +272,7 @@ occur given the climatic variables.
 
 # Challenges moving forward
 
-<!-- DG:  a transition is lacking. something like the example nicely illustrates the promises of data intensive approaches. it builds on new data availability, new statistical and computational tools. But as with every technical development in science comes a number of challenges and limitations. Here we discuss a few we believe are important. We essentially define these issues and emphasize that each of them, on their own, should be the subject of further debates. --> 
+<!-- DG:  a transition is lacking. something like the example nicely illustrates the promises of data intensive approaches. it builds on new data availability, new statistical and computational tools. But as with every technical development in science comes a number of challenges and limitations. Here we discuss a few we believe are important. We essentially define these issues and emphasize that each of them, on their own, should be the subject of further debates. -->
 
 **Attribution stacking and intellectual provenance:**
 
@@ -292,7 +308,7 @@ systematically disappointed. -->
 
 **Sharing of code and analysis pipeline:**
 
-<!-- DG:  provide a definition for pipeline --> 
+<!-- DG:  provide a definition for pipeline -->
 Ideally, authors should release their analysis *pipeline* in addition to the
 data and explanation of the steps. The pipeline can take the form of a
 `makefile` (which allows to generate the results, from the raw data, without
@@ -308,7 +324,7 @@ future improvement. The development of software should primarily aim to make the
 work of researchers easier. Looking at commonalities in the analytical pipelines
 for which no ready-made solutions exists will be a great way to influence
 priorities in software development.
-<!-- DG:  what should we do with version control ? and with software versions ? Papers do last much longer than the longevity of pieces of code, and that will be a major issue. Standard practices should include a complete listing of the packages and software details that were used to make sure that someone could reproduce your work in 15 years from now. --> 
+<!-- DG:  what should we do with version control ? and with software versions ? Papers do last much longer than the longevity of pieces of code, and that will be a major issue. Standard practices should include a complete listing of the packages and software details that were used to make sure that someone could reproduce your work in 15 years from now. -->
 
 **Computational literacy:**
 
@@ -331,9 +347,6 @@ there is value in the diversity of tools one can use to carry out more
 demanding studies. For example, both `Python` and `Julia` are equally as user
 friendly as `R` while also being more powerful and better suited for
 computationally- or memory-intensive analyses.
-
-<!-- DG:  tu n'as pas pu t'empêcher de faire ce commentaire ! Pour la mémoire, je trouve ces débats sur les langages de programmation aussi pertinents et objectifs qu'en aurait un sur la langue des publications scientifiques ou la couleur de la margarine (on a eu ça ici!); il y a d'autres critères que l'élégance ou la performance du code, l'historique, la facilité de partage et d'accès sont aussi importants --> 
-
 
 **Standards and best practices:**
 
