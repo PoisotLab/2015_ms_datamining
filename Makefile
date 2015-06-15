@@ -9,4 +9,9 @@ PHONY: all
 all: $(OUTPUT)
 
 $(OUTPUT): $(SOURCE)
-	pandoc $< -o $@ $(PFLAGS)
+	# Critic markup
+	perl critic.pl $< > marked_$(SOURCE)
+	# Compile
+	pandoc marked_$(SOURCE) -o $@ $(PFLAGS)
+	# Clean
+	rm marked_$(SOURCE)
