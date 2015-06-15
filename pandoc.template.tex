@@ -21,6 +21,9 @@ $endif$
 % Spacing
 \usepackage{setspace}
 
+% Track changes
+\usepackage{trackchanges}
+
 \usepackage[letterpaper]{geometry}
 \geometry{margin=2.5cm}
 
@@ -40,16 +43,18 @@ $endif$
 
 $if(author)$
 $for(author)$
-$author.given$ $author.family$ $$^{$author.affiliation$ $if(author.email)$,\ast$endif$}$$\\
+$author.given$ $author.family$ $$^{$author.affiliation$ $if(author.email)$,\ast$endif$}$$$sep$, %\\
 $endfor$
 \bigskip
 $endif$
 
 $if(affiliation)$
+\small
 $for(affiliation)$
 ($affiliation.id$) $affiliation.text$\\
 $endfor$
 \bigskip
+\normalsize
 $endif$
 
 $if(author)$

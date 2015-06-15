@@ -11,14 +11,14 @@ author:
   - family: Leroux
     given: Shawn
     affiliation: 4
-  - family: Woods
+  - family: Wood
     given: Spencer A.
     affiliation: 5, 6
   - family: Fortin
     given: Marie-Josée
     affiliation: 7
   - family: Baiser
-    given: Benjamin B.
+    given: Benjamin
     affiliation: 8
   - family: Stouffer
     given: Daniel B.
@@ -201,7 +201,7 @@ than 100 records were removed from the occurrence data and from the network.
 The cleaned food web had a total of 134 genera and 782 interactions, for 118269
 presences. Given the curated publicly available data, it represents the current
 best description of feeding interactions between species of this ecosystem. A
-visual depiction of the network is given in \autoref{f_network}.
+visual depiction of the network is given in Figure 1.
 
 On its own, the fact that filtering for genera with over 100 records reduced the
 sample size from 368 genera to 134 indicates how crucial it is that observations
@@ -233,7 +233,7 @@ The code to reproduce this analysis is in the `2_get_sdm.r` suppl. file.
 
 ## Assembly
 
-For every interactions in the metanetwork, we estimated the probability of it
+For every interactions in the food web, we estimated the probability of it
 being observed in each pixel as the product of the probabilities of observing
 each species on its own: $\mathrm{P}(L_{ij}) \propto
 \mathrm{P}(i)\mathrm{P}(j)$. This resulted in one LDM ("link distribution
@@ -248,14 +248,14 @@ each study.
 The code to reproduce this analysis is in the `3_get_ldm.r` suppl. file.
 
 Based on this information, we generated example illustrations (using
-`4_draw_figures.r` -- \autoref{f_maps}). The system is characterized, at the
-world-wide scale, by an increased number of genera *and* interactions in
-temperate areas, with diversity and interaction hotspots in Western Europe,
-North-East and South-Atlantic America, and the western coasts of New Zealand and
-Australia -- this is clearly symmetrical along the equator. Network structure,
-here measured by network connectance, follows a different trend than genera
-richness or interactions do. Connectance is, overall, stable along the gradient,
-with a decline only at higher latitudes.
+`4_draw_figures.r` -- Figure 2). The system is characterized, at the world-wide
+scale, by an increased number of genera *and* interactions in temperate areas,
+with diversity and interaction hotspots in Western Europe, North-East and
+South-Atlantic America, and the western coasts of New Zealand and Australia --
+this is clearly symmetrical along the equator. Network structure, here measured
+by network connectance, follows a different trend than genera richness or
+interactions do. Connectance is, overall, stable along the gradient, with a
+decline only at higher latitudes.
 
 # Challenges moving forward
 
@@ -388,11 +388,29 @@ community- level measures.
 
 # Conclusion -- why not?
 
-- need to try
-- fast, and relies on existing "classical" data
-- generate testable predictions
-- can identify gaps in knowledge -- missing data!
-- necessary step before real-time predictions @anto14
+In the light of the current limitations and challenges, one might be tempted to
+question the approach. Yet there are several strong arguments, that should not
+be overlooked, in favor of it use. As we demonstrate with this example,
+synthetic datasets allow to rapidly generate qualitative predictions at large
+scales. These can, for example, serve as a basis to forecast the effect of
+scenarios of climate change on community properties [@albo14]. Perhaps more
+importantly, synthetic datasets will be extremely efficient at identifying gaps
+in our knowledge of biological systems: either because there is high uncertainty
+or sensitivity to choices in the model output, or because there is no available
+information to incorporate in these models. By building these datasets, it will
+be easier to assess the extent of our knowledge of biodiversity, and to identify
+areas or taxa of higher priority for sampling. For this reason, using synthetic
+datasets is *not* a call to do less field-based science. Quite the contrary: in
+addition to highlighting areas of high uncertainty, synthetic datasets are a
+*prediction*, that requires field-based validation. At a longer time-scale, the
+use of synthetic dataset will necessitate the development of both statistical
+methodology and software; this is one of the required step towards real-time use
+and analysis of ecological data [@anto14]. We appreciate that this approach
+currently comes with some limitations -- they are unlikely to be overcome unless
+by increased use, test, and validation. Since the community already built
+effective and user-friendly databases and tools, there is very little cost (both
+in time and in funding) in trying these methods, and the promise of a great
+potential.
 
 **Acknowledgments --** This work was funded in part through a grant from the
 Canadian Institute of Ecology and Evolution. TP was funded by a Starting grant
