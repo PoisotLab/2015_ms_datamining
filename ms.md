@@ -53,7 +53,7 @@ keyword:
   - k: trophic interactions
 figure:
   - id: f_network
-    caption: Visual representation of the initial data. On the left, the food web (original data and additional interactions from GLOBI) is represented, with species forming modules in different colors. On the right, each dot represents one observation from BISON and GBIF (color-coded by module).
+    caption: Visual representation of the initial data. On the left, the food web (original data and additional interactions from GLOBI) is represented, with genera forming modules (groups of densely connected nodes) in different colors. On the right, each dot represents one observation from BISON and GBIF (color-coded by module).
     file: figures/figure1.png
   - id: f_maps
     caption: Maps, and relationship with latitude, for the number of genera, number of interactions, and connectance. The tropics are shaded in light yellow. The average value of each output has been (i) averaged across latitudes and (ii) z-score transformed; this emphasizes variations across the gradient as opposed to absolute values (which is a more conservative way of looking at these results, since the predictions are mostly qualitative).
