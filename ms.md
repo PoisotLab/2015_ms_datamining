@@ -20,6 +20,9 @@ author:
   - family: Baiser
     given: Benjamin
     affiliation: 8
+  - family: Cirtwill
+    given: Alyssa R
+    affiliation: 9
   - family: Stouffer
     given: Daniel B.
     affiliation: 9
@@ -76,21 +79,22 @@ macroecological questions that could be adressed (i) without additional data and
 software and platforms.
 
 Existing data can, to an increasing extent, be used to *build* new datasets
-(henceforth synthetic datasets). There are several parallel advances that make
-this approach possible. First, the volume of data on ecological systems that are
-available *openly* increases on a daily basis. This includes point- occurrence
-data, as in *e.g.* GBIF, but also taxonomic knowledge (through ITIS, NCBI or
-EOL), and trait and interactions data. A vast treasure trove of ecological
-information is now available without having to contact and secure authorization
-from every contributor individually. Second, this data is often available in a
+(henceforth *synthetic* datasets, since they represent the synthesis of several
+types of data). There are several parallel advances that make this approach
+possible. First, the volume of data on ecological systems that are available
+*openly* increases on a daily basis. This includes point- occurrence data, as in
+*e.g.* GBIF, but also taxonomic knowledge (through ITIS, NCBI or EOL), and trait
+and interactions data. A vast treasure trove of ecological information is now
+available without having to contact and secure authorization from every
+contributor individually. Second, these data are often available in a
 *programmatic* way. As opposed to manual collection, identification, and
 maintenance of datasets, most of these services implement web APIs, *i.e.*
 services that allow users to query and/or upload data in a standard format.
 These services can be queried, either once or on a regular basis, to retrieve
 records with the desired properties. This ensures that the process is
 repeatable, testable, transparent, and (as long as the code is properyl written)
-nearly error proof. Finally, most of the heavy-lifting for these tasks can be
-done through a *burgeoning ecosystem of packages and software*, that handles
+nearly error proof. Finally, most of the heavy lifting for these tasks can be
+done through a *burgeoning ecosystem of packages and software* that handles
 query formatting, data retrieval, and associated tasks, all the while exposing
 simple interfaces to researchers. None of these are *new* data, in the sense
 that these collections represent the aggregation of thousands of ecological
@@ -104,7 +108,7 @@ global scales. Perhaps as a result, developments in macroecology have primarily
 been driven by a search for patterns that are very broad both in scale and
 nature [@beck12c; @keit12]. While it is obvious that collecting exhaustive data
 at scales that are large enough to be relevant can be an insurmountable effort
-(both because of the monetary, time, and human costs needed), we suggest that
+(because of the monetary, time, and human costs needed), we suggest that
 macroecologists could, in parallel, build on existing databases, and aggregate
 them in a way that allows direct testing of proposals stemming from theory. To
 us, this opens no less than a new way for ecologists to ask critical research
@@ -128,18 +132,18 @@ are notoriously difficult to collect. The usual approach is to assemble
 literature data, expert knowledge, and additional information coming from field
 work, either as direct observation of feeding events or through gut-content
 analysis. Because of these technical constraints, food-web data are most often
-assembled in a single location. This impedes our ability to address the
-variation of their structure in space, which may both translate the action of
-macroecological mechanisms, as well as hold key to our ability to predict the
-spatial variation of ecological properties. As a consequence, most of the
-properties of food web over large (continental, global) spatial extents remain
-undocumented. For example, what is the relationship between latitude and
+assembled based on sampling in a single location. This impedes our ability to
+address the variation of their structure in space, which may both translate the
+action of macroecological mechanisms, as well as hold key to our ability to
+predict the spatial variation of ecological properties. As a consequence, most
+of the properties of food web over large (continental, global) spatial extents
+remain undocumented. For example, what is the relationship between latitude and
 connectance (the density of feeding interactions)? One possible way to approach
 this question would be to collect data from different localities, and document
-through *e.g.* regressions the relationship between latitude and connected. The
-approach we will illustrate here uses broad-scale data integration to forecast
-the structure of a single system at the global scale. We are interested in
-predicting the structure of a pine-marsh food web, worldwide.
+through *e.g.* regressions the relationship between latitude and connectance.
+The approach we will illustrate here uses broad-scale data integration to
+forecast the structure of a single system at the global scale. We are interested
+in predicting the structure of a pine-marsh food web, worldwide.
 
 ## Interactions data
 
@@ -184,21 +188,21 @@ network. The inflated network (original data, and data from *GLOBI*) has 368
 genera, and a total of 4796 interactions between them.
 
 As a final step, we queried the GBIF taxonomic rank database with each of these
-(tentatively) genera names. Every tentative genera that was either not found, or
+(tentatively) genera names. Every tentative genus that was either not found, or
 whose taxonomic level was not *genus*, was removed from the network.
 
 The code to reproduce this analysis is in the `1_get_data.r` suppl. file.
 
 ## Occurrence data and filtering
 
-For each genera, we downloaded the known occurrences from GBIF and BISON. This
+For each genus, we downloaded the known occurrences from GBIF and BISON. This
 yielded over 200000 point-occurence data. Because the ultimate goal is to
 perform spatial modeling of the structure of the network, we removed genera for
 which fewer than 100 occurrences were known. This seems like a stringent filter,
 yet it enables to (i) maintain sufficient predictive powers for SDMs, and (ii)
 only work on the genera for which we have "high-quality" data. Genera with fewer
-than 100 records were removed from the occurrence data and from the network.
-The cleaned food web had a total of 134 genera and 782 interactions, for 118269
+than 100 records were removed from the occurrence data and from the network. The
+cleaned food web had a total of 134 genera and 782 interactions, for 118269
 presences. Given the curated publicly available data, it represents the current
 best description of feeding interactions between species of this ecosystem. A
 visual depiction of the network is given in Figure 1.
@@ -271,27 +275,26 @@ should be the subject of further debates.
 
 **Attribution stacking and intellectual provenance:**
 
-The merging of large databases has already created a conflict of how to
-properly attribute data provenance. Here there are at least two core issues
-that will require community consultation in order to be resolved. First, *what
-is the proper mode of attribution when a very large volume of data is
-aggregated*?  Second, *what should be the intellectual property of the
-synthetic dataset*?  Currently, citations (whether to articles or datasets) are
-only counted when they are part of the main text. The simple example outlined
-here relies on well over a thousand references, and it makes little sense to
-expect that they would be provided in the main text. One intermediate solution
-would be to collate these references in a supplement, but it is unclear that
-these would be counted, and therefore contribute to the *impact* of each
-individual dataset. This is a problem that we argue is best solved by
-publishers; proper attribution and credit is key to provide incentives to data
-release [@whel14; @kena14]. As citations are currently the currency of
-scientific impact, publishers have a responsibility not only to ensure that
-data are available (which many already do), but that they are recognized; data
-citation, no matter how many data are cited, is a way to achieve this goal. The
-synthetic dataset, on the other, can reasonably be understood as a novel
-product; there is technical and intellectual effort involved in producing it,
-and although it is a derivative work, we would encourage authors to deposit it
-anew.
+The merging of large databases has already created a conflict of how to properly
+attribute data provenance. Here there are at least two core issues that will
+require community consultation in order to be resolved. First, *what is the
+proper mode of attribution when a very large volume of data are aggregated*?
+Second, *what should be the intellectual property of the synthetic dataset*?
+Currently, citations (whether to articles or datasets) are only counted when
+they are part of the main text. The simple example outlined here relies on well
+over a thousand references, and it makes little sense to expect that they would
+be provided in the main text. One intermediate solution would be to collate
+these references in a supplement, but it is unclear that these would be counted,
+and therefore contribute to the *impact* of each individual dataset. This is a
+problem that we argue is best solved by publishers; proper attribution and
+credit is key to provide incentives to data release [@whel14; @kena14]. As
+citations are currently the currency of scientific impact, publishers have a
+responsibility not only to ensure that data are available (which many already
+do), but that they are recognized; data citation, no matter how many data are
+cited, is a way to achieve this goal. The synthetic dataset, on the other hand,
+can reasonably be understood as a novel product; there is technical and
+intellectual effort involved in producing it, and although it is a derivative
+work, we would encourage authors to deposit it anew.
 
 **Sharing of code and analysis pipeline:**
 
@@ -301,21 +304,21 @@ new dataset) in addition to the data and explanation of the steps. The pipeline
 can take the form of a `makefile` (which allows to generate the results, from
 the raw data, without human intervention), or be all of the relevant code that
 allows to re-generate the figures and results. For example, we have released all
-of the `R` code that was used to generate the figures at **<will be given upon
-acceptance>**. Sharing the analysis pipeline has several advantages. First, it
-is a first step towards ensuring the quality of analyses, since reviewers can
-(and should reasonably be expected to) look at the source code. Second, it
-provides a *template* for future analyses -- instead of re-developing the
-pipeline from scratch, authors can re-use (and acknowledge) the previous code
-base and build on it. Finally, it helps identifying areas of future improvement.
-The development of software should primarily aim to make the work of researchers
-easier. Looking at commonalities in the analytical pipelines for which no
-ready-made solutions exists will be a great way to influence priorities in
-software development. Properly citing and reviewing computer code is still an
-issue, because software evolves whereas papers remain (for now) frozen in the
-state where they were published. Being more careful with citation, notably by
-including version number [@whit15] or using unique identifiers [@pois15c], will
-help long-term reproducibility.
+of the `R` code that was used to generate the figures at
+{>>will be given upon acceptance<<}. Sharing the analysis pipeline has several
+advantages. First, it is a first step towards ensuring the quality of analyses,
+since reviewers can (and should reasonably be expected to) look at the source
+code. Second, it provides a *template* for future analyses -- instead of
+re-developing the pipeline from scratch, authors can re-use (and acknowledge)
+the previous code base and build on it. Finally, it helps identifying areas of
+future improvement. The development of software should primarily aim to make
+the work of researchers easier. Looking at commonalities in the analytical
+pipelines for which no ready-made solutions exists will be a great way to
+influence priorities in software development. Properly citing and reviewing
+computer code is still an issue, because software evolves whereas papers remain
+(for now) frozen in the state where they were published. Being more careful
+with citation, notably by including version number [@whit15] or using unique
+identifiers [@pois15c], will help long-term reproducibility.
 
 **Computational literacy:**
 
@@ -329,15 +332,14 @@ being able to *manipulate* these data; even within the context of this simple
 use-case, the data do not fit in the memory of `R` (arguably the most commonly
 known and used software in ecology) without some adjustments. Once these issues
 were overcome, running the analysis involved a few hours worth of computation
-time. Since there is little doubt that computational approaches are going to
-become increasingly common in ecology [@hamp13], and are identified by the
-community as both in-demand skills and as not receiving enough attention in
-current ecological curricula [@barr13a], it seems that efforts should be
-allocated to raise the computational literacy of ecologists, and recognize that
-there is value in the diversity of tools one can use to carry out more demanding
-studies. For example, both `Python` and `Julia` are equally as user friendly as
-`R` while also being more powerful and better suited for computationally- or
-memory-intensive analyses.
+time. Computational approaches are going to become increasingly common in
+ecology [@hamp13], and are identified by the community as both in-demand skills
+and as not receiving enough attention in current ecological curricula [@barr13a]
+It seems that efforts should be allocated to raise the computational literacy of
+ecologists, and recognize that there is value in the diversity of tools one can
+use to carry out more demanding studies. For example, both `Python` and `Julia`
+are equally as user friendly as `R` while also being more powerful and better
+suited for computationally- or memory-intensive analyses.
 
 **Standards and best practices:**
 
