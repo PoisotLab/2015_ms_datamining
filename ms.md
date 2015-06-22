@@ -210,6 +210,8 @@ As a final step, we queried the GBIF taxonomic rank database with each of these
 (tentatively) genera names. Every tentative genus that was either not found, or
 whose taxonomic level was not *genus*, was removed from the network.
 
+!{network}
+
 The code to reproduce this analysis is in the `1_get_data.r` suppl. file.
 
 ## Occurrence data and filtering
@@ -348,6 +350,8 @@ including version number [@whit15] or using unique identifiers [@pois15c], will
 help long-term reproducibility.
 
 ### Computational literacy
+
+!{maps}
 
 This approach hardly qualifies as *big data*; nevertheless, it relies on the
 management and integration of a large volume of heterogeneous information, both
