@@ -23,28 +23,33 @@ author:
   - family: Cirtwill
     given: Alyssa R
     affiliation: 9
+  - family: Ara\'ujo
+    given: Miguel B.
+    affiliation: 10
   - family: Stouffer
     given: Daniel B.
     affiliation: 9
 affiliation:
   - id: 1
-    text: Université de Montréal, Département de Sciences Biologiques
+    text: Université de Montréal, Département de Sciences Biologiques, 90 Avenue Vincent d'Indy, Montréal, QC, CAN, H2V3S9
   - id: 2
-    text: Québec Centre for Biodiversity Sciences
+    text: Québec Centre for Biodiversity Sciences, 1205 Dr. Penfield Avenue, Montréal, QC, CAN, H3A1B1
   - id: 3
-    text: Université du Québec à Rimouski
+    text: Université du Québec à Rimouski, Département de Biologie, 300 Allée des Ursulines, Rimouski, QC, CAN, G5L3A1
   - id: 4
-    text: Shawn
+    text: Memorial University of Newfoundland, Department of Biology, 232 Elizabeth Ave, St. John's, NL, CAN, A1B3X9
   - id: 5
     text: Woods Institute for the Environment, Stanford University, Stanford, CA, USA
   - id: 6
     text: School for Environmental and Forest Science, University of Washington, Seattle, WA, USA
   - id: 7
-    text: University of Toronto
+    text: University of Toronto, Department of Ecology & Evolutionary Biology, 25 Harbord Street, Toronto, ON, CAN, M5S3G5
   - id: 8
-    text: University of Florida
+    text: University of Florida, Department of Wildlife, Ecology & Conservation, Gainseville, FL, USA
   - id: 9
     text: Centre for Integrative Ecology, School of Biological Sciences, University of Canterbury, Christchurch, New Zealand
+  - id: 10
+    text: Museo Nacional de Ciencias Naturales, CSIC, C/ José Gutiérrez Abascal 2, Madrid 28006, España
 keyword:
   - k: open data
   - k: API
@@ -52,45 +57,53 @@ keyword:
   - k: computational ecology
   - k: trophic interactions
 figure:
-  - id: f_network
+  - id: network
     caption: Visual representation of the initial data. On the left, we show the food web (original data and additional interactions from GLOBI), with genera forming modules (clusters of densely connected nodes) in different colors. On the right, we show the occurrence data where each dot represents one observation from BISON and GBIF (again color coded by module).
     file: figures/figure1.png
-  - id: f_maps
+  - id: maps
     caption: Maps for the number of genera, number of interactions, and connectance in the assembled networks (on the left) as well as their underlying relationship with latitude (on the right). The tropics are shaded in light yellow. The average value of each output has been (i) averaged across latitudes and (ii) z-score transformed; this emphasizes variations across the gradient as opposed to absolute values (which is a more conservative way of looking at the results since the predictions are mostly qualitative).
     file: figures/figure2.png
 date: work in progress
-abstract: ...
+abstract: The increased availability of both open ecological data, and software to interact with it, allows to rapidly collect and integrate data over large spatial and taxonomic scales. This offers the opportunity to address macroecological questions in a cost-effective way. In this contribution, we illustrate this approach by forecasting the structure of a stream food web at the global scale. In so doing, we highlight the most salient issues needing to be addressed before this approach can be used with a high degree of confidence.
 ---
 
-Ecologists are tasked with providing information on issues involving a variety
-of organisational scales. In addition to the global biodiversity crisis
-[@halp08], notable examples include predicting the consequences of the loss of
+Ecologists are often asked to provide information and guidance to solve a
+variety of issues, across different scales. As part of the global biodiversity
+crisis, notable examples include predicting the consequences of the loss of
 trophic structure [@este11], rapid shifts in species distributions [@gilm10],
 and increased anthropogenic stress on species and their environment. Most of
-these pressing topics require to be addressed (i) at the global scale, or at the
-very least across a variety of environments and landscapes, and (ii) through the
-integration of several types of data [@thui13]. Because of these requirements,
-new sampling is not always a viable solution on its own: there may be no funding
-structure to finance it, and there are time and scale constraints involved that
-make it unrealistic. While it is obvious that data collection should continue,
-we argue that there are a (potentially large) number of macroecological
-questions that could be adressed (i) without additional data and (ii) at minimal
-cost, by making use of open data and community-developed software and platforms.
+these pressing issues require the integration of a variety of ecological data
+and information, spanning different geographical and environmental scales, to be
+properly addressed [@thui13]. Because of these requirements, relying solely on
+*de novo* sampling of the ecological systems of interests is not a viable
+solution on its own. Chiefly, there are no global funding mechanisms available
+to finance systematic sampling of biological data, and the spatial and temporal
+scales required to obtain meaningful data on the patterns and processes driving
+biodiversity change are such that it would take a long time before realistic
+data would be available to support the decision process. While it is obvious
+that data collection should continue, we propose that there are a large number
+of macroecological questions that could be addressed without additional data or
+with data acquired at minimal cost, by making use of open data and
+community-developed software and platforms.
 
-Existing data can, to an increasing extent, be used to *build* new datasets
+Existing datasets can, to an increasing extent, be used to *build* new datasets
 (henceforth *synthetic* datasets, since they represent the synthesis of several
 types of data). There are several parallel advances that make this approach
 possible. First, the volume of data on ecological systems that are available
-*openly* increases on a daily basis. This includes point-occurrence data, as in
-GBIF, but also taxonomic knowledge (through ITIS, NCBI or EOL) or trait and
-interactions data. In fact, a vast treasure trove of ecological information is
-now available without having to contact and secure authorization from every
-contributor individually. Second, these data are often available in a
-*programmatic* way. As opposed to manual collection, identification, and
-maintenance of datasets, most of these services implement web APIs, *i.e.*
-services that allow users to query and/or upload data in a standard format.
-These services can be queried, either once or on a regular basis, to retrieve
-records with the desired properties. This ensures that the process is
+*openly* increases on a daily basis. This includes point-occurrence data (as in
+GBIF or BISON), but also taxonomic knowledge (through ITIS, NCBI or EOL) or
+trait and interactions data. In fact, there is a vast (and arguably
+under-exploited) amount of ecological information, that is now available without
+having to contact and secure authorization from every contributor individually.
+Second, these data are often available in a *programmatic* way; as opposed to
+manually visiting data repositories, and downloading or copy-and-pasting
+datasets, several software packages offer the opportunity to query these
+databases automatically, considerably speeding up the data collection process.
+As opposed to manual collection, identification, and maintenance of datasets,
+most of these services implement web APIs (Application Programming Interface,
+*i.e.* services that allow users to query and/or upload data in a standard
+format). These services can be queried, either once or on a regular basis, to
+retrieve records with the desired properties. This ensures that the process is
 repeatable, testable, transparent, and (as long as the code is properly written)
 nearly error proof. Finally, most of the heavy lifting for these tasks can be
 done through a *burgeoning ecosystem of packages and software* that handles
@@ -112,17 +125,17 @@ macroecologists could, in parallel, build on existing databases, and aggregate
 them in a way that allows direct testing of proposals stemming from theory. To
 us, this opens no less than a new way for ecologists to ask critical research
 questions, spanning from the local to the global, and from the organismal to the
-ecosystemic, scales. Indeed, we live in a data-rich world, and a very large
-amount of these data can now *easily* be collected, reducing the need for
-additional costly and time-consuming sampling. More importantly, this allows
-*rapid* evaluation of both climate change scenarios [@albo14] and hypotheses. In
-this contribution, we (i) outline the basic approach of integrating data from a
+ecosystemic, scales. Here, we (i) outline approaches for integrating data from a
 variety of sources (both in terms of provenance, and type of ecological
 information), (ii) identify technical bottlenecks, (iii) discuss issues related
 to scientific ethics and best practice, and (iv) provide clear recommendations
-moving forward. Although we work on a real-life example, the objective of this
-paper is to highlight the way different tools can be integrated in a single
-study, and to discuss the current limitations of this approach.
+moving forward with these approaches at larger scales. Although we illustrate
+the principles and proposed approaches with a real-life example, the objective
+of this paper is to highlight the way different tools can be integrated in a
+single study, and to discuss the current limitations of this approach. This
+approach can, for example, prove particularly fruitful if it allows to either
+offer new interpretation of well-described macroecological relationships, or to
+provide test of hypotheses coming from theoretical work.
 
 # An illustrative case-study
 
@@ -131,22 +144,21 @@ are notoriously difficult to collect. The usual approach is to assemble
 literature data, expert knowledge, and additional information coming from field
 work, either as direct observation of feeding events or through gut-content
 analysis. Because of these technical constraints, food-web data are most often
-assembled based on sampling in a single location. This impedes our ability to
-address the variation of their structure in space, which may both translate the
-action of macroecological mechanisms, as well as be key to our ability to
-predict the spatial variation of ecological properties. As a consequence, most
+assembled based on sampling in a single location. This prevents an adequate
+description of the variation of food web structure over space besides by
+comparing systems that may be composed of different taxa. As a consequence, most
 of the properties of food web over large (continental, global) spatial extents
 remain undocumented. For example, what is the relationship between latitude and
 connectance (the density of feeding interactions)? One possible way to approach
-this question would be to collect data from different localities, and document
-the relationship between latitude and connectance through regressions. The
-approach we will illustrate here uses broad-scale data integration to forecast
-the structure of a single system at the global scale. We are interested in
-predicting the structure of a pine-marsh food web, worldwide.
+this question is to collect data from different localities, and document the
+relationship between latitude and connectance through regressions. The approach
+we illustrate uses broad-scale data integration to forecast the structure of a
+single system at the global scale. We are interested in predicting the structure
+of a pine-marsh food web, worldwide.
 
 ## Interactions data
 
-The food-web data were take from @thom03, as made available in the `IWDB`
+The food-web data were taken from @thom03, as made available in the `IWDB`
 database (`https://www.nceas.ucsb.edu/interactionweb/html/thomps_towns.html`) --
 starting from the `Martins` dataset (stream food web from a pine forest in
 Maine). Wetlands and other freshwater ecosystems are critically endangered and
@@ -154,7 +166,7 @@ serve as a home to a host of endemic biodiversity [@fens11; @minc13]. Stream
 food webs in particular are important because they provide coupling between
 terrestrial and aquatic communities, ensure the maintenance of ecosystem
 services, and because the increased pressure on wetlands makes them particularly
-threatened. They represent a prime example of ecosystems for which data-based
+threatened. They represent a prime example of ecosystems for which data-driven
 prediction can be used to generate scenarios at a temporal scale relevant for
 conservation decisions, and faster than what sampling could allow.
 
@@ -164,7 +176,7 @@ cleaned in the following way. First, all nodes were aggregated to the *genus*
 level. Due to high level of structure in trophic interactions emerging from
 taxonomic rank alone [@eklo11; @stou12], aggregating to the genus level has the
 double advantage of (i) removing ambiguities on the identification of species
-and (ii) allowing us to integrate data when any two species from given genera
+and (ii) allowing integrating data when any two species from given genera
 interact. Second, all nodes that were not identified (`Unidentified` or
 `Unknown` in the original data) were removed. The cleaned network documented 227
 interactions, between 80 genera.
@@ -179,9 +191,9 @@ quality genus-level food-web from the original sampling.
 
 Because this food web was sampled *locally*, there is the possibility that
 interactions between genera are not reported; either because species from these
-genera do not interact, or co-occur, in the sampling location. To circumvent
-this, we queried the *GLOBI* database [@poel14] for each genus name, and
-retrieved all *feeding* interactions. For all *new* genera retrieved through
+genera do not interact or do not co-occur in the sampling location. To
+circumvent this, we queried the *GLOBI* database [@poel14] for each genus name,
+and retrieved all *feeding* interactions. For all *new* genera retrieved through
 this method, we also retrieved their interactions with genera already in the
 network. The inflated network (original data plus data from *GLOBI*) has 368
 genera, and a total of 4796 interactions between them.
@@ -194,16 +206,16 @@ The code to reproduce this analysis is in the `1_get_data.r` suppl. file.
 
 ## Occurrence data and filtering
 
-For each genus, we downloaded the known occurrences from GBIF and BISON. This
-yielded over 200000 point-occurence data. Because the ultimate goal is to
-perform spatial modeling of the structure of the network, we removed genera for
-which fewer than 100 occurrences were known. This seems like a stringent filter,
-yet it enables us (i) to maintain sufficient predictive powers for SDMs, and
-(ii) to only work on the genera for which we have "high-quality" data. The
+For each genus, we retrieved the known occurrences from GBIF and BISON. The
+download yielded over 200000 point-occurence data. Because the ultimate goal is
+to perform spatial modeling of the structure of the network, we removed genera
+for which fewer than 100 occurrences were known. This seems like a stringent
+filter, yet it enables us (i) to maintain sufficient predictive powers for SDMs,
+and (ii) to only work on the genera for which we have "high-quality" data. The
 cleaned food web had a total of 134 genera and 782 interactions, for 118269
 presences. Given the curated publicly available data, it represents the current
 best description of feeding interactions between species of this ecosystem. A
-visual depiction of the network is given in Figure 1.
+visual depiction of the network is given in \autoref{network}.
 
 On its own, the fact that filtering for genera with over 100 records reduced the
 sample size from 368 genera to 134 indicates how crucial it is that all
@@ -214,7 +226,15 @@ modeling tools require a minimal sample size in order to achieve acceptable
 accuracy, concerted efforts by the community and funding agencies to ensure that
 the minimal amount of data is deposited upon publication or acquisition is
 needed. It must also be noted that the treshold of a 100 occurrences is an
-arbitrary one. The approach is amenable to sensitivity analysis.
+arbitrary one.
+
+The approach is amenable to sensitivity analysis, and indeed this will be a
+crucial component of future analyses. A taxon can have less observations than
+the threshold either because of under-sampling or under-reporting, or because it
+is naturally rare. In the context of food webs, species higher-up the food chain
+can be less common than primary producers. To which extent these relationships
+between, *e.g.*, trophic position and rarity, can influence the predictions,
+will have to receive attention.
 
 The code to reproduce this analysis is in the `1_get_data.r` suppl. file.
 
@@ -222,14 +242,13 @@ The code to reproduce this analysis is in the `1_get_data.r` suppl. file.
 
 For each species in this subset of data, we retrieved the nineteen `bioclim`
 variables [@hijm05], with a resolution of 5 arc-minutes. This enabled us to
-build (`bioclim`) climatic envelope models for each species. These models tend
-to be more conservative than alternate modeling strategies, in that they predict
-smaller range sizes [@hijm06], but they also perform well overall for
-presence-only data [@elit06]. The output of these models is, for species $i$,
-the probability of an observation $\mathrm{P}(i)$ within each pixel. We
-appreciate that this is a coarse analysis, but its purpose is only to highlight
-how the different data can be combined. A discussion of the limitations of this
-approach is given below.
+build climatic envelope models for each species. These models tend to be more
+conservative than alternate modeling strategies, in that they predict smaller
+range sizes [@hijm06], but they also perform well overall for presence-only data
+[@elit06]. The output of these models is, for species $i$, the probability of an
+observation $\mathrm{P}(i)$ within each pixel. We appreciate that this is a
+coarse analysis, but its purpose is only to highlight how the different data can
+be combined. A discussion of the limitations of this approach is given below.
 
 The code to reproduce this analysis is in the `2_get_sdm.r` suppl. file.
 
@@ -239,12 +258,13 @@ For every interactions in the food web, we estimated the probability of it being
 observed in each pixel as the product of the probabilities of observing each
 species on its own: $\mathrm{P}(L_{ij}) \propto \mathrm{P}(i)\mathrm{P}(j)$.
 This resulted in one LDM ("link distribution model") for each interaction. It
-should be noted that co-occurrence here is entirely neutral, in that we assume
-that the probability that two species co-occur is independent. We also assume no
-variability in interactions, as in @have92. It is likely that, in addition to
-their occurrence, species co-occurrences and interactions [@pois15a] are
-affected by climate. Whether or not these constitute acceptable assumptions has
-to be decided for each study.
+should be noted that co-occurrence is considered to be entirely neutral, in that
+we assume that the probability that two species co-occur is independent (*i.e.*
+a predator is not more likely to be present if there are, or are not, potential
+preys). We also assume no variability in interactions, as in @have92. It is
+likely that, in addition to their occurrence, species co-occurrences and
+interactions [@pois15a] are affected by climate. Whether or not these constitute
+acceptable assumptions has to be decided for each study.
 
 The code to reproduce this analysis is in the `3_get_ldm.r` suppl. file.
 
@@ -260,16 +280,15 @@ decline only at higher latitudes.
 
 # Challenges moving forward
 
-We argue here that this example nicely illustrates the promises of
-data-intensive approaches. It builds on new data availability, new statistical
-and computational tools, and new ways to integrate both. Most importantly, it
-allows to use "classical" ecological data in a resolutely novel way, thus
-presenting an important opportunity to bridge a gap between field-based and
-theory-based macroecological research. But as with every methodological
-advancement, it comes a number of challenges and limitations. Here we discuss a
-few we believe are important. In doing so, we hope to define these issues and
-emphasize that each of them, on their own, should be the subject of further
-discourse.
+The example provided illustrates the promises of data-driven approaches. It
+builds on new data availability, new statistical and computational tools, and
+new ways to integrate both. Most importantly, it allows to use "classical"
+ecological data in a resolutely novel way, thus presenting an important
+opportunity to bridge a gap between field-based and theory-based macroecological
+research. But as with every methodological advancement, comes a number of
+challenges and limitations. Here we discuss a few we believe are important. In
+doing so, we hope to define these issues and emphasize that each of them, on
+their own, should be the subject of further discourse.
 
 **Attribution stacking and intellectual provenance:**
 
@@ -301,24 +320,24 @@ anew.
 Ideally, authors should release their analysis *pipeline* (that is, the series
 of steps, represented by code, needed to reproduce the analysis starting from a
 new dataset) in addition to the data and explanation of the steps. The pipeline
-can take the form of a `makefile` (which allows one to generate the results, from
-the raw data, without human intervention), or be all of the relevant code that
-allows to re-generate the figures and results. For example, we have released all
-of the `R` code that was used to generate the figures at
-{>>will be given upon acceptance<<}. Sharing the analysis pipeline has several
-advantages. First, it is a first step towards ensuring the quality of analyses,
-since reviewers can (and should reasonably be expected to) look at the source
-code. Second, it provides a *template* for future analyses -- instead of
-re-developing the pipeline from scratch, authors can re-use (and acknowledge)
-the previous code base and build on it. Finally, it helps identifying areas of
-future improvement. The development of software should primarily aim to make the
-work of researchers easier. Looking at commonalities in the analytical pipelines
-for which no ready-made solutions exists will be a great way to influence
-priorities in software development. Properly citing and reviewing computer code
-is still an issue, because software evolves whereas papers remain (for now)
-frozen in the state where they were published. Being more careful with citation,
-notably by including version number [@whit15] or using unique identifiers
-[@pois15c], will help long-term reproducibility.
+can take the form of a `makefile` (which allows one to generate the results,
+from the raw data, without human intervention), or be all of the relevant code
+that allows to re-generate the figures and results. For example, we have
+released all of the `R` code that was used to generate the figures at {==will be
+given upon acceptance==}. Sharing the analysis pipeline has several advantages.
+First, it is a first step towards ensuring the quality of analyses, since
+reviewers can (and should reasonably be expected to) look at the source code.
+Second, it provides a *template* for future analyses -- instead of re-developing
+the pipeline from scratch, authors can re-use (and acknowledge) the previous
+code base and build on it. Finally, it helps identifying areas of future
+improvement. The development of software should primarily aim to make the work
+of researchers easier. Looking at commonalities in the analytical pipelines for
+which no ready-made solutions exists will be a great way to influence priorities
+in software development. Properly citing and reviewing computer code is still an
+issue, because software evolves whereas papers remain (for now) frozen in the
+state where they were published. Being more careful with citation, notably by
+including version number [@whit15] or using unique identifiers [@pois15c], will
+help long-term reproducibility.
 
 **Computational literacy:**
 
@@ -405,11 +424,13 @@ our knowledge of biodiversity, and to identify areas or taxa of higher priority
 for sampling. For this reason, using synthetic datasets is *not* a call to do
 less field-based science. Quite the contrary: in addition to highlighting areas
 of high uncertainty, synthetic datasets provide *predictions* that require
-field-based validation. At a longer time-scale, the use of synthetic datasets
-will necessitate the development of both statistical methodology and software;
-this is one of the required steps towards real-time use and analysis of
-ecological data [@anto14]. We appreciate that this approach currently comes with
-some limitations -- they are unlikely to be overcome except with increased use,
+field-based validation. Only through this feedback can we build enough
+confidence in this approach to apply it for more ambitious questions, or
+disqualify it altogether. Meanwhile, the use of synthetic datasets will
+necessitate the development of both statistical methodology and software; this
+is one of the required steps towards real-time use and analysis of ecological
+data [@anto14]. We appreciate that this approach currently comes with some
+limitations -- they are unlikely to be overcome except with increased use,
 testing, and validation. Since the community already built effective and
 user-friendly databases and tools, there is very little cost (both in time and
 in funding) in trying these methods and there is also the promise of great
@@ -417,9 +438,11 @@ potential.
 
 **Acknowledgments --** This work was funded in part through a grant from the
 Canadian Institute of Ecology and Evolution. TP was funded by a Starting grant
-from the Université de Montréal, and a NSERC Discovery Grant. DBS acknowledges
-a Marsden Fund Fast-Start grant (UOC-1101) and Rutherford Discovery Fellowship,
-both administered by the Royal Society of New Zealand. We thank Kévin Cazelles
-for constructive comments on the manuscript.
+from the Université de Montréal, and a NSERC Discovery Grant. SL was funded by
+a NSERC Discovery Grant. DBS acknowledges a Marsden Fund Fast-Start grant
+(UOC-1101) and Rutherford Discovery Fellowship, both administered by the Royal
+Society of New Zealand. We thank Kévin Cazelles for constructive comments on
+the manuscript. We thank Anne Bruneau and Andrew Gonzalez for organizing the
+workshop at which this approach was first discussed.
 
 # References

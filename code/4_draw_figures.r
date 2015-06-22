@@ -82,9 +82,9 @@ box()
 
 Co = n_link/(sp_ric^2)
 
-plot(sqrt(Co), col=colors, axes=F, box='n', zlim=c(0,1))
+plot(sqrt(Co), col=colors, zlim=c(0,1))
 map("world", add=T, col=rgb(0.3, 0.3, 0.3, 0.2), interior=F)
-box()
+#box()
 title("Connectance")
 
 plot(zsc(Co)~y, sg, xlab="Latitude", ylab="Z-score of (predicted) connectance", pch=NA, xlim=c(-80, 80))
