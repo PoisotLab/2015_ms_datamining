@@ -63,9 +63,11 @@ figure:
   - id: network
     caption: Visual representation of the initial data. On the left, we show the food web (original data and additional interactions from GLOBI), with genera forming modules (clusters of densely connected nodes) in different colors. On the right, we show the occurrence data where each dot represents one observation from BISON and GBIF (again color coded by module).
     file: figures/figure1.png
+    wide: true
   - id: maps
     caption: Maps for the number of genera, number of interactions, and connectance in the assembled networks (on the left) as well as their underlying relationship with latitude (on the right). The tropics are shaded in light yellow. The average value of each output has been (i) averaged across latitudes and (ii) z-score transformed; this emphasizes variations across the gradient as opposed to absolute values (which is a more conservative way of looking at the results since the predictions are mostly qualitative).
     file: figures/figure2.png
+    wide: true
 date: work in progress
 abstract: The increased availability of both open ecological data, and software to interact with it, allows to rapidly collect and integrate data over large spatial and taxonomic scales. This offers the opportunity to address macroecological questions in a cost-effective way. In this contribution, we illustrate this approach by forecasting the structure of a stream food web at the global scale. In so doing, we highlight the most salient issues needing to be addressed before this approach can be used with a high degree of confidence.
 ---
@@ -162,7 +164,8 @@ of a pine-marsh food web, worldwide.
 ## Interactions data
 
 The food-web data were taken from @thom03, as made available in the `IWDB`
-database (`https://www.nceas.ucsb.edu/interactionweb/html/thomps_towns.html`) --
+database
+([https://www.nceas.ucsb.edu/interactionweb/html/thomps_towns.html][iwdb]) --
 starting from the `Martins` dataset (stream food web from a pine forest in
 Maine). Wetlands and other freshwater ecosystems are critically endangered and
 serve as a home to a host of endemic biodiversity [@fens11; @minc13]. Stream
@@ -172,6 +175,8 @@ services, and because the increased pressure on wetlands makes them particularly
 threatened. They represent a prime example of ecosystems for which data-driven
 prediction can be used to generate scenarios at a temporal scale relevant for
 conservation decisions, and faster than what sampling could allow.
+
+[iwdb]: https://www.nceas.ucsb.edu/interactionweb/html/thomps_towns.html
 
 The data comprising the original food web (105 nodes, including vague
 denominations like *Unidentified detritus* or *Terrestrial invertebrates*), were
@@ -293,7 +298,7 @@ challenges and limitations. Here we discuss a few we believe are important. In
 doing so, we hope to define these issues and emphasize that each of them, on
 their own, should be the subject of further discourse.
 
-**Attribution stacking and intellectual provenance:**
+### Attribution stacking and intellectual provenance
 
 The merging of large databases has already created a conflict of how to properly
 attribute data provenance. Here there are at least two core issues that will
@@ -318,7 +323,7 @@ product; there is technical and intellectual effort involved in producing it,
 and although it is a derivative work, we would encourage authors to deposit it
 anew.
 
-**Sharing of code and analysis pipeline:**
+### Sharing of code and analysis pipeline
 
 Ideally, authors should release their analysis *pipeline* (that is, the series
 of steps, represented by code, needed to reproduce the analysis starting from a
@@ -342,7 +347,7 @@ state where they were published. Being more careful with citation, notably by
 including version number [@whit15] or using unique identifiers [@pois15c], will
 help long-term reproducibility.
 
-**Computational literacy:**
+### Computational literacy
 
 This approach hardly qualifies as *big data*; nevertheless, it relies on the
 management and integration of a large volume of heterogeneous information, both
@@ -363,7 +368,7 @@ use to carry out more demanding studies. For example, both `Python` and `Julia`
 are equally as user friendly as `R` while also being more powerful and better
 suited for computationally- or memory-intensive analyses.
 
-**Standards and best practices:**
+### Standards and best practices
 
 In conducting this analysis, we noticed that a common issue was the
 identification of species and genera. All of these datasets were deposited by
@@ -388,7 +393,7 @@ other information is known; this requires an improved dialogue between data
 collectors and data curators, to highlight which practices have the highest risk
 of biasing future analyses.
 
-**Propagation of error:**
+### Propagation of error
 
 There are always caveats to using synthetic datasets. First, the extent to which
 each component dataset is adequately sampled is unknown (although there exist
