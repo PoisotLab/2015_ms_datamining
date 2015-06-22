@@ -327,7 +327,7 @@ can take the form of a `makefile` (which allows one to generate the results,
 from the raw data, without human intervention), or be all of the relevant code
 that allows to re-generate the figures and results. For example, we have
 released all of the `R` code that was used to generate the figures at
-{==will be given upon acceptance==}. Sharing the analysis pipeline has several advantages.
+\hilight{will be given upon acceptance}. Sharing the analysis pipeline has several advantages.
 First, it is a first step towards ensuring the quality of analyses, since
 reviewers can (and should reasonably be expected to) look at the source code.
 Second, it provides a *template* for future analyses -- instead of re-developing
