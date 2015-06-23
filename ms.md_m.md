@@ -178,7 +178,14 @@ conservation decisions, and faster than what sampling could allow.
 
 [iwdb]: https://www.nceas.ucsb.edu/interactionweb/html/thomps_towns.html
 
-!{network}
+
+\begin{figure*}[bt]
+	\centering
+	\includegraphics[width=\textwidth]{figures/figure1.png}
+	\caption{Visual representation of the initial data. On the left, we show the food web (original data and additional interactions from GLOBI), with genera forming modules (clusters of densely connected nodes) in different colors. On the right, we show the occurrence data where each dot represents one observation from BISON and GBIF (again color coded by module).}
+	\label{network}
+\end{figure*}
+
 
 The data comprising the original food web (105 nodes, including vague
 denominations like *Unidentified detritus* or *Terrestrial invertebrates*), were
@@ -276,7 +283,14 @@ likely that, in addition to their occurrence, species co-occurrences and
 interactions [@pois15a] are affected by climate. Whether or not these constitute
 acceptable assumptions has to be decided for each study.
 
-!{maps}
+
+\begin{figure*}[bt]
+	\centering
+	\includegraphics[width=\textwidth]{figures/figure2.pdf}
+	\caption{Maps for the number of genera, number of interactions, and connectance in the assembled networks (on the left) as well as their underlying relationship with latitude (on the right). The tropics are shaded in light yellow. The average value of each output has been (i) averaged across latitudes and (ii) z-score transformed; this emphasizes variations across the gradient as opposed to absolute values (which is a more conservative way of looking at the results since the predictions are mostly qualitative).}
+	\label{maps}
+\end{figure*}
+
 
 The code to reproduce this analysis is in the `3_get_ldm.r` suppl. file.
 
@@ -336,7 +350,7 @@ can take the form of a `makefile` (which allows one to generate the results,
 from the raw data, without human intervention), or be all of the relevant code
 that allows to re-generate the figures and results. For example, we have
 released all of the `R` code that was used to generate the figures at
-{==will be given upon acceptance==}. Sharing the analysis pipeline has several advantages.
+\hilight{will be given upon acceptance}. Sharing the analysis pipeline has several advantages.
 First, it is a first step towards ensuring the quality of analyses, since
 reviewers can (and should reasonably be expected to) look at the source code.
 Second, it provides a *template* for future analyses -- instead of re-developing

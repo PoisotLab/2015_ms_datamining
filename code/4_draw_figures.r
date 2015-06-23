@@ -22,7 +22,7 @@ small_ppd$longitude = round(small_ppd$longitude, 0)
 P = unique(small_ppd)
 
 # Figure 1 -- network and ppd
-png(file="figure1.png", width=1800, height=700)
+pdf(file="figure1.pdf", width=18, height=7)
 
 layout(matrix(rep(c(1,1,1,2,2,2,2,2,2), 6), ncol=9, byrow=T))
 
@@ -53,7 +53,7 @@ sg = ddply(space_grid, .(y), summarize, Co = mean(Co), S = mean(S), L = mean(L))
 zsc = function(x) (x-mean(x))/sd(x)
 
 # Figure 2 -- trends
-png(file="figure2.png", height=600*1.3, width=900*1.3)
+pdf(file="figure2.pdf", height=8, width=9)
 par(mfcol=c(3,2))
 
 plot(sp_ric, col=colors, axes=F, bty='n')
