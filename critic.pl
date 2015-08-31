@@ -21,6 +21,8 @@ open(my $fh, '<:encoding(UTF-8)', $filename)
 while (my $row = <$fh>) {
   chomp $row;
   $row =~ s/{\+\+(.+)\+\+}/\\add{$1}/g;
+  $row =~ s/{\+\+/\\add{/g;
+  $row =~ s/{\+\+}/}/g;
   $row =~ s/{~~(.+)~>(.+)~~}/\\change{$1}{$2}/g;
   $row =~ s/{--(.+)--}/\\remove{$1}/g;
   $row =~ s/{==(.+)==}{>>(.+)<<}/\\annote{$1}{$2}/g;

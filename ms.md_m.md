@@ -61,15 +61,15 @@ keyword:
   - k: trophic interactions
 figure:
   - id: network
-    caption: Visual representation of the initial data. On the left, we show the food web (original data and additional interactions from GLOBI), with genera forming modules (clusters of densely connected nodes) in different colors. On the right, we show the occurrence data where each dot represents one observation from BISON and GBIF (again color coded by module).
+    caption: Visual representation of the initial data. On the left, we show the food web (original data and interactions from GLOBI), with genera forming modules (clusters of densely connected nodes) in different colors. On the right, we show the occurrence data where each dot represents one observation from BISON and GBIF (again color coded by module).
     file: figures/figure1.png
     wide: true
   - id: maps
-    caption: Maps for the number of genera, number of interactions, and connectance in the assembled networks (on the left) as well as their underlying relationship with latitude (on the right). The tropics are shaded in light yellow. The average value of each output has been (i) averaged across latitudes and (ii) z-score transformed; this emphasizes variations across the gradient as opposed to absolute values (which is a more conservative way of looking at the results since the predictions are mostly qualitative).
+    caption: Maps for the number of genera, number of interactions, and connectance in the assembled networks (on the left) as well as their underlying relationship with latitude (on the right). The tropics are shaded in light yellow. The average value of each output has been (i) averaged across latitudes and (ii) z-score transformed; this emphasizes variations across the gradient as opposed to absolute values (which is a more conservative way of looking at the results since the predictions are qualitative).
     file: figures/figure2.pdf
     wide: true
 date: work in progress
-abstract: The increased availability of both open ecological data, and software to interact with it, allows to rapidly collect and integrate data over large spatial and taxonomic scales. This offers the opportunity to address macroecological questions in a cost-effective way. In this contribution, we illustrate this approach by forecasting the structure of a stream food web at the global scale. In so doing, we highlight the most salient issues needing to be addressed before this approach can be used with a high degree of confidence.
+abstract: The increased availability of both open ecological data, and software to interact with it, allows the fast collection and integration of information at all spatial and taxonomic scales. This offers the opportunity to address macroecological questions in a cost-effective way. In this contribution, we illustrate this approach by forecasting the structure of a stream food web at the global scale. In so doing, we highlight the most salient issues needing to be addressed before this approach can be used with a high degree of confidence.
 ---
 
 Ecologists are often asked to provide information and guidance to solve a
@@ -83,13 +83,12 @@ properly addressed [@thui13]. Because of these requirements, relying solely on
 *de novo* sampling of the ecological systems of interests is not a viable
 solution on its own. Chiefly, there are no global funding mechanisms available
 to finance systematic sampling of biological data, and the spatial and temporal
-scales required to obtain meaningful data on the patterns and processes driving
-biodiversity change are such that it would take a long time before realistic
-data would be available to support the decision process. While it is obvious
-that data collection should continue, we propose that there are a large number
-of macroecological questions that could be addressed without additional data or
-with data acquired at minimal cost, by making use of open data and
-community-developed software and platforms.
+scales required to acquire meaningful data on biodiversity change are such that
+it would take a long time before realistic data would be available to support
+the decision process. While that data collection must continue, we propose that
+there are a large number of macroecological questions that could be addressed
+without additional data or with data acquired at minimal cost, by making use of
+open data and community-developed software and platforms.
 
 Existing datasets can, to an increasing extent, be used to *build* new datasets
 (henceforth *synthetic* datasets, since they represent the synthesis of several
@@ -179,14 +178,6 @@ conservation decisions, and faster than what sampling could allow.
 [iwdb]: https://www.nceas.ucsb.edu/interactionweb/html/thomps_towns.html
 
 
-\begin{figure*}[bt]
-	\centering
-	\includegraphics[width=\textwidth]{figures/figure1.png}
-	\caption{Visual representation of the initial data. On the left, we show the food web (original data and additional interactions from GLOBI), with genera forming modules (clusters of densely connected nodes) in different colors. On the right, we show the occurrence data where each dot represents one observation from BISON and GBIF (again color coded by module).}
-	\label{network}
-\end{figure*}
-
-
 The data comprising the original food web (105 nodes, including vague
 denominations like *Unidentified detritus* or *Terrestrial invertebrates*), were
 cleaned in the following way. First, all nodes were aggregated to the *genus*
@@ -223,16 +214,17 @@ The code to reproduce this analysis is in the `1_get_data.r` suppl. file.
 
 ## Occurrence data and filtering
 
-For each genus, we retrieved the known occurrences from GBIF and BISON. The
-download yielded over 200000 point-occurence data. Because the ultimate goal is
-to perform spatial modeling of the structure of the network, we removed genera
-for which fewer than 100 occurrences were known. This seems like a stringent
-filter, yet it enables us (i) to maintain sufficient predictive powers for SDMs,
-and (ii) to only work on the genera for which we have "high-quality" data. The
-cleaned food web had a total of 134 genera and 782 interactions, for 118269
-presences. Given the curated publicly available data, it represents the current
-best description of feeding interactions between species of this ecosystem. A
-visual depiction of the network is given in \autoref{network}.
+For each genus, we retrieved the known occurrences \add{(approx. $2\times
+10^5$)} from GBIF and BISON. \remove{The download yielded over 200000
+point-occurence data.} Because the ultimate goal is to perform spatial
+modeling of the structure of the network, we removed genera for which fewer than
+100 occurrences were known. This seems like a stringent filter, yet it enables
+us (i) to maintain sufficient predictive powers for SDMs, and (ii) to only work
+on the genera for which we have "high-quality" data. The cleaned food web had a
+total of 134 genera and 782 interactions, for 118269 presences. Given the
+curated publicly available data, it represents the current best description of
+feeding interactions between species of this ecosystem. A visual depiction of
+the network is given in \autoref{network}.
 
 On its own, the fact that filtering for genera with over 100 records reduced the
 sample size from 368 genera to 134 indicates how crucial it is that all
@@ -242,7 +234,7 @@ of different scenarios, is only as good as the underlying data. Since most
 modeling tools require a minimal sample size in order to achieve acceptable
 accuracy, concerted efforts by the community and funding agencies to ensure that
 the minimal amount of data is deposited upon publication or acquisition is
-needed. It must also be noted that the treshold of a 100 occurrences is an
+needed. It must also be noted that the threshold of a 100 occurrences is an
 arbitrary one.
 
 The approach is amenable to sensitivity analysis, and indeed this will be a
@@ -282,14 +274,6 @@ preys). We also assume no variability in interactions, as in @have92. It is
 likely that, in addition to their occurrence, species co-occurrences and
 interactions [@pois15a] are affected by climate. Whether or not these constitute
 acceptable assumptions has to be decided for each study.
-
-
-\begin{figure*}[bt]
-	\centering
-	\includegraphics[width=\textwidth]{figures/figure2.pdf}
-	\caption{Maps for the number of genera, number of interactions, and connectance in the assembled networks (on the left) as well as their underlying relationship with latitude (on the right). The tropics are shaded in light yellow. The average value of each output has been (i) averaged across latitudes and (ii) z-score transformed; this emphasizes variations across the gradient as opposed to absolute values (which is a more conservative way of looking at the results since the predictions are mostly qualitative).}
-	\label{maps}
-\end{figure*}
 
 
 The code to reproduce this analysis is in the `3_get_ldm.r` suppl. file.
@@ -469,6 +453,7 @@ a NSERC Discovery Grant. DBS acknowledges a Marsden Fund Fast-Start grant
 (UOC-1101) and Rutherford Discovery Fellowship, both administered by the Royal
 Society of New Zealand. We thank Kévin Cazelles for constructive comments on
 the manuscript. We thank Anne Bruneau and Andrew Gonzalez for organizing the
-workshop at which this approach was first discussed.
+workshop at which this approach was first discussed. We thank Ross Mounce and
+one anonymous reviewer for comments on the manuscript.
 
 # References

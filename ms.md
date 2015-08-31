@@ -215,16 +215,17 @@ The code to reproduce this analysis is in the `1_get_data.r` suppl. file.
 
 ## Occurrence data and filtering
 
-For each genus, we retrieved the known occurrences from GBIF and BISON. The
-download yielded over 200000 point-occurence data. Because the ultimate goal is
-to perform spatial modeling of the structure of the network, we removed genera
-for which fewer than 100 occurrences were known. This seems like a stringent
-filter, yet it enables us (i) to maintain sufficient predictive powers for SDMs,
-and (ii) to only work on the genera for which we have "high-quality" data. The
-cleaned food web had a total of 134 genera and 782 interactions, for 118269
-presences. Given the curated publicly available data, it represents the current
-best description of feeding interactions between species of this ecosystem. A
-visual depiction of the network is given in \autoref{network}.
+For each genus, we retrieved the known occurrences {++(approx. $2\times
+10^5$)++} from GBIF and BISON. {--The download yielded over 200000
+point-occurence data.--} Because the ultimate goal is to perform spatial
+modeling of the structure of the network, we removed genera for which fewer than
+100 occurrences were known. This seems like a stringent filter, yet it enables
+us (i) to maintain sufficient predictive powers for SDMs, and (ii) to only work
+on the genera for which we have "high-quality" data. The cleaned food web had a
+total of 134 genera and 782 interactions, for 118269 presences. Given the
+curated publicly available data, it represents the current best description of
+feeding interactions between species of this ecosystem. A visual depiction of
+the network is given in \autoref{network}.
 
 On its own, the fact that filtering for genera with over 100 records reduced the
 sample size from 368 genera to 134 indicates how crucial it is that all
@@ -234,7 +235,7 @@ of different scenarios, is only as good as the underlying data. Since most
 modeling tools require a minimal sample size in order to achieve acceptable
 accuracy, concerted efforts by the community and funding agencies to ensure that
 the minimal amount of data is deposited upon publication or acquisition is
-needed. It must also be noted that the treshold of a 100 occurrences is an
+needed. It must also be noted that the threshold of a 100 occurrences is an
 arbitrary one.
 
 The approach is amenable to sensitivity analysis, and indeed this will be a
@@ -454,6 +455,7 @@ a NSERC Discovery Grant. DBS acknowledges a Marsden Fund Fast-Start grant
 (UOC-1101) and Rutherford Discovery Fellowship, both administered by the Royal
 Society of New Zealand. We thank Kévin Cazelles for constructive comments on
 the manuscript. We thank Anne Bruneau and Andrew Gonzalez for organizing the
-workshop at which this approach was first discussed.
+workshop at which this approach was first discussed. We thank Ross Mounce and
+one anonymous reviewer for comments on the manuscript.
 
 # References
