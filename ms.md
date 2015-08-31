@@ -139,7 +139,8 @@ of this paper is to highlight the way different tools can be integrated in a
 single study, and to discuss the current limitations of this approach. This
 approach can, for example, prove particularly fruitful if it allows to either
 offer new interpretation of well-described macroecological relationships, or to
-provide test of hypotheses coming from theoretical work.
+provide tests of hypotheses {~~coming from theoretical work~>suggested by
+theoretical studies~~}.
 
 # An illustrative case-study
 
@@ -148,17 +149,19 @@ are notoriously difficult to collect. The usual approach is to assemble
 literature data, expert knowledge, and additional information coming from field
 work, either as direct observation of feeding events or through gut-content
 analysis. Because of these technical constraints, food-web data are most often
-assembled based on sampling in a single location. This prevents an adequate
+assembled based on sampling in a single location. {~~This prevents an adequate
 description of the variation of food web structure over space besides by
-comparing systems that may be composed of different taxa. As a consequence, most
-of the properties of food web over large (continental, global) spatial extents
-remain undocumented. For example, what is the relationship between latitude and
-connectance (the density of feeding interactions)? One possible way to approach
-this question is to collect data from different localities, and document the
-relationship between latitude and connectance through regressions. The approach
-we illustrate uses broad-scale data integration to forecast the structure of a
-single system at the global scale. We are interested in predicting the structure
-of a pine-marsh food web, worldwide.
+comparing systems that may be composed of different taxa.~>Comparisons of food
+web structure over space may therefore require to compare communities composed
+of different taxa.~~} As a consequence, most of the properties of food web over
+large (continental, global) spatial extents remain undocumented. For example,
+what is the relationship between latitude and connectance (the density of
+feeding interactions)? One possible way to approach this question is to collect
+data from different localities, and document the relationship between latitude
+and connectance through regressions. The approach we illustrate uses broad-scale
+data integration to forecast the structure of a single system at the global
+scale. We are interested in predicting the structure of a pine-marsh food web,
+worldwide.
 
 ## Interactions data
 

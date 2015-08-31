@@ -17,6 +17,10 @@ perl -pi -e 's/{\-\-@(\w+) (.+)\-\-}/\\remove[$1]{$2}/gm' $2
 perl -pi -e 's/{\-\-(.+)\-\-}/\\remove{$1}/gm' $2
 
 # Replacements
+perl -pi -e 's/{~~@(\w+) /\\change[$1]{/gm' $2
+perl -pi -e 's/{~~/\\change{/gm' $2
+perl -pi -e 's/~>/}{/gm' $2
+perl -pi -e 's/~~}/}/gm' $2
 perl -pi -e 's/{~~@(\w+) (.+)~>(.+)~~}/\\change[$1]{$2}{$3}/gm' $2
 perl -pi -e 's/{~~(.+)~>(.+)~~}/\\change{$1}{$2}/gm' $2
 
