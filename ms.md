@@ -61,15 +61,15 @@ keyword:
   - k: trophic interactions
 figure:
   - id: network
-    caption: Visual representation of the initial data. On the left, we show the food web (original data and additional interactions from GLOBI), with genera forming modules (clusters of densely connected nodes) in different colors. On the right, we show the occurrence data where each dot represents one observation from BISON and GBIF (again color coded by module).
+    caption: Visual representation of the initial data. On the left, we show the food web (original data and interactions from GLOBI), with genera forming modules (clusters of densely connected nodes) in different colors. On the right, we show the occurrence data where each dot represents one observation from BISON and GBIF (again color coded by module).
     file: figures/figure1.png
     wide: true
   - id: maps
-    caption: Maps for the number of genera, number of interactions, and connectance in the assembled networks (on the left) as well as their underlying relationship with latitude (on the right). The tropics are shaded in light yellow. The average value of each output has been (i) averaged across latitudes and (ii) z-score transformed; this emphasizes variations across the gradient as opposed to absolute values (which is a more conservative way of looking at the results since the predictions are mostly qualitative).
+    caption: Maps for the number of genera, number of interactions, and connectance in the assembled networks (on the left) as well as their underlying relationship with latitude (on the right). The tropics are shaded in light yellow. The average value of each output has been (i) averaged across latitudes and (ii) z-score transformed; this emphasizes variations across the gradient as opposed to absolute values (which is a more conservative way of looking at the results since the predictions are qualitative).
     file: figures/figure2.pdf
     wide: true
 date: work in progress
-abstract: The increased availability of both open ecological data, and software to interact with it, allows to rapidly collect and integrate data over large spatial and taxonomic scales. This offers the opportunity to address macroecological questions in a cost-effective way. In this contribution, we illustrate this approach by forecasting the structure of a stream food web at the global scale. In so doing, we highlight the most salient issues needing to be addressed before this approach can be used with a high degree of confidence.
+abstract: The increased availability of both open ecological data, and software to interact with it, allows the fast collection and integration of information at all spatial and taxonomic scales. This offers the opportunity to address macroecological questions in a cost-effective way. In this contribution, we illustrate this approach by forecasting the structure of a stream food web at the global scale. In so doing, we highlight the most salient issues needing to be addressed before this approach can be used with a high degree of confidence.
 ---
 
 Ecologists are often asked to provide information and guidance to solve a
@@ -83,13 +83,12 @@ properly addressed [@thui13]. Because of these requirements, relying solely on
 *de novo* sampling of the ecological systems of interests is not a viable
 solution on its own. Chiefly, there are no global funding mechanisms available
 to finance systematic sampling of biological data, and the spatial and temporal
-scales required to obtain meaningful data on the patterns and processes driving
-biodiversity change are such that it would take a long time before realistic
-data would be available to support the decision process. While it is obvious
-that data collection should continue, we propose that there are a large number
-of macroecological questions that could be addressed without additional data or
-with data acquired at minimal cost, by making use of open data and
-community-developed software and platforms.
+scales required to acquire meaningful data on biodiversity change are such that
+it would take a long time before realistic data would be available to support
+the decision process. While that data collection must continue, we propose that
+there are a large number of macroecological questions that could be addressed
+without additional data or with data acquired at minimal cost, by making use of
+open data and community-developed software and platforms.
 
 Existing datasets can, to an increasing extent, be used to *build* new datasets
 (henceforth *synthetic* datasets, since they represent the synthesis of several
