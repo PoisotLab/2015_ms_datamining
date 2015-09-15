@@ -150,19 +150,17 @@ are notoriously difficult to collect. The usual approach is to assemble
 literature data, expert knowledge, and additional information coming from field
 work, either as direct observation of feeding events or through gut-content
 analysis. Because of these technical constraints, food-web data are most often
-assembled based on sampling in a single location. {~~This prevents an adequate
-description of the variation of food web structure over space besides by
-comparing systems that may be composed of different taxa.~>Comparisons of food
-web structure over space may therefore require to compare communities composed
-of different taxa.~~} As a consequence, most of the properties of food web over
-large (continental, global) spatial extents remain undocumented. For example,
-what is the relationship between latitude and connectance (the density of
-feeding interactions)? One possible way to approach this question is to collect
-data from different localities, and document the relationship between latitude
-and connectance through regressions. The approach we illustrate uses broad-scale
+assembled based on sampling in a single location. Comparisons of food web
+structure over space may therefore require to compare communities composed of
+different taxa. As a consequence, most of the properties of food web over large
+(continental, global) spatial extents remain undocumented. For example, what is
+the relationship between latitude and connectance (the density of feeding
+interactions)? One possible way to approach this question is to collect data
+from different localities, and document the relationship between latitude and
+connectance through regressions. The approach we illustrate uses broad-scale
 data integration to forecast the structure of a single system at the global
-scale. We are interested in predicting the structure of a pine-marsh food web,
-worldwide.
+scale [@pellissier_cfw]. We are interested in predicting the structure of a
+pine-marsh food web, worldwide.
 
 ## Interactions data
 
@@ -220,28 +218,25 @@ The code to reproduce this analysis is in the `1_get_data.r` suppl. file.
 
 ## Occurrence data and filtering
 
-For each genus, we retrieved the known occurrences {++(approx. $2\times
-10^5$)++} from GBIF and BISON. {--The download yielded over 200000
-point-occurence data.--} Because the ultimate goal is to perform spatial
-modeling of the structure of the network, we removed genera for which fewer than
-100 occurrences were known. This seems like a stringent filter, yet it enables
-us (i) to maintain sufficient predictive powers for SDMs, and (ii) to only work
-on the genera for which we have "high-quality" data. The cleaned food web had a
-total of 134 genera and 782 interactions, for 118269 presences. Given the
-curated publicly available data, it represents the current best description of
-feeding interactions between species of this ecosystem. A visual depiction of
-the network is given in \autoref{network}.
+For each genus, we retrieved the known occurrences (approx. $2\times 10^5$) from
+GBIF and BISON. Because the ultimate goal is to perform spatial modeling of the
+structure of the network, we removed genera for which fewer than 100 occurrences
+were known. This stringent filter enables us (i) to maintain high predictive
+powers for SDMs, and (ii) to work on the genera for which we have "high-quality"
+data. The cleaned food web had a total of 134 genera and 782 interactions, for
+118269 presences. Given the curated publicly available data, it represents the
+current best description of feeding interactions between species of this
+ecosystem. A visual depiction of the network is given in \autoref{network}.
 
 On its own, the fact that filtering for genera with over 100 records reduced the
-sample size from 368 genera to 134 indicates how crucial it is that all
-observations are reported in public databases. This is because the type of
-analysis we present here, although cost-effective and enabling rapid evaluation
-of different scenarios, is only as good as the underlying data. Since most
-modeling tools require a minimal sample size in order to achieve acceptable
-accuracy, concerted efforts by the community and funding agencies to ensure that
-the minimal amount of data is deposited upon publication or acquisition is
-needed. It must also be noted that the threshold of a 100 occurrences is an
-arbitrary one.
+sample size from 368 genera to 134 indicates how crucial the deposition of all
+observations in public databases is. This is because the analysis we present
+here, although cost-effective and enabling rapid evaluation of different
+scenarios, is only as good as the underlying data. Since most modeling tools
+require a minimal sample size in order to achieve acceptable accuracy, concerted
+efforts by the community and funding agencies to ensure that the minimal amount
+of data is deposited upon publication or acquisition is needed. It must also be
+noted that the threshold of a 100 occurrences is an arbitrary one.
 
 The approach is amenable to sensitivity analysis, and indeed this will be a
 crucial component of future analyses. A taxon can have less observations than
