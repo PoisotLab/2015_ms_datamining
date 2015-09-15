@@ -152,7 +152,7 @@ work, either as direct observation of feeding events or through gut-content
 analysis. Because of these technical constraints, food-web data are most often
 assembled based on sampling in a single location. Comparisons of food web
 structure over space may therefore require to compare communities composed of
-different taxa. As a consequence, most of the properties of food web over large
+different taxa. As a consequence, most food webs properties over large
 (continental, global) spatial extents remain undocumented. For example, what is
 the relationship between latitude and connectance (the density of feeding
 interactions)? One possible way to approach this question is to collect data
@@ -171,26 +171,26 @@ starting from the `Martins` dataset (stream food web from a pine forest in
 Maine). Wetlands and other freshwater ecosystems are critically endangered and
 serve as a home to a host of endemic biodiversity [@fensham_fdw; @minckley_rwc].
 Stream food webs in particular are important because they provide coupling
-between terrestrial and aquatic communities, ensure the maintenance of ecosystem
-services, and because the increased pressure on wetlands makes them particularly
+between terrestrial and aquatic communities, and ensure the maintenance of
+ecosystem services. Anthropogenic pressure on wetlands makes them particularly
 threatened. They represent a prime example of ecosystems for which data-driven
 prediction can be used to generate scenarios at a temporal scale relevant for
-conservation decisions, and faster than what sampling could allow.
+conservation decisions, and at a faster than sampling could allow.
 
 [iwdb]: https://www.nceas.ucsb.edu/interactionweb/html/thomps_towns.html
 
 !{network}
 
-The data comprising the original food web (105 nodes, including vague
-denominations like *Unidentified detritus* or *Terrestrial invertebrates*), were
-cleaned in the following way. First, all nodes were aggregated to the *genus*
-level. Due to high level of structure in trophic interactions emerging from
-taxonomic rank alone [@eklof_reh; @eklof_pcf; @stouffer_ecs], aggregating to the
-genus level has the double advantage of (i) removing ambiguities on the
-identification of species and (ii) allowing integrating data when any two
-species from given genera interact. Second, all nodes that were not identified
-(`Unidentified` or `Unknown` in the original data) were removed. The cleaned
-network documented 227 interactions, between 80 genera.
+The data from the original food web had 105 nodes, including vague denominations
+like *Unidentified detritus* or *Terrestrial invertebrates*. First, we
+aggregated all nodes to the *genus* level. Due to high level of structure in
+trophic interactions emerging from taxonomic rank alone [@eklof_reh; @eklof_pcf;
+@stouffer_ecs], aggregating to the genus level has the double advantage of (i)
+removing ambiguities on the identification of species and (ii) allowing
+integrating data when any two species from given genera interact. Second, we
+removed all nodes that were not identified (`Unidentified` or `Unknown` in the
+original data). The cleaned network documented 227 interactions, between 80
+genera.
 
 We then used the name-checking functions from the `taxize` package
 [@chamberlain_tts] to perform the following steps. First, all names were
@@ -203,12 +203,15 @@ sampling.
 
 Because this food web was sampled *locally*, there is the possibility that
 interactions between genera are not reported; either because species from these
-genera do not interact or do not co-occur in the sampling location. To
-circumvent this, we queried the *GLOBI* database [@poelen_gbi] for each genus
-name, and retrieved all *feeding* interactions. For all *new* genera retrieved
-through this method, we also retrieved their interactions with genera already in
-the network. The inflated network (original data plus data from *GLOBI*) has 368
-genera, and a total of 4796 interactions between them.
+genera do not interact or do not co-occur in the sampling location, or because
+of spatial mismatches between genus occurrence and sampling. To circumvent this,
+we queried the *GLOBI* database [@poelen_gbi] for each genus name, and retrieved
+all *feeding* interactions; this includes taxa from the original dataset, but
+also taxa that establish interactions with them even though these were not
+observed in the original sample. For all *new* genera retrieved through this
+method, we also retrieved their interactions with genera already in the network.
+The inflated network (original data plus data from *GLOBI*) has 368 genera, and
+a total of 4796 interactions between them.
 
 As a final step, we queried the GBIF taxonomic rank database with each of these
 (tentatively) genera names. Every tentative genus that was either not found, or
@@ -221,12 +224,13 @@ The code to reproduce this analysis is in the `1_get_data.r` suppl. file.
 For each genus, we retrieved the known occurrences (approx. $2\times 10^5$) from
 GBIF and BISON. Because the ultimate goal is to perform spatial modeling of the
 structure of the network, we removed genera for which fewer than 100 occurrences
-were known. This stringent filter enables us (i) to maintain high predictive
-powers for SDMs, and (ii) to work on the genera for which we have "high-quality"
-data. The cleaned food web had a total of 134 genera and 782 interactions, for
-118269 presences. Given the curated publicly available data, it represents the
-current best description of feeding interactions between species of this
-ecosystem. A visual depiction of the network is given in \autoref{network}.
+in the entire dataset. This stringent filter enables us (i) to maintain high
+predictive powers for SDMs, and (ii) to work on the genera for which we have
+"high-quality" data. The cleaned food web had a total of 134 genera and 782
+interactions, for 118269 presences. Given the curated publicly available data,
+it represents the current best description of feeding interactions between
+species of this ecosystem. A visual depiction of the network is given in
+\autoref{network}.
 
 On its own, the fact that filtering for genera with over 100 records reduced the
 sample size from 368 genera to 134 indicates how crucial the deposition of all
@@ -255,11 +259,11 @@ variables [@hijmans_vhr], with a resolution of 5 arc-minutes. This enabled us to
 build climatic envelope models for each species. These models tend to be more
 conservative than alternate modeling strategies, in that they predict smaller
 range sizes [@hijmans_ace], but they also perform well overall for presence-only
-data [@elith_nmi]. The output of these models is, for species $i$, the
-probability of an observation $\mathrm{P}(i)$ within each pixel. We appreciate
-that this is a coarse analysis, but its purpose is only to highlight how the
-different data can be combined. A discussion of the limitations of this approach
-is given below.
+data [@elith_nmi; @elith_tht]. The output of these models is, for species $i$,
+the probability of an observation $\mathrm{P}(i)$ within each pixel. We
+appreciate that this is a coarse analysis, but its purpose is to highlight how
+to combine different data. A discussion of the limitations of this approach is
+given below.
 
 The code to reproduce this analysis is in the `2_get_sdm.r` suppl. file.
 
@@ -272,7 +276,7 @@ This resulted in one LDM ("link distribution model") for each interaction. It
 should be noted that co-occurrence is considered to be entirely neutral, in that
 we assume that the probability that two species co-occur is independent (*i.e.*
 a predator is not more likely to be present if there are, or are not, potential
-preys). We also assume no variability in interactions, as in @havens_ssn. It is
+prey). We also assume no variability in interactions, as in @havens_ssn. It is
 likely that, in addition to their occurrence, species co-occurrences and
 interactions [@poisot_bsw] are affected by climate. Whether or not these
 constitute acceptable assumptions has to be decided for each study.
@@ -288,8 +292,8 @@ with diversity and interaction hotspots in Western Europe, North-East and
 South-Atlantic America, and the western coasts of New Zealand and Australia --
 this is clearly symmetrical along the equator. Network structure, here measured
 by network connectance, follows a different trend than genera richness or
-interactions do. Connectance is, overall, stable along the gradient, with a
-decline only at higher latitudes.
+interactions do. Connectance is stable along the gradient, but declines at
+extreme latitudes (Figure 2B).
 
 # Challenges moving forward
 
@@ -306,27 +310,28 @@ their own, should be the subject of further discourse.
 ## Attribution stacking and intellectual provenance
 
 The merging of large databases has already created a conflict of how to properly
-attribute data provenance. Here there are at least two core issues that will
-require community consultation in order to be resolved. First, *what is the
-proper mode of attribution when a very large volume of data are aggregated*?
-Second, *what should be the intellectual property of the synthetic dataset*?
-Currently, citations (whether to articles or datasets) are only counted when
-they are part of the main text. The simple example outlined here relies on well
-over a thousand references, and it makes little sense to expect that they would
-be provided in the main text (nor do we expect any journal to accept a
-manuscript with over a hundred references or so). One intermediate solution
-would be to collate these references in a supplement, but it is unclear that
-these would be counted, and therefore contribute to the *impact* of each
-individual dataset. This is a problem that we argue is best solved by
-publishers; proper attribution and credit is key to provide incentives to data
-release [@whelan_e; @kenall_off; @pronk_gta]. As citations are currently the
-"currency" of scientific impact, publishers have a responsibility not only to
-ensure that data are available (which many already do), but that they are
-recognized; data citation, no matter how many data are cited, is a way to
-achieve this goal. The synthetic dataset, on the other hand, can reasonably be
-understood as a novel product; there is technical and intellectual effort
-involved in producing it, and although it is a derivative work, we would
-encourage authors to deposit it anew.
+attribute data provenance [@carroll_srd]. Here there are at least two core
+issues that will require community consultation in order to be resolved. First,
+*what is the proper mode of attribution when a very large volume of data are
+aggregated*? Second, *what should be the intellectual property of the synthetic
+dataset*? Currently, citations (whether to articles or datasets) are only
+counted when they are part of the main text. The simple example outlined here
+relies on well over a thousand references, and it makes little sense to expect
+that they would be provided in the main text (nor do we expect any journal to
+accept a manuscript with over a hundred references or so, with rare exceptions).
+One intermediate solution would be to collate these references in a supplement,
+but it is unclear that these would be counted [@seeber_csi], and therefore
+contribute to the *impact* of each individual dataset [and hence, collector;
+@kueffer_fgn]. This is a problem that we argue is best solved by publishers;
+proper attribution and credit is key to provide incentives to data release
+[@whelan_e; @kenall_off; @pronk_gta]. As citations are currently the "currency"
+of scientific impact, publishers have a responsibility not only to ensure that
+data are available (which many already do), but that they are recognized; data
+citation, no matter how many data are cited, is a way to achieve this goal. The
+synthetic dataset, on the other hand, can reasonably be understood as a novel
+product; there is technical and intellectual effort involved in producing it,
+and although it is a derivative work, we would encourage authors to deposit it
+anew.
 
 ## Sharing of code and analysis pipeline
 
