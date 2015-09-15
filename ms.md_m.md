@@ -322,19 +322,18 @@ but it is unclear that these would be counted [@seeber_csi], and therefore
 contribute to the *impact* of each individual dataset [and hence, collector;
 @kueffer_fgn]. This is a problem that we argue is best solved by publishers;
 proper attribution and credit is key to provide incentives to data release
-[@whelan_e; @kenall_off; @pronk_gta]. As citations are currently the "currency"
-of scientific impact, publishers have a responsibility not only to ensure that
-data are available (which many already do), but that they are recognized; data
-citation, no matter how many data are cited, is a way to achieve this goal. The
-synthetic dataset, on the other hand, can reasonably be understood as a novel
-product; there is technical and intellectual effort involved in producing it,
-and although it is a derivative work, we would encourage authors to deposit it
-anew.
+[@whelan_e; @kenall_off; @pronk_gta].
 
-
-
-
-
+As citations are currently the "currency" of scientific impact, publishers have
+a responsibility not only to ensure that data are available (which many already
+do), but that they are recognized; data citation, no matter how many data are
+cited, is a way to achieve this goal. The synthetic dataset, on the other hand,
+can reasonably be understood as a novel product; there is technical and
+intellectual effort involved in producing it, and although it is a derivative
+work, we would encourage authors to deposit it anew. Nevertheless, we would like
+to see a more meaningful dialogue between editors, publishers, and authors, to
+determine how the citation of thousands of datasets ought to be handled across
+the editorial process.
 
 ## Sharing of code and analysis pipeline
 

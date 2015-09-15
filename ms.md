@@ -190,9 +190,7 @@ removing ambiguities on the identification of species and (ii) allowing
 integrating data when any two species from given genera interact. Second, we
 removed all nodes that were not identified (`Unidentified` or `Unknown` in the
 original data). The cleaned network documented 227 interactions, between 80
-genera.
-
-We then used the name-checking functions from the `taxize` package
+genera. We then used the name-checking functions from the `taxize` package
 [@chamberlain_tts] to perform the following steps. First, all names were
 resolved, and one of the following was applied: valid names were conserved,
 invalid names with a close replacement were corrected, and invalid names with no
@@ -218,6 +216,13 @@ As a final step, we queried the GBIF taxonomic rank database with each of these
 whose taxonomic level was not *genus*, was removed from the network.
 
 The code to reproduce this analysis is in the `1_get_data.r` suppl. file.
+
+It should be noted that this analysis relies on *databases*, and a vast majority
+of information is confined to the primary literature. While it is possible to do
+manual literature surveys [*e.g.* @strong_int], this tasks becomes daunting for
+large number of species. Initiatives like text-mining [@milanit_mlt] will speed
+up the rate at which we can recover interactions data from the literature -- if
+publishers allow researchers to mine the literature they create.
 
 ## Occurrence data and filtering
 
@@ -324,18 +329,16 @@ but it is unclear that these would be counted [@seeber_csi], and therefore
 contribute to the *impact* of each individual dataset [and hence, collector;
 @kueffer_fgn]. This is a problem that we argue is best solved by publishers;
 proper attribution and credit is key to provide incentives to data release
-[@whelan_e; @kenall_off; @pronk_gta].
-
-As citations are currently the "currency" of scientific impact, publishers have
-a responsibility not only to ensure that data are available (which many already
-do), but that they are recognized; data citation, no matter how many data are
-cited, is a way to achieve this goal. The synthetic dataset, on the other hand,
-can reasonably be understood as a novel product; there is technical and
-intellectual effort involved in producing it, and although it is a derivative
-work, we would encourage authors to deposit it anew. Nevertheless, we would like
-to see a more meaningful dialogue between editors, publishers, and authors, to
-determine how the citation of thousands of datasets ought to be handled across
-the editorial process.
+[@whelan_e; @kenall_off; @pronk_gta]. As citations are currently the "currency"
+of scientific impact, publishers have a responsibility not only to ensure that
+data are available (which many already do), but that they are recognized; data
+citation, no matter how many data are cited, is a way to achieve this goal. The
+synthetic dataset, on the other hand, can reasonably be understood as a novel
+product; there is technical and intellectual effort involved in producing it,
+and although it is a derivative work, we would encourage authors to deposit it
+anew. Nevertheless, we would like to see a more meaningful dialogue between
+editors, publishers, and authors, to determine how the citation of thousands of
+datasets ought to be handled across the editorial process.
 
 ## Sharing of code and analysis pipeline
 
