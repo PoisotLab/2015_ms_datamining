@@ -2,7 +2,7 @@
 title: Synthetic datasets and community tools for the rapid testing of ecological hypotheses
 short: Synthetic macroecological data
 csl: /home/tpoisot/.pandoc/styles/oikos.csl
-bibliography: /home/tpoisot/.pandoc/default.json
+bibliography: default.json
 author:
   - family: Poisot
     given: Timothée
@@ -140,8 +140,8 @@ example, the objective of this paper is to highlight the way different tools can
 be integrated in a single study, and to discuss the current limitations of this
 approach. This approach can, for example, prove particularly fruitful if it
 allows to either offer new interpretation of well-described macroecological
-relationships, or to provide tests of hypotheses {~~coming from theoretical
-work~>suggested by theoretical studies~~}.
+relationships, or to provide tests of hypotheses suggested by theoretical
+studies [@levin_tmt].
 
 # An illustrative case-study
 
@@ -220,7 +220,7 @@ The code to reproduce this analysis is in the `1_get_data.r` suppl. file.
 It should be noted that this analysis relies on *databases*, and a vast majority
 of information is confined to the primary literature. While it is possible to do
 manual literature surveys [*e.g.* @strong_int], this tasks becomes daunting for
-large number of species. Initiatives like text-mining [@milanit_mlt] will speed
+large number of species. Initiatives like text-mining [@milani_mlt] will speed
 up the rate at which we can recover interactions data from the literature -- if
 publishers allow researchers to mine the literature they create.
 

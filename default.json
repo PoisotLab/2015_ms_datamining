@@ -1,0 +1,2109 @@
+[
+    {
+        "DOI": "10.1016/j.tree.2012.08.005",
+        "ISSN": "0169-5347",
+        "author": [
+            {
+                "family": "Thompson",
+                "given": "Ross M"
+            },
+            {
+                "family": "Brose",
+                "given": "Ulrich"
+            },
+            {
+                "family": "Dunne",
+                "given": "Jennifer A"
+            },
+            {
+                "family": "Hall",
+                "given": "Robert O Jr."
+            },
+            {
+                "family": "Hladyz",
+                "given": "Sally"
+            },
+            {
+                "family": "Kitching",
+                "given": "Roger L"
+            },
+            {
+                "family": "Martinez",
+                "given": "Neo D"
+            },
+            {
+                "family": "Rantala",
+                "given": "Heidi"
+            },
+            {
+                "family": "Romanuk",
+                "given": "Tamara N"
+            },
+            {
+                "family": "Stouffer",
+                "given": "Daniel B"
+            },
+            {
+                "family": "Tylianakis",
+                "given": "Jason M"
+            }
+        ],
+        "container-title": "Trends Ecol. Evol.",
+        "id": "thompson_fwr",
+        "issued": {
+            "date-parts": [
+                [
+                    2012
+                ]
+            ]
+        },
+        "page": "1-9",
+        "title": "Food webs: reconciling the structure and function of biodiversity",
+        "type": "article-journal"
+    },
+    {
+        "DOI": "10.1002/joc.1276",
+        "ISSN": "1097-0088",
+        "abstract": "We developed interpolated climate surfaces for global land areas (excluding Antarctica) at a spatial resolution of 30 arc s (often referred to as 1-km spatial resolution). The climate elements considered were monthly precipitation and mean, minimum, and maximum temperature. Input data were gathered from a variety of sources and, where possible, were restricted to records from the 19502000 period. We used the thin-plate smoothing spline algorithm implemented in the ANUSPLIN package for interpolation, using latitude, longitude, and elevation as independent variables. We quantified uncertainty arising from the input data and the interpolation by mapping weather station density, elevation bias in the weather stations, and elevation variation within grid cells and through data partitioning and cross validation. Elevation bias tended to be negative (stations lower than expected) at high latitudes but positive in the tropics. Uncertainty is highest in mountainous and in poorly sampled areas. Data partitioning showed high uncertainty of the surfaces on isolated islands, e.g. in the Pacific. Aggregating the elevation and climate data to 10 arc min resolution showed an enormous variation within grid cells, illustrating the value of high-resolution surfaces. A comparison with an existing data set at 10 arc min resolution showed overall agreement, but with significant variation in some regions. A comparison with two high-resolution data sets for the United States also identified areas with large local differences, particularly in mountainous areas. Compared to previous global climatologies, ours has the following advantages: the data are at a higher spatial resolution (400 times greater or more); more weather station records were used; improved elevation data were used; and more information about spatial patterns of uncertainty in the data is available. Owing to the overall low density of available climate stations, our surfaces do not capture of all variation that may occur at a resolution of 1 km, particularly of precipitation in mountainous areas. In future work, such variation might be captured through knowledge-based methods and inclusion of additional co-variates, particularly layers obtained through remote sensing. Copyright 2005 Royal Meteorological Society.",
+        "accessed": {
+            "date-parts": [
+                [
+                    2015,
+                    2,
+                    18
+                ]
+            ]
+        },
+        "author": [
+            {
+                "family": "Hijmans",
+                "given": "Robert J."
+            },
+            {
+                "family": "Cameron",
+                "given": "Susan E."
+            },
+            {
+                "family": "Parra",
+                "given": "Juan L."
+            },
+            {
+                "family": "Jones",
+                "given": "Peter G."
+            },
+            {
+                "family": "Jarvis",
+                "given": "Andy"
+            }
+        ],
+        "container-title": "Int. J. Climatol.",
+        "id": "hijmans_vhr",
+        "issue": "15",
+        "issued": {
+            "date-parts": [
+                [
+                    2005
+                ]
+            ]
+        },
+        "keyword": "ANUSPLIN,Climate,error,GIS,interpolation,precipitation,temperature,uncertainty",
+        "page": "1965-1978",
+        "title": "Very high resolution interpolated climate surfaces for global land areas",
+        "type": "article-journal",
+        "volume": "25"
+    },
+    {
+        "DOI": "10.1111/jbi.12013",
+        "ISSN": "03050270",
+        "author": [
+            {
+                "family": "Albouy",
+                "given": "Camille"
+            },
+            {
+                "family": "Guilhaumon",
+                "given": "Fran\\\\ccois"
+            },
+            {
+                "family": "Leprieur",
+                "given": "Fabien"
+            },
+            {
+                "family": "Lasram",
+                "given": "Frida Ben Rais"
+            },
+            {
+                "family": "Somot",
+                "given": "Samuel"
+            },
+            {
+                "family": "Aznar",
+                "given": "Roland"
+            },
+            {
+                "family": "Velez",
+                "given": "Laure"
+            },
+            {
+                "family": "Le Loc’h",
+                "given": "Fran\\\\ccois"
+            },
+            {
+                "family": "Mouillot",
+                "given": "David"
+            }
+        ],
+        "container-title": "J. Biogeogr.",
+        "editor": [
+            {
+                "family": "Pearman",
+                "given": "Peter"
+            }
+        ],
+        "id": "albouy_pcc",
+        "issued": {
+            "date-parts": [
+                [
+                    2012,
+                    11
+                ]
+            ]
+        },
+        "page": "n/a-n/a",
+        "title": "Projected climate change and the changing biogeography of coastal Mediterranean fishes",
+        "type": "article-journal"
+    },
+    {
+        "URL": "https://peerj.com/preprints/501v1",
+        "abstract": "Rapidly growing biological data volumes including molecular sequences, species traits, geographic occurrences, specimen collections, and fossil records hold an unprecedented, yet largely unexplored potential to reveal how ecological and evolutionary processes generate and maintain biodiversity. Most biodiversity studies integrating ecological data and evolutionary history use an idiosyncratic step-by-step approach for the reconstruction of time-calibrated phylogenies in light of ecological and evolutionary scenarios. Here we introduce a conceptual framework, termed SUPERSMART (Self-Updating Platform for Estimating Rates of Speciation and Migration, Ages, and Relationships of Taxa), and provide a proof of concept for dealing with the moving targets of biodiversity research. This framework reconstructs dated phylogenies based on the assembly of molecular datasets and collects pertinent data on ecology, distribution, and fossils of the focal clade. The data handled for each step are continuously updated as databases accumulate new records. We exemplify the practice of our method by presenting comprehensive phylogenetic and dating analyses for the orders Primates and the Gentianales. We believe that this emerging framework will provide an invaluable tool for a wide range of hypothesis-driven research questions in ecology and evolution.",
+        "accessed": {
+            "date-parts": [
+                [
+                    2015,
+                    3,
+                    11
+                ]
+            ]
+        },
+        "author": [
+            {
+                "family": "Antonelli",
+                "given": "Alexandre"
+            },
+            {
+                "family": "Condamine",
+                "given": "Fabien L."
+            },
+            {
+                "family": "Hettling",
+                "given": "Hannes"
+            },
+            {
+                "family": "Nilsson",
+                "given": "Karin"
+            },
+            {
+                "family": "Nilsson",
+                "given": "R. Henrik"
+            },
+            {
+                "family": "Oxelman",
+                "given": "Bengt"
+            },
+            {
+                "family": "Sanderson",
+                "given": "Michael J."
+            },
+            {
+                "family": "Sauquet",
+                "given": "Hervé"
+            },
+            {
+                "family": "Scharn",
+                "given": "Ruud"
+            },
+            {
+                "family": "Silvestro",
+                "given": "Daniele"
+            },
+            {
+                "family": "Töpel",
+                "given": "Mats"
+            },
+            {
+                "family": "Vos",
+                "given": "Rutger A."
+            }
+        ],
+        "id": "antonelli_see",
+        "issued": {
+            "date-parts": [
+                [
+                    2014,
+                    9
+                ]
+            ]
+        },
+        "number": "e501v1",
+        "publisher": "PeerJ PrePrints",
+        "title": "SUPERSMART: ecology and evolution in the era of big data",
+        "title-short": "SUPERSMART",
+        "type": "report"
+    },
+    {
+        "DOI": "10.1098/rspb.2011.2149",
+        "ISSN": "1471-2954",
+        "abstract": "Explaining the structure of ecosystems is one of the great challenges of ecology. Simple models for food web structure aim at disentangling the complexity of ecological interaction networks and detect the main forces that are responsible for their shape. Trophic interactions are influenced by species traits, which in turn are largely determined by evolutionary history. Closely related species are more likely to share similar traits, such as body size, feeding mode and habitat preference than distant ones. Here, we present a theoretical framework for analysing whether evolutionary history-represented by taxonomic classification-provides valuable information on food web structure. In doing so, we measure which taxonomic ranks better explain species interactions. Our analysis is based on partitioning of the species into taxonomic units. For each partition, we compute the likelihood that a probabilistic model for food web structure reproduces the data using this information. We find that taxonomic partitions produce significantly higher likelihoods than expected at random. Marginal likelihoods (Bayes factors) are used to perform model selection among taxonomic ranks. We show that food webs are best explained by the coarser taxonomic ranks (kingdom to class). Our methods provide a way to explicitly include evolutionary history in models for food web structure.",
+        "author": [
+            {
+                "family": "Eklof",
+                "given": "Anna"
+            },
+            {
+                "family": "Helmus",
+                "given": "Matthew R."
+            },
+            {
+                "family": "Moore",
+                "given": "M."
+            },
+            {
+                "family": "Allesina",
+                "given": "Stefano"
+            },
+            {
+                "family": "Eklöf",
+                "given": "Anna"
+            }
+        ],
+        "container-title": "Proc. R. Soc. B Biol. Sci.",
+        "id": "eklof_reh",
+        "issue": "November 2011",
+        "issued": {
+            "date-parts": [
+                [
+                    2011,
+                    11
+                ]
+            ]
+        },
+        "keyword": "complex networks,dimension,food webs,species traits,taxonomy",
+        "page": "1588-1596",
+        "title": "Relevance of evolutionary history for food web structure.",
+        "type": "article-journal",
+        "volume": "279"
+    },
+    {
+        "DOI": "10.1111/geb.12326",
+        "ISSN": "1466-822X",
+        "URL": "http://dx.doi.org/10.1111/geb.12326",
+        "author": [
+            {
+                "family": "Maldonado",
+                "given": "Carla"
+            },
+            {
+                "family": "Molina",
+                "given": "Carlos I."
+            },
+            {
+                "family": "Zizka",
+                "given": "Alexander"
+            },
+            {
+                "family": "Persson",
+                "given": "Claes"
+            },
+            {
+                "family": "Taylor",
+                "given": "Charlotte M."
+            },
+            {
+                "family": "Albán",
+                "given": "Joaquina"
+            },
+            {
+                "family": "Chilquillo",
+                "given": "Eder"
+            },
+            {
+                "family": "Rønsted",
+                "given": "Nina"
+            },
+            {
+                "family": "Antonelli",
+                "given": "Alexandre"
+            }
+        ],
+        "container-title": "Global Ecology and Biogeography",
+        "id": "maldonado_esd",
+        "issued": {
+            "date-parts": [
+                [
+                    2015
+                ]
+            ]
+        },
+        "page": "n/a-n/a",
+        "publisher": "Wiley-Blackwell",
+        "title": "Estimating species diversity and distribution in the era of Big Data: to what extent can we trust public databases?",
+        "type": "article-journal"
+    },
+    {
+        "DOI": "10.1111/j.1365-2486.2006.01256.x",
+        "ISSN": "1365-2486",
+        "abstract": "Climate envelope models (CEMs) have been used to predict the distribution of species under current, past, and future climatic conditions by inferring a species’ environmental requirements from localities where it is currently known to occur. CEMs can be evaluated for their ability to predict current species distributions but it is unclear whether models that are successful in predicting current distributions are equally successful in predicting distributions under different climates (i.e. different regions or time periods). We evaluated the ability of CEMs to predict species distributions under different climates by comparing their predictions with those obtained with a mechanistic model (MM). In an MM the distribution of a species is modeled based on knowledge of a species’ physiology. The potential distributions of 100 plant species were modeled with an MM for current conditions, a past climate reconstruction (21 000 years before present) and a future climate projection (double preindustrial CO2 conditions). Point localities extracted from the currently suitable area according to the MM were used to predict current, future, and past distributions with four CEMs covering a broad range of statistical approaches: Bioclim (percentile distributions), Domain (distance metric), GAM (general additive modeling), and Maxent (maximum entropy). Domain performed very poorly, strongly underestimating range sizes for past or future conditions. Maxent and GAM performed as well under current climates as under past and future climates. Bioclim slightly underestimated range sizes but the predicted ranges overlapped more with the ranges predicted with the MM than those predicted with GAM did. Ranges predicted with Maxent overlapped most with those produced with the MMs, but compared with the ranges predicted with GAM they were more variable and sometimes much too large. Our results suggest that some CEMs can indeed be used to predict species distributions under climate change, but individual modeling approaches should be validated for this purpose, and model choice could be made dependent on the purpose of a particular study.",
+        "accessed": {
+            "date-parts": [
+                [
+                    2015,
+                    2,
+                    19
+                ]
+            ]
+        },
+        "author": [
+            {
+                "family": "Hijmans",
+                "given": "Robert J."
+            },
+            {
+                "family": "Graham",
+                "given": "Catherine H."
+            }
+        ],
+        "container-title": "Glob. Change Biol.",
+        "id": "hijmans_ace",
+        "issue": "12",
+        "issued": {
+            "date-parts": [
+                [
+                    2006
+                ]
+            ]
+        },
+        "keyword": "bioclim,Climate change,domain,envelope models,GAM,Maxent,species distributions",
+        "page": "2272-2281",
+        "title": "The ability of climate envelope models to predict the effect of climate change on species distributions",
+        "type": "article-journal",
+        "volume": "12"
+    },
+    {
+        "DOI": "10.12688/f1000research.2-191.v2",
+        "ISSN": "2046-1402",
+        "accessed": {
+            "date-parts": [
+                [
+                    2014,
+                    1,
+                    8
+                ]
+            ]
+        },
+        "author": [
+            {
+                "family": "Chamberlain",
+                "given": "Scott A."
+            },
+            {
+                "family": "Szöcs",
+                "given": "Eduard"
+            }
+        ],
+        "container-title": "F1000Research",
+        "id": "chamberlain_tts",
+        "issued": {
+            "date-parts": [
+                [
+                    2013,
+                    10
+                ]
+            ]
+        },
+        "title": "taxize: taxonomic search and retrieval in R",
+        "title-short": "taxize",
+        "type": "article-journal"
+    },
+    {
+        "DOI": "10.1126/science.1205106",
+        "ISSN": "0036-8075",
+        "abstract": "Until recently, large apex consumers were ubiquitous across the globe and had been for millions of years. The loss of these animals may be humankind’s most pervasive influence on nature. Although such losses are widely viewed as an ethical and aesthetic problem, recent research reveals extensive cascading effects of their disappearance in marine, terrestrial, and freshwater ecosystems worldwide. This empirical work supports long-standing theory about the role of top-down forcing in ecosystems but also highlights the unanticipated impacts of trophic cascades on processes as diverse as the dynamics of disease, wildfire, carbon sequestration, invasive species, and biogeochemical cycles. These findings emphasize the urgent need for interdisciplinary research to forecast the effects of trophic downgrading on process, function, and resilience in global ecosystems.",
+        "author": [
+            {
+                "family": "Estes",
+                "given": "James A"
+            },
+            {
+                "family": "Terborgh",
+                "given": "John"
+            },
+            {
+                "family": "Brashares",
+                "given": "Justin S"
+            },
+            {
+                "family": "Power",
+                "given": "Mary E"
+            },
+            {
+                "family": "Berger",
+                "given": "Joel"
+            },
+            {
+                "family": "Bond",
+                "given": "William J"
+            },
+            {
+                "family": "Carpenter",
+                "given": "Stephen R"
+            },
+            {
+                "family": "Essington",
+                "given": "Timothy E"
+            },
+            {
+                "family": "Holt",
+                "given": "Robert D"
+            },
+            {
+                "family": "Jackson",
+                "given": "Jeremy B C"
+            },
+            {
+                "family": "Marquis",
+                "given": "Robert J"
+            },
+            {
+                "family": "Oksanen",
+                "given": "L."
+            },
+            {
+                "family": "Oksanen",
+                "given": "Tarja"
+            },
+            {
+                "family": "Paine",
+                "given": "Robert T"
+            },
+            {
+                "family": "Pikitch",
+                "given": "Ellen K"
+            },
+            {
+                "family": "Ripple",
+                "given": "William J"
+            },
+            {
+                "family": "Sandin",
+                "given": "Stuart A"
+            },
+            {
+                "family": "Scheffer",
+                "given": "Marten"
+            },
+            {
+                "family": "Schoener",
+                "given": "Thomas W"
+            },
+            {
+                "family": "Shurin",
+                "given": "Jonathan B"
+            },
+            {
+                "family": "Sinclair",
+                "given": "Anthony R E"
+            },
+            {
+                "family": "Soule",
+                "given": "M E"
+            },
+            {
+                "family": "Virtanen",
+                "given": "Risto"
+            },
+            {
+                "family": "Wardle",
+                "given": "David A"
+            }
+        ],
+        "container-title": "Science",
+        "id": "estes_tdp",
+        "issue": "6040",
+        "issued": {
+            "date-parts": [
+                [
+                    2011,
+                    7
+                ]
+            ]
+        },
+        "keyword": "Animals,biodiversity,Biological,Ecosystem,extinction,Feeding Behavior,Food Chain,Humans,Introduced Species,Population Dynamics,Predatory Behavior",
+        "page": "301-306",
+        "title": "Trophic Downgrading of Planet Earth",
+        "type": "article-journal",
+        "volume": "333"
+    },
+    {
+        "DOI": "10.1111/2041-210X.12103",
+        "ISSN": "2041-210X",
+        "abstract": "\\* Current global changes make it important to be able to predict which interactions will occur in the emerging ecosystems. Most of the current methods to infer the existence of interactions between two species require a good knowledge of their behaviour or a direct observation of interactions. In this paper, we overcome these limitations by developing a method, inspired from the niche model of food web structure, using the statistical relationship between predator and prey body size to infer the matrix of potential interactions among a pool of species. \\* The novelty of our approach is to infer, for any species of a given species pool, the three species-specific parameters of the niche model. The method applies to both local and metaweb scales. It allows one to evaluate the feeding interactions of a new species entering the community. \\* We find that this method gives robust predictions of the structure of food webs and that its efficiency is increased when the strength of the bodysize relationship between predators and preys increases. \\* We finally illustrate the potential of the method to infer the metaweb structure of pelagic fishes of the Mediterranean sea under different global change scenarios.",
+        "accessed": {
+            "date-parts": [
+                [
+                    2014,
+                    11,
+                    3
+                ]
+            ]
+        },
+        "author": [
+            {
+                "family": "Gravel",
+                "given": "Dominique"
+            },
+            {
+                "family": "Poisot",
+                "given": "Timothée"
+            },
+            {
+                "family": "Albouy",
+                "given": "Camille"
+            },
+            {
+                "family": "Velez",
+                "given": "Laure"
+            },
+            {
+                "family": "Mouillot",
+                "given": "David"
+            }
+        ],
+        "container-title": "Methods Ecol Evol",
+        "id": "gravel_ifw",
+        "issue": "11",
+        "issued": {
+            "date-parts": [
+                [
+                    2013,
+                    11
+                ]
+            ]
+        },
+        "keyword": "body size,Food web,metaweb,Niche model",
+        "page": "1083-1090",
+        "title": "Inferring food web structure from predatorprey body size relationships",
+        "type": "article-journal",
+        "volume": "4"
+    },
+    {
+        "DOI": "10.1098/rsbl.2012.0672",
+        "ISSN": "1744-9561, 1744-957X",
+        "PMID": "22915630",
+        "abstract": "The symposium ‘What is Macroecology?’ was held in London on 20 June 2012. The event was the inaugural meeting of the Macroecology Special Interest Group of the British Ecological Society and was attended by nearly 100 scientists from 11 countries. The meeting reviewed the recent development of the macroecological agenda. The key themes that emerged were a shift towards more explicit modelling of ecological processes, a growing synthesis across systems and scales, and new opportunities to apply macroecological concepts in other research fields.",
+        "accessed": {
+            "date-parts": [
+                [
+                    2014,
+                    11,
+                    5
+                ]
+            ]
+        },
+        "author": [
+            {
+                "family": "Keith",
+                "given": "Sally A."
+            },
+            {
+                "family": "Webb",
+                "given": "Tom J."
+            },
+            {
+                "family": "Böhning-Gaese",
+                "given": "Katrin"
+            },
+            {
+                "family": "Connolly",
+                "given": "Sean R."
+            },
+            {
+                "family": "Dulvy",
+                "given": "Nicholas K."
+            },
+            {
+                "family": "Eigenbrod",
+                "given": "Felix"
+            },
+            {
+                "family": "Jones",
+                "given": "Kate E."
+            },
+            {
+                "family": "Price",
+                "given": "Trevor"
+            },
+            {
+                "family": "Redding",
+                "given": "David W."
+            },
+            {
+                "family": "Owens",
+                "given": "Ian P. F."
+            },
+            {
+                "family": "Isaac",
+                "given": "Nick J. B."
+            }
+        ],
+        "container-title": "Biology Letters",
+        "id": "keith_wm",
+        "issued": {
+            "date-parts": [
+                [
+                    2012,
+                    8
+                ]
+            ]
+        },
+        "keyword": "disease,Ecosystem,macroecology,process-based model,spatial scale,theory",
+        "page": "rsbl20120672",
+        "title": "What is macroecology?",
+        "type": "article-journal"
+    },
+    {
+        "DOI": "10.1111/gcb.12467",
+        "ISSN": "1354-1013",
+        "URL": "http://dx.doi.org/10.1111/gcb.12467",
+        "author": [
+            {
+                "family": "Albouy",
+                "given": "Camille"
+            },
+            {
+                "family": "Velez",
+                "given": "Laure"
+            },
+            {
+                "family": "Coll",
+                "given": "Marta"
+            },
+            {
+                "family": "Colloca",
+                "given": "Francesco"
+            },
+            {
+                "family": "Le Loc’h",
+                "given": "François"
+            },
+            {
+                "family": "Mouillot",
+                "given": "David"
+            },
+            {
+                "family": "Gravel",
+                "given": "Dominique"
+            }
+        ],
+        "container-title": "Glob Change Biol",
+        "id": "albouy_fps",
+        "issue": "3",
+        "issued": {
+            "date-parts": [
+                [
+                    2014
+                ]
+            ]
+        },
+        "page": "730-741",
+        "publisher": "Wiley-Blackwell",
+        "title": "From projected species distribution to food-web structure under climate change",
+        "type": "article-journal",
+        "volume": "20"
+    },
+    {
+        "author": [
+            {
+                "family": "White",
+                "given": "Ethan P"
+            }
+        ],
+        "container-title": "Ideas in Ecology & Evolution",
+        "id": "white_stb",
+        "issued": {
+            "date-parts": [
+                [
+                    2015
+                ]
+            ]
+        },
+        "title": "Some thoughts on best publishing practices for scientific software.",
+        "type": "article-journal"
+    },
+    {
+        "DOI": "10.1016/j.tree.2011.07.007",
+        "ISSN": "0169-5347",
+        "URL": "http://dx.doi.org/10.1016/j.tree.2011.07.007",
+        "alternative-id": [
+            "S0169534711002059"
+        ],
+        "author": [
+            {
+                "affiliation": [
+
+                ],
+                "family": "Kueffer",
+                "given": "Christoph"
+            },
+            {
+                "affiliation": [
+
+                ],
+                "family": "Niinemets",
+                "given": "Ülo"
+            },
+            {
+                "affiliation": [
+
+                ],
+                "family": "Drenovsky",
+                "given": "Rebecca E."
+            },
+            {
+                "affiliation": [
+
+                ],
+                "family": "Kattge",
+                "given": "Jens"
+            },
+            {
+                "affiliation": [
+
+                ],
+                "family": "Milberg",
+                "given": "Per"
+            },
+            {
+                "affiliation": [
+
+                ],
+                "family": "Poorter",
+                "given": "Hendrik"
+            },
+            {
+                "affiliation": [
+
+                ],
+                "family": "Reich",
+                "given": "Peter B."
+            },
+            {
+                "affiliation": [
+
+                ],
+                "family": "Werner",
+                "given": "Christiane"
+            },
+            {
+                "affiliation": [
+
+                ],
+                "family": "Westoby",
+                "given": "Mark"
+            },
+            {
+                "affiliation": [
+
+                ],
+                "family": "Wright",
+                "given": "Ian J."
+            }
+        ],
+        "container-title": "Trends in Ecology & Evolution",
+        "deposited": {
+            "date-parts": [
+                [
+                    2011,
+                    9,
+                    13
+                ]
+            ],
+            "timestamp": 1315872000000
+        },
+        "id": "kueffer_fgn",
+        "indexed": {
+            "date-parts": [
+                [
+                    2015,
+                    2,
+                    7
+                ]
+            ],
+            "timestamp": 1423329766388
+        },
+        "issue": "10",
+        "issued": {
+            "date-parts": [
+                [
+                    2011,
+                    10
+                ]
+            ]
+        },
+        "member": "http://id.crossref.org/member/78",
+        "page": "493-494",
+        "prefix": "http://id.crossref.org/prefix/10.1016",
+        "publisher": "Elsevier BV",
+        "reference-count": 7,
+        "score": 1.0,
+        "source": "CrossRef",
+        "subject": [
+            "Ecology, Evolution, Behavior and Systematics"
+        ],
+        "subtitle": [
+
+        ],
+        "title": "Fame, glory and neglect in meta-analyses",
+        "type": "article-journal",
+        "volume": "26"
+    },
+    {
+        "DOI": "10.1109/com.geo.2014.21",
+        "ISBN": "http://id.crossref.org/isbn/978-1-4799-4321-0",
+        "URL": "http://dx.doi.org/10.1109/COM.Geo.2014.21",
+        "author": [
+            {
+                "family": "Schmill",
+                "given": "Matthew D."
+            },
+            {
+                "family": "Gordon",
+                "given": "Lindsey M."
+            },
+            {
+                "family": "Magliocca",
+                "given": "Nicholas R."
+            },
+            {
+                "family": "Ellis",
+                "given": "Erle C."
+            },
+            {
+                "family": "Oates",
+                "given": "Tim"
+            }
+        ],
+        "container-title": "2014 Fifth International Conference on Computing for Geospatial Research and Application",
+        "id": "schmill_gaf",
+        "issued": {
+            "date-parts": [
+                [
+                    2014
+                ]
+            ]
+        },
+        "publisher": "IEEE",
+        "title": "GLOBE: Analytics for Assessing Global Representativeness",
+        "type": "article-journal"
+    },
+    {
+        "URL": "http://dx.plos.org/10.1371/journal.pone.0106264.g004",
+        "accessed": {
+            "date-parts": [
+                [
+                    2014,
+                    9,
+                    11
+                ]
+            ]
+        },
+        "author": [
+            {
+                "family": "Strong",
+                "given": "Justin S."
+            },
+            {
+                "family": "Leroux",
+                "given": "Shawn J."
+            }
+        ],
+        "container-title": "PloS One",
+        "id": "strong_int",
+        "issue": "8",
+        "issued": {
+            "date-parts": [
+                [
+                    2014
+                ]
+            ]
+        },
+        "page": "e106264",
+        "title": "Impact of Non-Native Terrestrial Mammals on the Structure of the Terrestrial Mammal Food Web of Newfoundland, Canada",
+        "type": "article-journal",
+        "volume": "9"
+    },
+    {
+        "DOI": "10.1111/oik.01719",
+        "ISSN": "1600-0706",
+        "abstract": "Community ecology is tasked with the considerable challenge of predicting the structure, and properties, of emerging ecosystems. It requires the ability to understand how and why species interact, as this will allow the development of mechanism-based predictive models, and as such to better characterize how ecological mechanisms act locally on the existence of inter-specific interactions. Here we argue that the current conceptualization of species interaction networks is ill-suited for this task. Instead, we propose that future research must start to account for the intrinsic variability of species interactions, then scale up from here onto complex networks. This can be accomplished simply by recognizing that there exists intra-specific variability, in traits or properties related to the establishment of species interactions. By shifting the scale towards population-based processes, we show that this new approach will improve our predictive ability and mechanistic understanding of how species interact over large spatial or temporal scales.",
+        "accessed": {
+            "date-parts": [
+                [
+                    2014,
+                    11,
+                    5
+                ]
+            ]
+        },
+        "author": [
+            {
+                "family": "Poisot",
+                "given": "Timothée"
+            },
+            {
+                "family": "Stouffer",
+                "given": "Daniel B."
+            },
+            {
+                "family": "Gravel",
+                "given": "Dominique"
+            }
+        ],
+        "container-title": "Oikos",
+        "id": "poisot_bsw",
+        "issue": "3",
+        "issued": {
+            "date-parts": [
+                [
+                    2015,
+                    3
+                ]
+            ]
+        },
+        "page": "243-251",
+        "title": "Beyond species: why ecological interaction networks vary through space and time",
+        "title-short": "Beyond species",
+        "type": "article-journal",
+        "volume": "124"
+    },
+    {
+        "DOI": "10.1890/120103",
+        "ISSN": "1540-9295",
+        "abstract": "The need for sound ecological science has escalated alongside the rise of the information age and “big data” across all sectors of society. Big data generally refer to massive volumes of data not readily handled by the usual data tools and practices and present unprecedented opportunities for advancing science and informing resource management through data-intensive approaches. The era of big data need not be propelled only by “big science” the term used to describe large-scale efforts that have had mixed success in the individual-driven culture of ecology. Collectively, ecologists already have big data to bolster the scientific effort a large volume of distributed, high-value information but many simply fail to contribute. We encourage ecologists to join the larger scientific community in global initiatives to address major scientific and societal problems by bringing their distributed data to the table and harnessing its collective power. The scientists who contribute such information will be at the forefront of socially relevant science but will they be ecologists?",
+        "accessed": {
+            "date-parts": [
+                [
+                    2015,
+                    3,
+                    11
+                ]
+            ]
+        },
+        "author": [
+            {
+                "family": "Hampton",
+                "given": "Stephanie E"
+            },
+            {
+                "family": "Strasser",
+                "given": "Carly A"
+            },
+            {
+                "family": "Tewksbury",
+                "given": "Joshua J"
+            },
+            {
+                "family": "Gram",
+                "given": "Wendy K"
+            },
+            {
+                "family": "Budden",
+                "given": "Amber E"
+            },
+            {
+                "family": "Batcheller",
+                "given": "Archer L"
+            },
+            {
+                "family": "Duke",
+                "given": "Clifford S"
+            },
+            {
+                "family": "Porter",
+                "given": "John H"
+            }
+        ],
+        "container-title": "Frontiers in Ecology and the Environment",
+        "id": "hampton_bdf",
+        "issue": "3",
+        "issued": {
+            "date-parts": [
+                [
+                    2013,
+                    3
+                ]
+            ]
+        },
+        "page": "156-162",
+        "title": "Big data and the future of ecology",
+        "type": "article-journal",
+        "volume": "11"
+    },
+    {
+        "DOI": "10.1371/journal.pbio.1002235",
+        "ISSN": "1545-7885",
+        "URL": "http://dx.doi.org/10.1371/journal.pbio.1002235",
+        "author": [
+            {
+                "family": "Carroll",
+                "given": "Michael W."
+            }
+        ],
+        "container-title": "PLoS Biol",
+        "id": "carroll_srd",
+        "issue": "8",
+        "issued": {
+            "date-parts": [
+                [
+                    2015
+                ]
+            ]
+        },
+        "page": "e1002235",
+        "publisher": "Public Library of Science (PLoS)",
+        "title": "Sharing Research Data and Intellectual Property Law: A Primer",
+        "type": "article-journal",
+        "volume": "13"
+    },
+    {
+        "DOI": "10.7717/peerj.1242",
+        "ISSN": "2167-8359",
+        "author": [
+            {
+                "family": "Pronk",
+                "given": "Tessa E."
+            },
+            {
+                "family": "Wiersma",
+                "given": "Paulien H."
+            },
+            {
+                "family": "van Weerden",
+                "given": "Anne"
+            },
+            {
+                "family": "Schieving",
+                "given": "Feike"
+            }
+        ],
+        "container-title": "PeerJ",
+        "id": "pronk_gta",
+        "issued": {
+            "date-parts": [
+                [
+                    2015,
+                    9,
+                    8
+                ]
+            ]
+        },
+        "page": "e1242",
+        "title": "A game theoretic analysis of research data sharing",
+        "type": "article-journal",
+        "url": "https://peerj.com/articles/1242",
+        "volume": "3"
+    },
+    {
+        "DOI": "10.1111/ele.12104",
+        "ISSN": "1461-0248",
+        "abstract": "The demand for projections of the future distribution of biodiversity has triggered an upsurge in modelling at the crossroads between ecology and evolution. Despite the enthusiasm around these so-called biodiversity models, most approaches are still criticised for not integrating key processes known to shape species ranges and community structure. Developing an integrative modelling framework for biodiversity distribution promises to improve the reliability of predictions and to give a better understanding of the eco-evolutionary dynamics of species and communities under changing environments. In this article, we briefly review some eco-evolutionary processes and interplays among them, which are essential to provide reliable projections of species distributions and community structure. We identify gaps in theory, quantitative knowledge and data availability hampering the development of an integrated modelling framework. We argue that model development relying on a strong theoretical foundation is essential to inspire new models, manage complexity and maintain tractability. We support our argument with an example of a novel integrated model for species distribution modelling, derived from metapopulation theory, which accounts for abiotic constraints, dispersal, biotic interactions and evolution under changing environmental conditions. We hope such a perspective will motivate exciting and novel research, and challenge others to improve on our proposed approach.",
+        "accessed": {
+            "date-parts": [
+                [
+                    2013,
+                    5,
+                    23
+                ]
+            ]
+        },
+        "author": [
+            {
+                "family": "Thuiller",
+                "given": "Wilfried"
+            },
+            {
+                "family": "Münkemüller",
+                "given": "Tamara"
+            },
+            {
+                "family": "Lavergne",
+                "given": "Sébastien"
+            },
+            {
+                "family": "Mouillot",
+                "given": "David"
+            },
+            {
+                "family": "Mouquet",
+                "given": "Nicolas"
+            },
+            {
+                "family": "Schiffers",
+                "given": "Katja"
+            },
+            {
+                "family": "Gravel",
+                "given": "Dominique"
+            }
+        ],
+        "container-title": "Ecol. Lett.",
+        "id": "thuiller_rmf",
+        "issued": {
+            "date-parts": [
+                [
+                    2013
+                ]
+            ]
+        },
+        "keyword": "biotic interactions,hybrid modelling,metacommunity,rapid adaptation,species distribution",
+        "page": "94-105",
+        "title": "A road map for integrating eco-evolutionary processes into biodiversity models",
+        "type": "article-journal",
+        "volume": "16"
+    },
+    {
+        "URL": "http://www.esajournals.org/doi/abs/10.1890/1540-9295-10.2.59",
+        "author": [
+            {
+                "family": "Hampton",
+                "given": "Stephanie E"
+            },
+            {
+                "family": "Tewksbury",
+                "given": "Joshua J"
+            },
+            {
+                "family": "Strasser",
+                "given": "Carly A"
+            }
+        ],
+        "id": "hampton_edi",
+        "issued": {
+            "date-parts": [
+                [
+                    2012,
+                    3
+                ]
+            ]
+        },
+        "title": "Ecological data in the Information Age",
+        "type": "article-journal"
+    },
+    {
+        "DOI": "10.1109/icmla.2012.201",
+        "ISBN": [
+            "http://id.crossref.org/isbn/978-1-4673-4651-1",
+            "http://id.crossref.org/isbn/978-0-7695-4913-2"
+        ],
+        "URL": "http://dx.doi.org/10.1109/ICMLA.2012.201",
+        "author": [
+            {
+                "affiliation": [
+
+                ],
+                "family": "Milani",
+                "given": "Ghazal Afroozi"
+            },
+            {
+                "affiliation": [
+
+                ],
+                "family": "Bohan",
+                "given": "David"
+            },
+            {
+                "affiliation": [
+
+                ],
+                "family": "Dunbar",
+                "given": "Stuart"
+            },
+            {
+                "affiliation": [
+
+                ],
+                "family": "Muggleton",
+                "given": "Stephen"
+            },
+            {
+                "affiliation": [
+
+                ],
+                "family": "Raybould",
+                "given": "Alan"
+            },
+            {
+                "affiliation": [
+
+                ],
+                "family": "Tamaddoni-Nezhad",
+                "given": "Alireza"
+            }
+        ],
+        "container-title": "2012 11th International Conference on Machine Learning and Applications",
+        "deposited": {
+            "date-parts": [
+                [
+                    2013,
+                    1,
+                    17
+                ]
+            ],
+            "timestamp": 1358380800000
+        },
+        "id": "milani_mlt",
+        "indexed": {
+            "date-parts": [
+                [
+                    2015,
+                    6,
+                    11
+                ]
+            ],
+            "timestamp": 1433994360802
+        },
+        "issued": {
+            "date-parts": [
+                [
+                    2012,
+                    12
+                ]
+            ]
+        },
+        "member": "http://id.crossref.org/member/263",
+        "prefix": "http://id.crossref.org/prefix/10.1109",
+        "publisher": "Institute of Electrical & Electronics Engineers (IEEE)",
+        "reference-count": 0,
+        "score": 1.0,
+        "source": "CrossRef",
+        "subtitle": [
+
+        ],
+        "title": "Machine Learning and Text Mining of Trophic Links",
+        "type": "proceedings-article"
+    },
+    {
+        "DOI": "10.1002/ece3.843",
+        "ISSN": "2045-7758",
+        "abstract": "The ability to model biodiversity patterns is of prime importance in this era of severe environmental crisis. Species assemblage along environmental gradients is subject to the interplay of biotic interactions in complement to abiotic filtering and stochastic forces. Accounting for complex biotic interactions for a wide array of species remains so far challenging. Here, we propose using food web models that can infer the potential interaction links between species as a constraint in species distribution models. Using a plantherbivore (butterfly) interaction dataset, we demonstrate that this combined approach is able to improve species distribution and community forecasts. The trophic interaction network between butterfly larvae and host plant was phylogenetically structured and driven by host plant nitrogen content allowing forecasting the food web model to unknown interactions links. This combined approach is very useful in rendering models of more generalist species that have multiple potential interaction links, where gap in the literature may occur. Our combined approach points toward a promising direction for modeling the spatial variation in entire species interaction networks.",
+        "accessed": {
+            "date-parts": [
+                [
+                    2013,
+                    10,
+                    25
+                ]
+            ]
+        },
+        "author": [
+            {
+                "family": "Pellissier",
+                "given": "Loïc"
+            },
+            {
+                "family": "Rohr",
+                "given": "Rudolf P."
+            },
+            {
+                "family": "Ndiribe",
+                "given": "Charlotte"
+            },
+            {
+                "family": "Pradervand",
+                "given": "Jean-Nicolas"
+            },
+            {
+                "family": "Salamin",
+                "given": "Nicolas"
+            },
+            {
+                "family": "Guisan",
+                "given": "Antoine"
+            },
+            {
+                "family": "Wisz",
+                "given": "Mary"
+            }
+        ],
+        "container-title": "Ecol. Evol.",
+        "id": "pellissier_cfw",
+        "issued": {
+            "date-parts": [
+                [
+                    2013
+                ]
+            ]
+        },
+        "keyword": "biotic interactions,ecological niche modeling,phylogeny,plantherbivore interactions,trophic network.",
+        "page": "n/a-n/a",
+        "title": "Combining food web and species distribution models for improved community projections",
+        "type": "article-journal"
+    },
+    {
+        "URL": "http://www.sciencedirect.com/science/article/pii/S0006320711002515",
+        "accessed": {
+            "date-parts": [
+                [
+                    2015,
+                    3,
+                    9
+                ]
+            ]
+        },
+        "author": [
+            {
+                "family": "Fensham",
+                "given": "R. J."
+            },
+            {
+                "family": "Silcock",
+                "given": "J. L."
+            },
+            {
+                "family": "Kerezsy",
+                "given": "Adam"
+            },
+            {
+                "family": "Ponder",
+                "given": "W."
+            }
+        ],
+        "container-title": "Biol. Conserv.",
+        "id": "fensham_fdw",
+        "issue": "10",
+        "issued": {
+            "date-parts": [
+                [
+                    2011
+                ]
+            ]
+        },
+        "page": "2459-2467",
+        "title": "Four desert waters: setting arid zone wetland conservation priorities through understanding patterns of endemism",
+        "title-short": "Four desert waters",
+        "type": "article-journal",
+        "volume": "144"
+    },
+    {
+        "DOI": "10.1890/1051-0761-24.1.1",
+        "ISSN": "1051-0761",
+        "URL": "http://dx.doi.org/10.1890/1051-0761-24.1.1",
+        "author": [
+            {
+                "family": "Whelan",
+                "given": "Anne Marie"
+            },
+            {
+                "family": "Schimel",
+                "given": "David S."
+            },
+            {
+                "family": "Baldwin",
+                "given": "J. David"
+            }
+        ],
+        "container-title": "Ecological Applications",
+        "id": "whelan_e",
+        "issue": "1",
+        "issued": {
+            "date-parts": [
+                [
+                    2014,
+                    1
+                ]
+            ]
+        },
+        "page": "1-2",
+        "publisher": "Ecological Society of America",
+        "title": "Editorial",
+        "type": "article-journal",
+        "volume": "24"
+    },
+    {
+        "author": [
+            {
+                "family": "Poisot",
+                "given": "Timothée"
+            }
+        ],
+        "container-title": "Ideas in Ecology & Evolution",
+        "id": "poisot_bpp",
+        "issued": {
+            "date-parts": [
+                [
+                    2015
+                ]
+            ]
+        },
+        "title": "Best publishing practices to improve user confidence in scientific software",
+        "type": "article-journal"
+    },
+    {
+        "DOI": "10.1093/biosci/biu234",
+        "ISSN": "0006-3568, 1525-3244",
+        "abstract": "Forests are experiencing simultaneous changes in climate, disturbance regimes, and management, all of which affect ecosystem function. Climate change is shifting ranges and altering forest productivity. Disturbance regimes are changing with the potential for novel interactions among disturbance types. In some areas, forest management practices are intensifying, whereas in other areas, lower-impact ecological methods are being used. Interactions among these changing factors are likely to alter ecosystem structure and function at regional to continental scales. A macrosystems approach is essential to assessing the broadscale impacts of these changes and quantify cross-scale interactions, emergent patterns, and feedbacks. A promising line of analysis is the assimilation of data with ecosystem models to scale processes to the macrosystem and generate projections based on alternative scenarios. Analyses of these projections can characterize the range of future variability in forest function and provide information to guide policy, industry, and science in a changing world.",
+        "accessed": {
+            "date-parts": [
+                [
+                    2015,
+                    3,
+                    3
+                ]
+            ]
+        },
+        "author": [
+            {
+                "family": "Becknell",
+                "given": "Justin M."
+            },
+            {
+                "family": "Desai",
+                "given": "Ankur R."
+            },
+            {
+                "family": "Dietze",
+                "given": "Michael C."
+            },
+            {
+                "family": "Schultz",
+                "given": "Courtney A."
+            },
+            {
+                "family": "Starr",
+                "given": "Gregory"
+            },
+            {
+                "family": "Duffy",
+                "given": "Paul A."
+            },
+            {
+                "family": "Franklin",
+                "given": "Jerry F."
+            },
+            {
+                "family": "Pourmokhtarian",
+                "given": "Afshin"
+            },
+            {
+                "family": "Hall",
+                "given": "Jaclyn"
+            },
+            {
+                "family": "Stoy",
+                "given": "Paul C."
+            },
+            {
+                "family": "Binford",
+                "given": "Michael W."
+            },
+            {
+                "family": "Boring",
+                "given": "Lindsay R."
+            },
+            {
+                "family": "Staudhammer",
+                "given": "Christina L."
+            }
+        ],
+        "container-title": "BioScience",
+        "id": "becknell_aia",
+        "issue": "3",
+        "issued": {
+            "date-parts": [
+                [
+                    2015,
+                    3
+                ]
+            ]
+        },
+        "keyword": "Climate change,disturbance regimes,forest management,Forestry,macrosystems,modeling",
+        "page": "263-274",
+        "title": "Assessing Interactions Among Changing Climate, Management, and Disturbance in Forests: A Macrosystems Approach",
+        "title-short": "Assessing Interactions Among Changing Climate, Management, and Disturbance in Forests",
+        "type": "article-journal",
+        "volume": "65"
+    },
+    {
+        "DOI": "10.1186/1472-6785-14-10",
+        "ISSN": "1472-6785",
+        "URL": "http://www.biomedcentral.com/1472-6785/14/10",
+        "abstract": "As part of BioMed Central’s open science mission, we are pleased to announce that two of our journals have integrated with the open data repository Dryad. Authors submitting their research to either BMC Ecology or BMC Evolutionary Biology will now have the opportunity to deposit their data directly into the Dryad archive and will receive a permanent, citable link to their dataset. Although this does not affect any of our current data deposition policies at these journals, we hope to encourage a more widespread adoption of open data sharing in the fields of ecology and evolutionary biology by facilitating this process for our authors. We also take this opportunity to discuss some of the wider issues that may concern researchers when making their data openly available. Although we offer a number of positive examples from different fields of biology, we also recognise that reticence to data sharing still exists, and that change must be driven from within research communities in order to create future science that is fit for purpose in the digital age.This editorial was published jointly in both BMC Ecology and BMC Evolutionary Biology.",
+        "author": [
+            {
+                "family": "Kenall",
+                "given": "Amye"
+            },
+            {
+                "family": "Harold",
+                "given": "Simon"
+            },
+            {
+                "family": "Foote",
+                "given": "Christopher"
+            }
+        ],
+        "container-title": "BMC Ecology",
+        "id": "kenall_off",
+        "issue": "1",
+        "issued": {
+            "date-parts": [
+                [
+                    2014
+                ]
+            ]
+        },
+        "page": "10",
+        "title": "An open future for ecological and evolutionary data?",
+        "type": "article-journal",
+        "volume": "14"
+    },
+    {
+        "DOI": "10.1098/rsfs.2012.0006",
+        "ISSN": "2042-8898",
+        "author": [
+            {
+                "family": "Levin",
+                "given": "Simon A"
+            }
+        ],
+        "container-title": "Interface Focus",
+        "id": "levin_tmt",
+        "issue": "2",
+        "issued": {
+            "date-parts": [
+                [
+                    2012,
+                    2
+                ]
+            ]
+        },
+        "page": "141-143",
+        "title": "Towards the marriage of theory and data",
+        "type": "article-journal",
+        "volume": "2"
+    },
+    {
+        "DOI": "10.7717/peerj.285",
+        "ISSN": "2167-8359",
+        "abstract": "Proficiency in mathematics and statistics is essential to modern ecological science, yet few studies have assessed the level of quantitative training received by ecologists. To do so, we conducted an online survey. The 937 respondents were mostly early-career scientists that studied biology as undergraduates. We found a clear self-perceived lack of quantitative training: 75% are not satisfied with their understanding of mathematical models; 75% feel the level of mathematics was “too low” in their ecology classes; 90% wanted more mathematics classes for ecologists; and 95% more statistics classes. Respondents thought that 30% of classes in ecology-related degrees should be focused on quantitative disciplines; likely more than what is taught in most universities. The main suggestion to improve quantitative training was to relate theoretical and statistical modeling to applied ecological problems. Improving quantitative training will require more mathematics classes for ecology-related degrees, and also more ecology classes containing mathematical and statistical examples.",
+        "accessed": {
+            "date-parts": [
+                [
+                    2014,
+                    11,
+                    23
+                ]
+            ]
+        },
+        "author": [
+            {
+                "family": "Barraquand",
+                "given": "Frédéric"
+            },
+            {
+                "family": "Ezard",
+                "given": "Thomas H.G."
+            },
+            {
+                "family": "Jørgensen",
+                "given": "Peter S."
+            },
+            {
+                "family": "Zimmerman",
+                "given": "Naupaka"
+            },
+            {
+                "family": "Chamberlain",
+                "given": "Scott"
+            },
+            {
+                "family": "Salguero-Gómez",
+                "given": "Roberto"
+            },
+            {
+                "family": "Curran",
+                "given": "Timothy J."
+            },
+            {
+                "family": "Poisot",
+                "given": "Timothée"
+            }
+        ],
+        "container-title": "PeerJ",
+        "id": "barraquand_lqt",
+        "issued": {
+            "date-parts": [
+                [
+                    2014,
+                    3
+                ]
+            ]
+        },
+        "keyword": "ecology student,education,Mathematics,Statistics,student,Teaching,university curriculum",
+        "page": "e285",
+        "title": "Lack of quantitative training among early-career ecologists: a survey of the problem and potential solutions",
+        "title-short": "Lack of quantitative training among early-career ecologists",
+        "type": "article-journal",
+        "volume": "2"
+    },
+    {
+        "DOI": "10.1038/451887d",
+        "ISSN": "0028-0836,1476-4687",
+        "URL": "http://dx.doi.org/10.1038/451887d",
+        "alternative-id": [
+            "451887d"
+        ],
+        "author": [
+            {
+                "affiliation": [
+
+                ],
+                "family": "Seeber",
+                "given": "Frank"
+            }
+        ],
+        "container-title": "Nature",
+        "deposited": {
+            "date-parts": [
+                [
+                    2011,
+                    7,
+                    15
+                ]
+            ],
+            "timestamp": 1310688000000
+        },
+        "id": "seeber_csi",
+        "indexed": {
+            "date-parts": [
+                [
+                    2015,
+                    2,
+                    7
+                ]
+            ],
+            "timestamp": 1423298091980
+        },
+        "issue": "7181",
+        "issued": {
+            "date-parts": [
+                [
+                    2008,
+                    2,
+                    21
+                ]
+            ]
+        },
+        "member": "http://id.crossref.org/member/339",
+        "page": "887-887",
+        "prefix": "http://id.crossref.org/prefix/10.1038",
+        "publisher": "Nature Publishing Group",
+        "reference-count": 0,
+        "score": 1.0,
+        "source": "CrossRef",
+        "subject": [
+            "General"
+        ],
+        "subtitle": [
+
+        ],
+        "title": "Citations in supplementary information are invisible",
+        "type": "article-journal",
+        "volume": "451"
+    },
+    {
+        "URL": "http://www.sciencedirect.com/science/article/pii/S0140196312002431",
+        "accessed": {
+            "date-parts": [
+                [
+                    2015,
+                    3,
+                    9
+                ]
+            ]
+        },
+        "author": [
+            {
+                "family": "Minckley",
+                "given": "T. A."
+            },
+            {
+                "family": "Turner",
+                "given": "D. S."
+            },
+            {
+                "family": "Weinstein",
+                "given": "S. R."
+            }
+        ],
+        "container-title": "J. Arid Environ.",
+        "id": "minckley_rwc",
+        "issued": {
+            "date-parts": [
+                [
+                    2013
+                ]
+            ]
+        },
+        "page": "213-221",
+        "title": "The relevance of wetland conservation in arid regions: a re-examination of vanishing communities in the American Southwest",
+        "title-short": "The relevance of wetland conservation in arid regions",
+        "type": "article-journal",
+        "volume": "88"
+    },
+    {
+        "DOI": "10.1016/j.tree.2010.03.002",
+        "ISSN": "0169-5347",
+        "abstract": "Predicting the impacts of climate change on species is one of the biggest challenges that ecologists face. Predictions routinely focus on the direct effects of climate change on individual species, yet interactions between species can strongly influence how climate change affects organisms at every scale by altering their individual fitness, geographic ranges and the structure and dynamics of their community. Failure to incorporate these interactions limits the ability to predict responses of species to climate change. We propose a framework based on ideas from global-change biology, community ecology, and invasion biology that uses community modules to assess how species interactions shape responses to climate change.",
+        "author": [
+            {
+                "family": "Gilman",
+                "given": "Sarah E"
+            },
+            {
+                "family": "Urban",
+                "given": "Mark C"
+            },
+            {
+                "family": "Tewksbury",
+                "given": "Joshua"
+            },
+            {
+                "family": "Gilchrist",
+                "given": "George W"
+            },
+            {
+                "family": "Holt",
+                "given": "Robert D"
+            }
+        ],
+        "container-title": "Trends Ecol. Evol.",
+        "id": "gilman_ffc",
+        "issue": "6",
+        "issued": {
+            "date-parts": [
+                [
+                    2010,
+                    6
+                ]
+            ]
+        },
+        "keyword": "Animal,Animals,Behavior,Biological,Climate Change,Demography,Ecosystem,Human Activities,Models",
+        "page": "325-331",
+        "title": "A framework for community interactions under climate change.",
+        "type": "article-journal",
+        "volume": "25"
+    },
+    {
+        "DOI": "10.1126/science.257.5073.1107",
+        "ISSN": "0036-8075",
+        "abstract": "The degree to which widely accepted generalizations about food web structure apply to natural communities was determined through examination of 50 pelagic webs sampled consistently with even taxonomic resolution of all trophic levels. The fraction of species in various trophic categories showed no significant overall trends as the number of species varied from 10 to 74. In contrast, the number of links per species increased fourfold over the range of species number, suggesting that the link-species scaling law, defined on the basis of aggregated webs, does not reflect a real ecological trend.",
+        "author": [
+            {
+                "family": "Havens",
+                "given": "Karl"
+            }
+        ],
+        "container-title": "Science",
+        "id": "havens_ssn",
+        "issue": "5073",
+        "issued": {
+            "date-parts": [
+                [
+                    2015,
+                    8
+                ]
+            ]
+        },
+        "page": "1107-1109",
+        "title": "Scale and structure in natural food webs.",
+        "type": "article-journal",
+        "volume": "257"
+    },
+    {
+        "DOI": "10.1111/j.2006.0906-7590.04596.x",
+        "ISSN": "1600-0587",
+        "abstract": "Prediction of species’ distributions is central to diverse applications in ecology, evolution and conservation science. There is increasing electronic access to vast sets of occurrence records in museums and herbaria, yet little effective guidance on how best to use this information in the context of numerous approaches for modelling distributions. To meet this need, we compared 16 modelling methods over 226 species from 6 regions of the world, creating the most comprehensive set of model comparisons to date. We used presence-only data to fit models, and independent presence-absence data to evaluate the predictions. Along with well-established modelling methods such as generalised additive models and GARP and BIOCLIM, we explored methods that either have been developed recently or have rarely been applied to modelling species’ distributions. These include machine-learning methods and community models, both of which have features that may make them particularly well suited to noisy or sparse information, as is typical of species’ occurrence data. Presence-only data were effective for modelling species’ distributions for many species and regions. The novel methods consistently outperformed more established methods. The results of our analysis are promising for the use of data from museums and herbaria, especially as methods suited to the noise inherent in such data improve.",
+        "accessed": {
+            "date-parts": [
+                [
+                    2015,
+                    2,
+                    19
+                ]
+            ]
+        },
+        "author": [
+            {
+                "family": "Elith",
+                "given": "Jane"
+            },
+            {
+                "family": "H. Graham",
+                "given": "Catherine"
+            },
+            {
+                "family": "P. Anderson",
+                "given": "Robert"
+            },
+            {
+                "family": "Dudík",
+                "given": "Miroslav"
+            },
+            {
+                "family": "Ferrier",
+                "given": "Simon"
+            },
+            {
+                "family": "Guisan",
+                "given": "Antoine"
+            },
+            {
+                "family": "J. Hijmans",
+                "given": "Robert"
+            },
+            {
+                "family": "Huettmann",
+                "given": "Falk"
+            },
+            {
+                "family": "R. Leathwick",
+                "given": "John"
+            },
+            {
+                "family": "Lehmann",
+                "given": "Anthony"
+            },
+            {
+                "family": "Li",
+                "given": "Jin"
+            },
+            {
+                "family": "G. Lohmann",
+                "given": "Lucia"
+            },
+            {
+                "family": "A. Loiselle",
+                "given": "Bette"
+            },
+            {
+                "family": "Manion",
+                "given": "Glenn"
+            },
+            {
+                "family": "Moritz",
+                "given": "Craig"
+            },
+            {
+                "family": "Nakamura",
+                "given": "Miguel"
+            },
+            {
+                "family": "Nakazawa",
+                "given": "Yoshinori"
+            },
+            {
+                "family": "M. Overton",
+                "given": "Jacob McC."
+            },
+            {
+                "family": "Townsend Peterson",
+                "given": "A."
+            },
+            {
+                "family": "J. Phillips",
+                "given": "Steven"
+            },
+            {
+                "family": "Richardson",
+                "given": "Karen"
+            },
+            {
+                "family": "Scachetti-Pereira",
+                "given": "Ricardo"
+            },
+            {
+                "family": "E. Schapire",
+                "given": "Robert"
+            },
+            {
+                "family": "Soberón",
+                "given": "Jorge"
+            },
+            {
+                "family": "Williams",
+                "given": "Stephen"
+            },
+            {
+                "family": "S. Wisz",
+                "given": "Mary"
+            },
+            {
+                "family": "E. Zimmermann",
+                "given": "Niklaus"
+            }
+        ],
+        "container-title": "Ecography",
+        "id": "elith_nmi",
+        "issue": "2",
+        "issued": {
+            "date-parts": [
+                [
+                    2006
+                ]
+            ]
+        },
+        "page": "129-151",
+        "title": "Novel methods improve prediction of species’ distributions from occurrence data",
+        "type": "article-journal",
+        "volume": "29"
+    },
+    {
+        "DOI": "10.1126/science.1216556",
+        "ISSN": "0036-8075, 1095-9203",
+        "abstract": "Studies of ecological networks (the web of interactions between species in a community) demonstrate an intricate link between a community’s structure and its long-term viability. It remains unclear, however, how much a community’s persistence depends on the identities of the species present, or how much the role played by each species varies as a function of the community in which it is found. We measured species’ roles by studying how species are embedded within the overall network and the subsequent dynamic implications. Using data from 32 empirical food webs, we find that species’ roles and dynamic importance are inherent species attributes and can be extrapolated across communities on the basis of taxonomic classification alone. Our results illustrate the variability of roles across species and communities and the relative importance of distinct species groups when attempting to conserve ecological communities.",
+        "accessed": {
+            "date-parts": [
+                [
+                    2014,
+                    10,
+                    23
+                ]
+            ]
+        },
+        "author": [
+            {
+                "family": "Stouffer",
+                "given": "Daniel B."
+            },
+            {
+                "family": "Sales-Pardo",
+                "given": "Marta"
+            },
+            {
+                "family": "Sirer",
+                "given": "M. Irmak"
+            },
+            {
+                "family": "Bascompte",
+                "given": "Jordi"
+            }
+        ],
+        "container-title": "Science",
+        "id": "stouffer_ecs",
+        "issue": "6075",
+        "issued": {
+            "date-parts": [
+                [
+                    2012,
+                    3
+                ]
+            ]
+        },
+        "page": "1489-1492",
+        "title": "Evolutionary Conservation of Species’ Roles in Food Webs",
+        "type": "article-journal",
+        "volume": "335"
+    },
+    {
+        "URL": "http://onlinelibrary.wiley.com/doi/10.1111/j.1600-0587.2008.05505.x/full",
+        "author": [
+            {
+                "family": "Elith",
+                "given": "J"
+            },
+            {
+                "family": "Graham",
+                "given": "CH"
+            }
+        ],
+        "container-title": "Ecography",
+        "id": "elith_tht",
+        "issued": {
+            "date-parts": [
+                [
+                    2009
+                ]
+            ]
+        },
+        "title": "Do they? How do they? WHY do they differ? On finding reasons for differing performances of species distribution models",
+        "type": "article-journal"
+    },
+    {
+        "DOI": "10.1007/s12080-015-0273-9",
+        "ISSN": "1874-1746",
+        "URL": "http://dx.doi.org/10.1007/s12080-015-0273-9",
+        "author": [
+            {
+                "family": "Eklöf",
+                "given": "Anna"
+            },
+            {
+                "family": "Stouffer",
+                "given": "Daniel B."
+            }
+        ],
+        "container-title": "Theor Ecol",
+        "id": "eklof_pcf",
+        "issued": {
+            "date-parts": [
+                [
+                    2015
+                ]
+            ]
+        },
+        "publisher": "Springer Science + Business Media",
+        "title": "The phylogenetic component of food web structure and intervality",
+        "type": "article-journal"
+    },
+    {
+        "DOI": "10.1016/j.ecoinf.2014.08.005",
+        "ISSN": "1574-9541",
+        "abstract": "An intricate network of interactions between organisms and their environment form the ecosystems that sustain life on earth. With a detailed understanding of these interactions, ecologists and biologists can make better informed predictions about the ways different environmental factors will impact ecosystems. Despite the abundance of research data on biotic and abiotic interactions, no comprehensive and easily accessible data collection is available that spans taxonomic, geospatial, and temporal domains. Biotic-interaction datasets are effectively siloed, inhibiting cross-dataset comparisons. In order to pool resources and bring to light individual datasets, specialized research tools are needed to aggregate, normalize, and integrate existing datasets with standard taxonomies, ontologies, vocabularies, and structured data repositories. Global Biotic Interactions (GloBI) provides such tools by way of an open, community-driven infrastructure designed to lower the barrier for researchers to perform ecological systems analysis and modeling. GloBI provides a tool that (a) ingests, normalizes, and aggregates datasets, (b) integrates interoperable data with accepted ontologies (e.g., OBO Relations Ontology, Uberon, and Environment Ontology), vocabularies (e.g., Coastal and Marine Ecological Classification Standard), and taxonomies (e.g., Integrated Taxonomic Information System and National Center for Biotechnology Information Taxonomy Database), (c) makes data accessible through anapplication programming interface (API) and various data archives (Darwin Core, Turtle, and Neo4j), and (d) houses a data collection of about 700,000 species interactions across about 50,000 taxa, covering over 1,100 references from 19 data sources. GloBI has taken an open-source and open-data approach in order to make integrated species-interaction data maximally accessible and to encourage users to provide feedback, contribute data, and improve data access methods. The GloBI collection ofdatasets is currently used in the Encyclopedia of Life (EOL) and Gulf of Mexico Species Interactions (GoMexSI).",
+        "accessed": {
+            "date-parts": [
+                [
+                    2014,
+                    9,
+                    15
+                ]
+            ]
+        },
+        "author": [
+            {
+                "family": "Poelen",
+                "given": "Jorrit H."
+            },
+            {
+                "family": "Simons",
+                "given": "James D."
+            },
+            {
+                "family": "Mungall",
+                "given": "Chris J."
+            }
+        ],
+        "container-title": "Ecological Informatics",
+        "id": "poelen_gbi",
+        "issued": {
+            "date-parts": [
+                [
+                    2014
+                ]
+            ]
+        },
+        "keyword": "species interactions data integration taxonomy ontology",
+        "title": "Global Biotic Interactions: An open infrastructure to share and analyze species-interaction datasets",
+        "title-short": "Global Biotic Interactions",
+        "type": "article-journal"
+    }
+]

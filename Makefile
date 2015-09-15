@@ -24,3 +24,12 @@ $(MARKED): $(SOURCE)
 
 $(OUTPUT): $(MARKED)
 	pandoc $< -o $@ $(PFLAGS)
+
+bib.keys: $(SOURCE)
+	grep @[a-zA-Z_0-9-]* $< -oh --color=never | sort  | uniq | sed 's/@//g' > $@
+
+default.json: bib.keys
+	chmod +x generatebib.py
+	./generatebib.py
+	cat $@ | json_reformat > tmp.json
+	mv tmp.json $@
