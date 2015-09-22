@@ -378,12 +378,14 @@ use-case, the data do not fit in the memory of `R` (arguably the most commonly
 known and used software in ecology) without some adjustments. Once these issues
 were overcome, running the analysis involved a few hours worth of computation
 time. Computational approaches are going to become increasingly common in
-ecology [@hampton_bdf; @hampton_edi], and are identified by the community as both in-demand skills
-and as not receiving enough attention in current ecological curricula [@barraquand_lqt]. It seems that efforts should be allocated to raise the computational literacy of
-ecologists, and recognize that there is value in the diversity of tools one can
-use to carry out more demanding studies. For example, both `Python` and `Julia`
-are equally as user friendly as `R` while also being more powerful and better
-suited for computationally- or memory-intensive analyses.
+ecology [@hampton_bdf; @hampton_edi], and are identified by the community as
+both in-demand skills and as not receiving enough attention in current
+ecological curricula [@barraquand_lqt]. It seems that efforts should be
+allocated to raise the computational literacy of ecologists, and recognize that
+there is value in the diversity of tools one can use to carry out more demanding
+studies. For example, both `Python` and `Julia` are equally as user friendly as
+`R` while also being more powerful and better suited for computationally- or
+memory-intensive analyses.
 
 ## Standards and best practices
 
